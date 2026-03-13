@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Open Window</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    /* .wave svg {
+    display: block;
+    width: 100%;
+    height: 150px;
+}  */
+
+    .how-image img {
+      width: 100%;
+      max-width: 350px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    .how-waves svg {
+    /* display: block;
+    width: 100%; */
+    height: 132px;
+}
+
+/* new css */
+.how-container {
+  display: flex;
+  align-items: flex-start;   /* top-aligns content */
+  justify-content: flex-start;
+  gap: 60px;                 /* space between image & text */
+  position: relative;        /* allows image to move freely */
+  /* padding: 40px 20px; */
+  flex-wrap: wrap;           /* for mobile */
+
+    align-items: center;   /* 👈 auto adjusts vertically */
+  justify-content: center;
+ 
+  padding: 60px 20px;
+  
+}
+
+/* IMAGE */
+.how-image {
+  position: relative;
+                 /* move image slightly up */
+  left: 0;                   /* push to the left corner */
+  max-width: 280px;          /* controls size */
+  flex-shrink: 0;            /* prevents shrinking on small screens */
+}
+
+.how-image img {
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/* TEXT */
+.how-text {
+  max-width: 600px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .how-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+  }
+
+  .how-image {
+    top: 0;                  /* reset on mobile */
+    left: 0;
+    margin-bottom: 20px;
+  }
+
+  .how-text {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- BRAND HEADER -->
+  <header class="brand-header">
+    <h1 class="brand">The Open Window</h1>
+    <!-- <p class="tagline">Mental Health</p> -->
+  </header>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="phylosophy.html">PHILOSOPHY</a></li>
+      <li><a href="culture.html">CULTURE</a></li>
+      <li><a href="ethicalai.html">ETHICAL AI</a></li>
+      <li><a href="community.html">COMMUNITY</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HOW IT WORKS ===== -->
+
+  <div class="how-container">
+
+    <!-- IMAGE -->
+    <div class="how-image">
+      <img src="phylosophy.png" alt="phylosophy">
+    </div>
+
+    <!-- TEXT -->
+    <div class="how-text">
+      <!-- <h3> At The Open Window, care is intentional from the first interaction to the last session. Our process is designed to feel clear,thoughtful, and steady,not rushed or transactional.</h3> -->
+    <p>
+                The Open Window was named with intention. We believe the work of mental health is not about escape,
+                transformation, or becoming someone completely new. 
+                <br></br>
+                Often, it is about making your current state of mind
+                more inhabitable. About creating enough space to breathe, to stay, and to understand what is already
+                here.
+                <br></br>
+                An open window does not ask you to leave the room. It invites in light, air, and perspective. It
+                changes how the room feels without demanding that you abandon it.
+                <br></br>
+                Our philosophy is rooted in this belief. We support people in gently widening their inner world,
+                allowing new ways of seeing, feeling, and relating to emerge at a pace that feels safe.
+                <br></br>
+                 Therapy, to us,
+                is not about fixing or forcing change, but about helping life feel more livable, meaningful, and steady
+                from the inside out. We honour complexity, respect readiness, and trust the process of growth when it is
+                met with care.
+                <br></br>
+                <p><strong><span> do not need a new room. You may only need an open window.</span></strong></p>
+                <!-- You do not need a new room. You may only need an open window. -->
+
+
+
+            </p>
+    </div>
+
+  </div>
+
+  </section>
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", function () {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="forcompanies.html">For Comanies</a>
+        <a href="#">Advice</a>
+        <a href="#">Find a Therapist</a>
+        <a href="#">FAQ</a>
+        <a href="#">Library</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact Us</a>
+        <a href="login.html">Log In </a>
+        <a href="getstart.html">Lets Start</a>
+      </div>
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="footer-bottom">
+      <div class="bottom-links">
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Sharing Settings</a>
+        <a href="#">Web Accessibility</a>
+      </div>
+
+      <div class="copyright">
+        © 2026 Open Window. All rights reserved. 
+      </div>
+    </div>
+  </footer>

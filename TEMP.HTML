@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>How It Works</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<style>
+
+/* PAGE */
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:linear-gradient(135deg,#f4f4f4,#e9eef3);
+}
+
+/* SECTION */
+
+.how-section{
+padding:90px 20px;
+text-align:center;
+}
+
+.how-title{
+font-size:36px;
+margin-bottom:70px;
+color:#333;
+letter-spacing:1px;
+}
+
+/* SWIPER */
+
+.swiper{
+width:100%;
+max-width:1200px;
+padding-top:50px;
+padding-bottom:80px;
+}
+
+/* SLIDE */
+
+.swiper-slide{
+width:600px;
+transition:0.4s;
+}
+
+/* Blur side slides */
+
+.swiper-slide:not(.swiper-slide-active){
+filter:blur(2px);
+opacity:0.7;
+}
+
+/* CARD */
+
+.step-card{
+
+display:flex;
+align-items:center;
+gap:30px;
+
+padding:30px;
+
+border-radius:20px;
+
+/* glassmorphism */
+
+background:rgba(255,255,255,0.6);
+backdrop-filter:blur(10px);
+
+box-shadow:0 25px 60px rgba(0,0,0,0.15);
+
+transition:0.4s;
+
+}
+
+.step-card:hover{
+transform:translateY(-10px);
+}
+
+/* STEP NUMBER */
+
+.step-number{
+font-size:60px;
+font-weight:bold;
+color:rgba(0,0,0,0.08);
+position:absolute;
+top:10px;
+left:20px;
+}
+
+/* IMAGE */
+
+.step-image img{
+width:220px;
+border-radius:12px;
+}
+
+/* TEXT */
+
+.step-text{
+text-align:left;
+}
+
+.step-text p{
+font-size:15px;
+line-height:1.7;
+color:#444;
+margin-bottom:14px;
+}
+
+.step-text span{
+font-size:20px;
+font-weight:bold;
+color:#222;
+}
+
+/* PAGINATION */
+
+.swiper-pagination-bullet{
+background:#999;
+opacity:1;
+}
+
+.swiper-pagination-bullet-active{
+background:#222;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.swiper-slide{
+width:90%;
+}
+
+.step-card{
+flex-direction:column;
+text-align:center;
+}
+
+.step-image img{
+width:240px;
+}
+
+.step-text{
+text-align:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="how-section">
+
+<h2 class="heading"><span>How It Works</span>
+  <br></br>
+   At The Open Window, care is intentional from the first interaction to the last session. Our process is designed to
+      feel clear,thoughtful, and steady,not rushed or transactional.
+    
+</h2>
+
+
+<div class="swiper howSwiper">
+
+<div class="swiper-wrapper">
+
+<!-- STEP 1 -->
+
+<div class="swiper-slide">
+
+<div class="step-card">
+
+<div class="step-number">01</div>
+
+<div class="step-image">
+<img src="WhatsApp Image 2026-02-19 at 1_uuid_f51aee2c-2fe1-44b6-afc3-0eea934e3bc7.png">
+</div>
+
+<div class="step-text">
+
+<p><span>Reach Out</span></p>
+
+<p>
+You begin by sharing what brings you here.
+This can be brief. You do not need to have the right words
+or a fully formed goal.
+</p>
+
+<p>
+We simply want to understand where you are starting from.
+You can reach out to us on WhatsApp or on our website.
+</p>
+
+<p><span>Thoughtful Matching</span></p>
+
+<p>
+We carefully match you with a therapist based on your
+concerns, preferences, lived context and therapeutic needs.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- STEP 2 -->
+
+<div class="swiper-slide">
+
+<div class="step-card">
+
+<div class="step-number">02</div>
+
+<div class="step-image">
+<img src="2ndd.png">
+</div>
+
+<div class="step-text">
+
+<p><span>First Session</span></p>
+
+<p>
+ The initial session focus on understanding your history, current challenges, pace, and readiness.
+</p>
+
+<p>
+There is no
+        pressure to disclose everything at once. Therapy begins where you are.
+</p>
+
+<p><span>Ongoing Work</span></p>
+
+<p>
+Your therapist works with you using evidence-based approaches tailored to your needs. Together, you clarify
+        goals, explore patterns, and build emotional steadliness at a pace that feels sustainable.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- STEP 3 -->
+
+<div class="swiper-slide">
+
+<div class="step-card">
+
+<div class="step-number">03</div>
+
+<div class="step-image">
+<img src="3rd.png">
+</div>
+
+<div class="step-text">
+
+<p><span>Review and Adjust</span></p>
+
+<p>
+Therapy is collaborative. You and your therapist regularly reflect on progress,adjust direction when needed, and
+        decide together what next steps look like.
+</p>
+
+<p><span>Closing with Care</span></p>
+
+<p>
+ When the time feels right,therapy moves towards closure intentionally.Endings are processed with care, ensuring
+        integration rather than abrupt withdrawal. The timeline looks different for everyone. For some, Therapy is short
+        and focused. For others, it unfolds over a longer period.The pace and duration are shaped collaboratively, based
+        on your needs,goals and readiness.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="swiper-pagination"></div>
+
+</div>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+
+var swiper = new Swiper(".howSwiper", {
+
+effect:"coverflow",
+grabCursor:true,
+centeredSlides:true,
+slidesPerView:"auto",
+
+coverflowEffect:{
+rotate:15,
+stretch:0,
+depth:200,
+modifier:1,
+slideShadows:false
+},
+
+loop:true,
+
+autoplay:{
+delay:3500,
+disableOnInteraction:false
+},
+
+pagination:{
+el:".swiper-pagination",
+clickable:true
+}
+
+});
+
+</script>
+
+</body>
+</html>

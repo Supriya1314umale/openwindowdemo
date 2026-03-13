@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .windows-section {
+  padding: 60px 20px;
+}
+/*  */
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Center content */
+.inside-content {
+  position: absolute;
+  inset: 0;              /* fills wrapper */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* vertical center */
+  align-items: center;      /* horizontal center */
+  text-align: center;
+  z-index: 1;   /* behind doors */
+}
+
+/* Smaller image */
+.small-gif {
+  width: 100px;
+  margin-top: 10px;
+}
+
+/* Keep doors above */
+.door {
+  z-index: 2;
+}
+
+/*  */
+
+.door {
+  background-color: #9B6A6A;
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+   transform-style: preserve-3d;
+  transition: transform 1.2s ease-in-out;
+  backface-visibility: hidden;
+  z-index: 2;
+}
+
+
+.small-gif {
+  width: 110px;   /* smaller */
+  height: auto;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.wrapper {
+  height: 350px;
+  width: 300px;
+  border-top-left-radius: 180px;
+  border-top-right-radius: 180px;
+  position: relative;
+  perspective: 1000px;
+  overflow: hidden;   /* IMPORTANT */
+  
+}
+
+.windows-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* .left-door {
+  top: 0;
+  left: 0;
+  border-right: 1px solid black;
+  transform-origin: left;
+  transition: transform 1.5s ease;
+  border-top-left-radius: 150px;
+  position: absolute;
+}
+
+.right-door {
+  top: 0;
+  right: 0;
+  border-left: 1px solid black;
+  transform-origin: right;
+  transition: transform 1.5s ease;
+  border-top-right-radius: 150px;
+  position: absolute;
+} */
+
+/* .left-door {
+  left: 0;
+  transform-origin: left;
+  border-top-left-radius: 180px;
+  transition: transform 1.9s;
+  border-top-left-radius: 150px
+  border-right: 2px solid #3e2a2a;
+} */
+
+.left-door {
+  left: 0;
+  transform-origin: left center;
+  border-top-left-radius: 120px;
+
+  border-right: 1px solid black;
+ /* center line */
+}
+
+.right-door {
+  right: 0;
+  transform-origin: right center;
+  /* border-top-right-radius: 120px; */
+  border-top-right-radius: 150px
+}
+
+/* .right-door {
+  right: 0;
+  transform-origin: right;
+  border-top-right-radius: 180px;
+  
+} */
+
+.left-door .shapeup {
+  border-top-left-radius: 150px;
+  width: 60px;
+  height: 120px;
+  margin-top: 10px;
+}
+
+.right-door .shapeup {
+  border-top-right-radius: 150px;
+  width: 60px;
+  height: 120px;
+  margin-top: 10px;
+}
+
+.wrapper:hover .left-door {
+  transform: rotateY(-120deg);
+}
+
+.wrapper:hover .right-door {
+  transform: rotateY(120deg);
+}
+
+/* image couple */
+
+.individual-img {
+  width: 200px;   /* change size here */
+  height: auto;
+}
+
+.teen-img {
+  width: 250px;   /* different size */
+  height: auto;
+}
+
+.couple-img {
+  width: 150px;   /* different size */
+  height: auto;
+}
+
+/* line on door */
+.left-door {
+  border-right: 1px solid black;   /* 👈 THIS IS THE LINE */
+}
+
+.right-door {
+  border-left: 1px solid black;    /* 👈 THIS IS ALSO A LINE */
+}
+
+
+
+@media (max-width: 768px) {
+  .windows-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+    </style>
+</head>
+<body>
+   <section class="windows-section">
+
+  <div class="windows-container">
+
+    <!-- Window 1 -->
+    <div class="wrapper">
+
+      <div class="inside-content">
+        <h1>For Individuals</h1>
+        <img src="indivisual-removebg-preview.png" alt="minion"  class="individual-img">
+      </div>
+
+      <div class="door left-door">
+        <div class="shapeup"></div>
+        <div class="shapelow"></div>
+      </div>
+
+      <div class="door right-door">
+        <div class="shapeup"></div>
+        <div class="shapelow"></div>
+      </div>
+
+    </div>
+
+
+    <!-- Window 2 -->
+    <div class="wrapper">
+
+      <div class="inside-content">
+        <h1>For Couples</h1>
+        <img src="couple-removebg-preview.png" alt="minion"  class="couple-img">
+      </div>
+
+      <div class="door left-door">
+        <div class="shapeup"></div>
+        <div class="shapelow"></div>
+      </div>
+
+      <div class="door right-door">
+        <div class="shapeup"></div>
+        <div class="shapelow"></div>
+      </div>
+
+    </div>
+
+
+    <!-- Window 3 -->
+    <div class="wrapper">
+
+      <div class="inside-content">
+        <h1>For Teens</h1>
+        <img src="teens-removebg-preview.png" alt="minion" class="teen-img">
+      </div>
+
+      <div class="door left-door">
+        <div class="shapeup"></div>
+        <div class="shapelow"></div>
+      </div>
+
+      <div class="door right-door">
+        <div class="shapeup"></div>
+        <div class="shapelow"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+</body>
+</html>

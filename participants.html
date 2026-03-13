@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Open Window</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* .wave svg {
+    display: block;
+    width: 100%;
+    height: 150px;
+}  */
+
+         .how-image img {
+            width: 100%;
+            max-width: 350px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Default desktop */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+/* Hide menu toggle on desktop */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #cfd8d3;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+ .how-waves svg {
+    /* display: block;
+    width: 100%; */
+    height: 132px;
+}
+
+/* new css */
+.how-container {
+  display: flex;
+  align-items: flex-start;   /* top-aligns content */
+  justify-content: flex-start;
+  gap: 60px;                 /* space between image & text */
+  position: relative;        /* allows image to move freely */
+  padding: 40px 20px;
+  flex-wrap: wrap;           /* for mobile */
+}
+
+/* IMAGE */
+.how-image {
+  position: relative;
+  top: -40px;                /* move image slightly up */
+  left: 0;                   /* push to the left corner */
+  max-width: 280px;          /* controls size */
+  flex-shrink: 0;            /* prevents shrinking on small screens */
+}
+
+.how-image img {
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/* TEXT */
+.how-text {
+  max-width: 600px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .how-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+  }
+
+  .how-image {
+    top: 0;                  /* reset on mobile */
+    left: 0;
+    margin-bottom: 20px;
+  }
+
+  .how-text {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+/* CARDS */
+
+ .process-section {
+            max-width: 900px;
+            margin: -80px auto 80px;
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ===== TITLE ===== */
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 500;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        .faq-subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 40px;
+        }
+
+        /* ===== ACCORDION ===== */
+        .accordion-item {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .accordion-question {
+            width: 100%;
+            padding: 18px 0;
+            background: none;
+            border: none;
+            font-size: 18px;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #333;
+        }
+
+        .accordion-question span {
+            font-size: 22px;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-question.active span {
+            transform: rotate(45deg);
+            /* + becomes × */
+        }
+
+        .accordion-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .accordion-answer p {
+            padding: 10px 0 20px;
+            margin: 0;
+        }
+
+        .process-section {
+    max-width: 900px;
+    margin: 60px auto 80px; /* remove negative margin */
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- BRAND HEADER -->
+    <header class="brand-header">
+        <h1 class="brand">The Open Window</h1>
+        <!-- <p class="tagline">Mental Health</p> -->
+    </header>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+        <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="individual.html">FOR INDIVIDUALS</a></li>
+      <li><a href="organization.html">FOR ORGANIZATIONS</a></li>
+      <li><a href="participants.html">FOR THERAPISTS AND PRACTITIONERS </a></li>
+     
+            <!-- <li><a href="openposition.html">OPEN POSITIONS</a></li> -->
+        </ul>
+    </nav>
+
+
+
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="process-section">
+        <h1 class="section-title">Frequently Asked Questions</h1>
+        <p class="faq-subtitle">
+            FOR THERAPISTS AND PRACTITIONERS
+        </p>
+
+        <div class="accordion-container">
+
+            <div class="accordion-item">
+                <button class="accordion-question">
+                    What is it like to work at The Open Window?
+                    <span>+</span>
+                </button>
+                <div class="accordion-answer">
+                    <p>
+                        We prioritise ethical practice, sustainable workloads, and psychological safety. Supervision,
+                        support, and boundaries are built into how we work.
+                    </p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-question">
+                    How are caseloads managed?
+                    <span>+</span>
+                </button>
+                <div class="accordion-answer">
+                    <p>
+                        Caseloads are designed with sustainability and clinical quality in mind. We prioritise realistic
+                        session loads, flexibility based on individual capacity, and protected time for documentation,
+                        reflection, and learning. Caseloads are reviewed regularly and adjusted when needed to prevent
+                        burnout and support ethical care.
+                    </p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-question">
+                    What does supervision look like?
+                    <span>+</span>
+                </button>
+
+                <div class="accordion-answer">
+                    <p>
+                        Supervision is regular, structured, and clinically meaningful. It is a space for reflection,
+                        ethical decision-making, case discussion, and professional growth. Supervision is provided by
+                        experienced clinicians and treated as an essential part of practice.
+                    </p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-question">
+                    Is there room for different therapeutic orientations?
+                    <span>+</span>
+                </button>
+                <div class="accordion-answer">
+                    <p>
+                        Yes. We support integrative practice and respect diverse therapeutic orientations. No single
+                        model is imposed, as long as the work is ethical, evidence-informed, and responsive to client
+                        needs.
+                    </p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-question">
+                    How do you support therapist wellbeing?
+                    <span>+</span>
+                </button>
+                <div class="accordion-answer">
+                    <p>
+                        Therapist wellbeing is built into our systems rather than left to individual resilience. This
+                        includes manageable caseloads, flexibility, access to supervision, and a culture that respects
+                        boundaries, rest, and honest conversations about capacity.
+                    </p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-question">
+                    What happens if a clinician is struggling?
+                    <span>+</span>
+                </button>
+                <div class="accordion-answer">
+                    <p>
+                        Struggle is recognised as part of human and clinical work, not as a failure. We encourage early
+                        conversations, offer additional supervision or support, and make adjustments where possible. The
+                        goal is care, containment, and sustainability, not performance or penalty.
+                    </p>
+                </div>
+
+            </div>
+    </section>
+
+   
+        <script>
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  toggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+  });
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const questions = document.querySelectorAll(".accordion-question");
+
+            questions.forEach(question => {
+                question.addEventListener("click", function () {
+
+                    const answer = this.nextElementSibling;
+
+                    this.classList.toggle("active");
+
+                    if (answer.style.maxHeight) {
+                        answer.style.maxHeight = null;
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    }
+
+                });
+            });
+
+        });
+   
+</script>
+    
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="forcompanies.html">For Comanies</a>
+        <a href="#">Advice</a>
+        <a href="#">Find a Therapist</a>
+        <a href="#">FAQ</a>
+        <a href="#">Library</a>
+        <a href="careers.html">Careers</a>
+        <a href="#">Contact Us</a>
+        <a href="login.html">Log In </a>
+        <a href="getstart.html">Lets Start</a>
+      </div>
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="footer-bottom">
+      <div class="bottom-links">
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Sharing Settings</a>
+        <a href="#">Web Accessibility</a>
+      </div>
+
+      <div class="copyright">
+        © 2026 Open Window. All rights reserved. 
+      </div>
+    </div>
+  </footer>
