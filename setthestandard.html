@@ -94,11 +94,19 @@
   flex-shrink: 0;            /* prevents shrinking on small screens */
 }
 
-.how-image img {
+/* .how-image img {
   width: 100%;
   border-radius: 50%;
   object-fit: cover;
   display: block;
+} */
+
+.how-image img {
+  width: 100%;
+  height: 280px;          /* FIX height */
+  border-radius: 50%;
+  object-fit: contain;    /* 👈 shows full image */
+  background: #fff;       /* optional (adds white space around image) */
 }
 
 /* TEXT */
@@ -129,16 +137,104 @@
   }
 }
 
+.section-title {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.list {
+  padding-left: 20px;
+  line-height: 1.7;
+  color: #555;
+  font-size: 15px;
+}
+
+.list li {
+  margin-bottom: 12px;
+}
+
+.list strong {
+  color: #333;
+}
+/* ===== FIX LOGO GAP ===== */
+.brand img {
+    height: 160px;   /* reduced from 150px */
+    width: auto;
+    display: block;
+}
+
+.brand-header {
+    text-align: center;
+    padding: 5px 0;   /* reduced gap */
+    margin-bottom: 0; /* remove extra space */
+}
+
+/* ===== NAVBAR GAP FIX ===== */
+.navbar {
+    margin-top: 0;
+    padding-top: 5px;
+}
+
+/* ===== REMOVE DUPLICATE login-section (IMPORTANT) */
+/* KEEP ONLY THIS ONE */
+.login-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;   /* responsive full screen */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== VIDEO FIX ===== */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* makes it responsive */
+  z-index: 0;
+}
+
+.section-title {
+      color: #507cb0;
+      font-family: 'Ikaros';
+}
+.how-text {
+  text-align: left;
+}
+
+.title span {
+  color: #eb957f; /* your color */
+}
+
+.list strong {
+  color: #5ead4e; /* change to any color you want */
+  font-family: 'Poppins';
+}
+
     </style>
 </head>
 
 <body>
 
     <!-- BRAND HEADER -->
-    <header class="brand-header">
-        <h1 class="brand">The Open Window</h1>
-        <!-- <p class="tagline">Mental Health</p> -->
-    </header>
+   <header class="brand-header">
+    <div class="brand">
+        <img src="remove logo backgraound.png" alt="The Open Window Logo">
+    </div>
+</header>
 
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
@@ -146,8 +242,10 @@
 
         <ul class="nav-links" id="nav-links">
             <li><a href="index.html">HOME</a></li>
+                  <li><a href="forcompanies.html">REQUEST A DEMO</a></li>
+
             <li><a href="clinicalapp.html">CLINICAL APPROACH THAT WORKS</a></li>
-            <li><a href="setthestandard.html">SET THE STANDARDS</a></li>
+            <!-- <li><a href="setthestandard.html">SET THE STANDARDS</a></li> -->
             <li><a href="eap.html">EAP</a></li>
             <li><a href="workwithus.html">WORKSHOPS AND LEADERSHIP TRAINING</a></li>
             <!-- <li><a href="openposition.html">OPEN POSITIONS</a></li> -->
@@ -163,27 +261,42 @@
   <div class="how-container">
 
       <div class="how-image">
-          <img src="trust.png" alt="phylosophy">
+          <img src="set the standards.png" alt="phylosophy">
       </div>
 
-      <div class="how-text">
-          <p>
-             <span>Trust,</span>
-             is built when care is done right,not fast.
-             <br></br>
+     <div class="how-text">
 
-<strong>Clinical rigour with real accessibility</strong>
-We combine robust clinical frameworks with ease of access, without compromising care or ethics.
-  <br></br>
-<strong>Clear standards and accountability</strong>
-Our work is guided by defined protocols, ethical practice, ongoing supervision, and measurable impact.
-  <br></br>
-<strong>Built for real workplaces</strong>
-Mental health programs are designed in close partnership with organisations to integrate seamlessly into workplace culture.
-  <br></br>
-<strong>Confidentiality and psychological safety at every level</strong>
-From leadership alignment to employee access, we prioritise trust, quality, and care across the entire organisation.
-          </p>
+  <h2 class="section-title">SET THE STANDARDS</h2>
+
+  <p class="title">
+    <span>Trust</span> is built when care is done right, not fast.
+  </p>
+
+  <ul class="list">
+
+    <li>
+      <strong>Clinical rigour with real accessibility</strong><br>
+      We combine robust clinical frameworks with ease of access, without compromising care or ethics.
+    </li>
+
+    <li>
+      <strong>Clear standards and accountability</strong><br>
+      Our work is guided by defined protocols, ethical practice, ongoing supervision, and measurable impact.
+    </li>
+
+    <li>
+      <strong>Built for real workplaces</strong><br>
+      Mental health programs are designed in close partnership with organisations to integrate seamlessly into workplace culture.
+    </li>
+
+    <li>
+      <strong>Confidentiality and psychological safety at every level</strong><br>
+      From leadership alignment to employee access, we prioritise trust, quality, and care across the entire organisation.
+    </li>
+
+  </ul>
+
+
       </div>
 
   </div>
@@ -205,15 +318,15 @@ From leadership alignment to employee access, we prioritise trust, quality, and 
   <footer class="footer">
     <div class="footer-top">
       <div class="footer-links">
-        <a href="index.html">Home</a>
+          <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="forcompanies.html">For Comanies</a>
-        <a href="#">Advice</a>
-        <a href="#">Find a Therapist</a>
-        <a href="#">FAQ</a>
-        <a href="#">Library</a>
+        <a href="advise.html">Advice</a>
+        <a href="getstart.html">Find a Therapist</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="library.html">Library</a>
         <a href="careers.html">Careers</a>
-        <a href="#">Contact Us</a>
+        <a href="contactus.html">Contact Us</a>
         <a href="login.html">Log In </a>
         <a href="getstart.html">Lets Start</a>
       </div>

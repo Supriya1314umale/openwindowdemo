@@ -286,13 +286,13 @@ function openPage(page) {
 
 // gift box
 
- const giftTrigger = document.querySelector(".gift-box-trigger");
-  const scratchOverlay = document.querySelector(".scratch-overlay");
+//  const giftTrigger = document.querySelector(".gift-box-trigger");
+// const giftSection = document.querySelector(".gift-section");
 
-  giftTrigger.addEventListener("click", () => {
-    scratchOverlay.classList.remove("hidden");
-    giftTrigger.style.display = "none";
-  });
+// giftTrigger.addEventListener("click", () => {
+//   giftSection.classList.add("revealed"); 
+//   giftTrigger.style.display = "none";    
+// });
 
 
 
@@ -335,3 +335,15 @@ clickable: true
 }
 
 });
+
+
+
+// 👇 ADD THIS PART
+const navLinksList = document.querySelectorAll("#nav-links a");
+
+navLinksList.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+  });
+});
+

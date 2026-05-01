@@ -139,16 +139,116 @@
         text-align: center;
       }
     }
+    .desc {
+  text-align: justify;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  color: #555;
+  font-size: 15px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 17px;
+  margin: 15px 0 8px;
+  color: #444;
+}
+
+.list {
+  padding-left: 20px;
+  color: #555;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.list li {
+  margin-bottom: 8px;
+}
+.section-title {
+  font-size: 22px;
+  font-weight: 500;     /* medium, not too bold */
+  color: #333;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+/* ===== FIX LOGO GAP ===== */
+.brand img {
+    height: 160px;   /* reduced from 150px */
+    width: auto;
+    display: block;
+}
+
+.brand-header {
+    text-align: center;
+    padding: 5px 0;   /* reduced gap */
+    margin-bottom: 0; /* remove extra space */
+}
+
+/* ===== NAVBAR GAP FIX ===== */
+.navbar {
+    margin-top: 0;
+    padding-top: 5px;
+}
+
+/* ===== REMOVE DUPLICATE login-section (IMPORTANT) */
+/* KEEP ONLY THIS ONE */
+.login-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;   /* responsive full screen */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== VIDEO FIX ===== */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* makes it responsive */
+  z-index: 0;
+}
+.section-title {
+    color: #5f48d3;
+}
+.how-text {
+  text-align: left;
+}
+.title{
+  color: #5ead4e !important;
+}
+.how-text p {
+    margin-bottom: 12px;
+    font-family: 'ikaros';
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 500;   /* medium, not too bold */
+  margin-bottom: 15px;
+    color: #507cb0;
+      font-family: 'Ikaros';
+
+  }
   </style>
+
+
+  
+
 </head>
 
 <body>
 
   <!-- BRAND HEADER -->
   <header class="brand-header">
-    <h1 class="brand">The Open Window</h1>
-    <!-- <p class="tagline">Mental Health</p> -->
-  </header>
+    <div class="brand">
+        <img src="remove logo backgraound.png" alt="The Open Window Logo">
+    </div>
+</header>
 
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
@@ -156,7 +256,8 @@
 
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">HOME</a></li>
-      <li><a href="clinicalapp.html">CLINICAL APPROACH THAT WORKS</a></li>
+      <!-- <li><a href="index.html">REQUEST A DEMO</a></li> -->
+      <li><a href="forcomp.html">CLINICAL APPROACH THAT WORKS</a></li>
       <li><a href="setthestandard.html">SET THE STANDARDS</a></li>
       <li><a href="eap.html">EAP</a></li>
       <li><a href="workwithus.html">WORKSHOPS AND LEADERSHIP TRAINING</a></li>
@@ -165,7 +266,7 @@
   </nav>
 
    <div class="auth-bar">
-    <a href="login.html" class="login-btn">Request a Demo</a>
+    <a href="login.html" class="login-btn">REQUEST A DEMO </a>
   </div>
 
   <!-- ===== HOW IT WORKS ===== -->
@@ -178,27 +279,31 @@
         <img src="evidence.png" alt="phylosophy">
       </div>
 
-      <div class="how-text">
-        <p>
-          See how The Open Window partners with organisations to deliver ethical, clinically led workplace mental health
-          support.
+    <div class="how-text">
+      <h2 class="section-title">Request a Demo</h2> 
 
-          <br> </br>
+  <p class="desc">
+    See how The Open Window partners with organisations to deliver ethical, clinically led workplace mental health
+    support.
+  </p>
 
-          Request a personalised demo to explore our Employee Assistance Programs, leadership training, and workplace
-          interventions, and understand how our approach integrates seamlessly into your organisation’s culture while
-          protecting confidentiality and psychological safety.
-<br> </br>
-      <strong>   What you can expect: </strong> 
-<br> </br>
-          A walkthrough of our services and delivery model
-<br> </br>
-          Insight into clinical protocols, supervision, and ethical standards
-<br> </br>
-          Customisation options based on your workforce size and needs
-<br> </br>
-          Time to ask questions and discuss real workplace challenges
-        </p>
+
+  <p class="desc">
+    Request a personalised demo to explore our Employee Assistance Programs, leadership training, and workplace
+    interventions, and understand how our approach integrates seamlessly into your organisation’s culture while
+    protecting confidentiality and psychological safety.
+  </p>
+
+  <p class="title">What you can expect:</p>
+
+  <ul class="list">
+    <li>A walkthrough of our services and delivery model</li>
+    <li>Insight into clinical protocols, supervision, and ethical standards</li>
+    <li>Customisation options based on your workforce size and needs</li>
+    <li>Time to ask questions and discuss real workplace challenges</li>
+  </ul>
+
+</div>
       </div>
 
     </div>
@@ -222,13 +327,13 @@
       <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="forcompanies.html">For Comanies</a>
-        <a href="#">Advice</a>
-        <a href="#">Find a Therapist</a>
-        <a href="#">FAQ</a>
-        <a href="#">Library</a>
+        <a href="forcompanies.html">For Companies</a>
+        <a href="advise.html">Advice</a>
+        <a href="getstart.html">Find a Therapist</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="library.html">Library</a>
         <a href="careers.html">Careers</a>
-        <a href="#">Contact Us</a>
+        <a href="contactus.html">Contact Us</a>
         <a href="login.html">Log In </a>
         <a href="getstart.html">Lets Start</a>
       </div>

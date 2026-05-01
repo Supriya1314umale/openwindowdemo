@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Open Window</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+       
+
+        .how-image img {
+            width: 100%;
+            max-width: 350px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Default desktop */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+/* Hide menu toggle on desktop */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #cfd8d3;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+ .how-waves svg {
+    /* display: block;
+    width: 100%; */
+    height: 132px;
+}
+
+/* new css */
+.how-container {
+  display: flex;
+  align-items: flex-start;   /* top-aligns content */
+  justify-content: flex-start;
+  gap: 60px;                 /* space between image & text */
+  position: relative;        /* allows image to move freely */
+  /* padding: 40px 20px; */
+  flex-wrap: wrap;           /* for mobile */
+
+    align-items: center;   /* 👈 auto adjusts vertically */
+  justify-content: center;
+ 
+  padding: 60px 20px;
+  
+}
+
+/* IMAGE */
+.how-image {
+  position: relative;
+                 /* move image slightly up */
+  left: 0;                   /* push to the left corner */
+  max-width: 280px;          /* controls size */
+  flex-shrink: 0;            /* prevents shrinking on small screens */
+}
+
+.how-image img {
+  width: 100%;
+  border-radius: 0%;
+  object-fit: cover;
+  display: block;
+}
+
+/* TEXT */
+.how-text {
+  max-width: 600px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .how-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+  }
+
+  .how-image {
+    top: 0;                  /* reset on mobile */
+    left: 0;
+    margin-bottom: 20px;
+  }
+
+  .how-text {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+/* new text */
+.section-title {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.desc {
+  text-align: justify;   /* 🔥 justified text */
+  line-height: 1.7;
+  margin-bottom: 12px;
+  color: #555;
+  font-size: 15px;
+}
+/* ===== FIX LOGO GAP ===== */
+.brand img {
+    height: 160px;   /* reduced from 150px */
+    width: auto;
+    display: block;
+}
+
+.brand-header {
+    text-align: center;
+    padding: 5px 0;   /* reduced gap */
+    margin-bottom: 0; /* remove extra space */
+}
+
+/* ===== NAVBAR GAP FIX ===== */
+.navbar {
+    margin-top: 0;
+    padding-top: 5px;
+}
+
+/* ===== REMOVE DUPLICATE login-section (IMPORTANT) */
+/* KEEP ONLY THIS ONE */
+.login-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;   /* responsive full screen */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== VIDEO FIX ===== */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* makes it responsive */
+  z-index: 0;
+}
+.section-title {
+    color: #507cb0;
+    font-family: 'Ikaros';
+}
+
+/* container (optional but recommended) */
+.button-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* button style */
+.custom-btn {
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background: #eb957f;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* hover effect */
+.custom-btn:hover {
+  background: white;
+  color: #eb957f;
+  border: 2px solid #aa6666;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* active click effect */
+.custom-btn:active {
+  transform: scale(0.95);
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* aligns under text */
+  margin-top: 25px;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .button-group {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-btn {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;   /* 👈 THIS makes buttons one by one */
+  gap: 15px;
+  margin-top: 25px;
+  align-items: flex-start;  /* left aligned under text */
+      align-content: center;
+}
+
+/* button style stays same */
+.custom-btn {
+  width: fit-content;   /* keeps natural size */
+  padding: 12px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background: #eb957f;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.custom-btn:hover {
+  background: white;
+  color: #eb957f;
+  border: 2px solid #eb957f;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.custom-btn {
+  width: fit-content;   
+  padding: 12px 25px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background: #eb957f;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.custom-btn:hover {
+  background: white;
+  color: #eb957f;
+  border: 2px solid #eb957f;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- BRAND HEADER -->
+   <header class="brand-header">
+    <div class="brand">
+        <img src="remove logo backgraound.png" alt="The Open Window Logo">
+    </div>
+</header>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+ <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <!-- <li><a href="careers.html">FOR INDIVISUAL</a></li> -->
+            <!-- <li><a href="cultureee.html">CULTURE</a></li> -->
+            <!-- <li><a href="perkwith.html">FOR COUPLES</a></li>
+            <li><a href="teamstory.html">FOR TEEN</a></li>
+            <li><a href="openposition.html">OPEN POSITIONS</a></li> -->
+        </ul>
+    </nav>
+
+    <!-- ===== HOW IT WORKS ===== -->
+
+    <div class="how-container">
+
+        <!-- IMAGE -->
+        <div class="how-image">
+            <img src="teen-removebg-preview.png" alt="phylosophy">
+        </div>
+
+       <div class="how-text">
+
+  <h2 class="section-title">Teens Therapy</h2>
+
+  <p class="desc">
+    
+  </p>
+
+  <p class="desc">
+Therapy is a space where you can talk freely-without feeling judged, rushed, or "lectured."  </p>
+
+  <p class="desc">
+Growing up comes with a lot: school pressure, friendships, family expectations, figuring out who you are, and dealing with emotions that can feel intense or confusing. Therapy gives you a place to slow down and make sense of all of that, at your own pace.</p>
+
+  <p class="desc">
+You don't have to know exactly what to say or where to start. Even "I don't know, I just feel off is enough.
+  <p class="desc">
+The focus isn't on what's "right" or "wrong," but on understanding what you're experiencing-and finding ways to move forward that feel healthier and more supportive for you.  
+  <p class="desc">
+    
+    <p class="desc">
+The goal is to help you feel understood, build coping skills, and navigate what you're going through in a way that feels right for you-not forced.
+  <p class="desc">
+   Confidentiality
+<br></br>
+What you share in therapy stays private.
+<br></br>
+Confidentiality is a core part of the process, it helps create a space where you can speak honestly and safely.
+<br></br>
+There are a few exceptions, which we'll always be transparent about:
+<br></br>
+If there is a risk of harm to yourself or someone else
+<br></br>
+If there is concern about abuse or safety
+<br></br>
+If required by law
+
+  </p>
+
+   <p class="desc">
+    In these situations, the priority is safety, and only the necessary information is shared.
+
+    <br></br>
+    For teens, we aim to balance privacy with parental involvement. While parents/guardians may be kept informed about general progress, the details of what is shared in sessions remain confidential unless there is a safety concern.
+   < br></br>
+If you ever have questions about confidentiality, you're always welcome to ask, we'll walk you through it.
+  </p>
+
+</div>
+        </div>
+
+    </div>
+
+    </section>
+ <div class="button-group">
+
+  <a href="teen form.html" class="custom-btn">Matching Form</a>
+
+  <a href="https://wa.me/919970778039" class="custom-btn" target="_blank">
+    WhatsApp
+  </a>
+
+  <a href="mailto:hello@openwindow.com" class="custom-btn">
+    Email us
+  </a>
+
+</div>
+
+</div>
+
+   
+        <script>
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  toggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+  });
+</script>
+    
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-links">
+          <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="forcompanies.html">For Comanies</a>
+        <a href="advise.html">Advice</a>
+        <a href="getstart.html">Find a Therapist</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="library.html">Library</a>
+        <a href="careers.html">Careers</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="login.html">Log In </a>
+        <a href="getstart.html">Lets Start</a>
+      </div>
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="footer-bottom">
+      <div class="bottom-links">
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Sharing Settings</a>
+        <a href="#">Web Accessibility</a>
+      </div>
+
+      <div class="copyright">
+        © 2026 Open Window. All rights reserved.
+      </div>
+    </div>
+  </footer>

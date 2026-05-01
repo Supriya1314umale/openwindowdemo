@@ -1,336 +1,752 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Open Window</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<title>How It Works</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <style>
+    * {
+      text-align: center;
+    }
 
-<style>
+    .how-image img {
+      width: 100%;
+      max-width: 350px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+    }
 
-/* PAGE */
+    /* Default desktop */
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
 
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:linear-gradient(135deg,#f4f4f4,#e9eef3);
-}
+    /* Hide menu toggle on desktop */
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
 
-/* SECTION */
+    /* Mobile */
+    @media (max-width: 768px) {
 
-.how-section{
-padding:90px 20px;
-text-align:center;
-}
+      .menu-toggle {
+        display: block;
+      }
 
-.how-title{
-font-size:36px;
-margin-bottom:70px;
-color:#333;
-letter-spacing:1px;
-}
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #cfd8d3;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        padding: 20px 0;
+      }
 
-/* SWIPER */
+      .nav-links.active {
+        display: flex;
+      }
+    }
 
-.swiper{
-width:100%;
-max-width:1200px;
-padding-top:50px;
-padding-bottom:80px;
-}
+    /* ================= LOGIN BACKGROUND SECTION ================= */
+    .login-section {
+      background: url(coming\ soon.png) no-repeat center center;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      /* padding:40px 20px; */
+      padding-top: 0px;
+    }
 
-/* SLIDE */
+    /* Overlay */
+    .login-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      /* background: #f4f4f4;
+  z-index: 1; */
+      /* background:rgba(0,0,0,0.4); */
+    }
 
-.swiper-slide{
-width:600px;
-transition:0.4s;
-}
+    .login-section {
+      position: relative;
+      z-index: 2;
 
-/* Blur side slides */
+    }
 
-.swiper-slide:not(.swiper-slide-active){
-filter:blur(2px);
-opacity:0.7;
-}
+    /* ================= LOGIN CARD ================= */
+    .login-card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      margin-top: -2px;
+    }
 
-/* CARD */
+    .login-card input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+    }
 
-.step-card{
+    .login-card button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      background: #f3aaaa;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-display:flex;
-align-items:center;
-gap:30px;
+    .login-card button:hover {
+      background: #996767;
+    }
 
-padding:30px;
+    .forgot {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+      text-decoration: none;
+      color: #333;
+    }
 
-border-radius:20px;
+    .how-waves svg {
+      display: block;
+      width: 100%;
+      height: 109px;
+    }
 
-/* glassmorphism */
+    /* ===== FIX LOGO GAP ===== */
+    .brand img {
+      height: 160px;
+      /* reduced from 150px */
+      width: auto;
+      display: block;
+    }
 
-background:rgba(255,255,255,0.6);
-backdrop-filter:blur(10px);
+    .brand-header {
+      text-align: center;
+      padding: 5px 0;
+      /* reduced gap */
+      margin-bottom: 0;
+      /* remove extra space */
+    }
 
-box-shadow:0 25px 60px rgba(0,0,0,0.15);
+    /* ===== NAVBAR GAP FIX ===== */
+    .navbar {
+      margin-top: 0;
+      padding-top: 5px;
+    }
 
-transition:0.4s;
+    /* ===== REMOVE DUPLICATE login-section (IMPORTANT) */
+    /* KEEP ONLY THIS ONE */
+    .login-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      /* responsive full screen */
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-}
+    /* ===== VIDEO FIX ===== */
+    .bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* makes it responsive */
+      z-index: 0;
+    }
 
-.step-card:hover{
-transform:translateY(-10px);
-}
 
-/* STEP NUMBER */
+    .coming-btn {
+      margin-top: 20px;
+      padding: 12px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+      background: #eb957f;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
 
-.step-number{
-font-size:60px;
-font-weight:bold;
-color:rgba(0,0,0,0.08);
-position:absolute;
-top:10px;
-left:20px;
-}
+    /* Hover effect */
+    .coming-btn:hover {
+      background: white;
+      color: #eb957f;
+      transform: translateY(-2px);
+    }
 
-/* IMAGE */
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .coming-btn {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
 
-.step-image img{
-width:220px;
-border-radius:12px;
-}
+    .coming-btn {
+      display: block;
+      margin: 20px auto;
+      /* 👈 centers horizontally */
+    }
 
-/* TEXT */
+    .coming-heading {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: #507cb0;
+      font-family: 'Ikaros';
+    }
 
-.step-text{
-text-align:left;
-}
+    .coming-heading {
+      text-align: center;
+      font-size: 22px;
+      margin-top: -149px;
+    }
 
-.step-text p{
-font-size:15px;
-line-height:1.7;
-color:#444;
-margin-bottom:14px;
-}
+    .quiz-section {
+      text-align: center;
+      padding: 60px 20px;
+    }
 
-.step-text span{
-font-size:20px;
-font-weight:bold;
-color:#222;
-}
+    /* PROGRESS BAR */
+    .progress-container {
+      width: 60%;
+      height: 6px;
+      background: #ddd;
+      margin: 0 auto 40px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
 
-/* PAGINATION */
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #507cb0;
+      transition: 0.4s;
+    }
 
-.swiper-pagination-bullet{
-background:#999;
-opacity:1;
-}
+    /* CARD */
+    .quiz-card {
+      background: #f4f6f5;
+      padding: 40px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 500px;
+      margin: auto;
+    }
 
-.swiper-pagination-bullet-active{
-background:#222;
-}
+    /* STEPS */
+    .step {
+      display: none;
+    }
 
-/* MOBILE */
+    .step.active {
+      display: block;
+    }
 
-@media(max-width:768px){
+    /* INPUT */
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
 
-.swiper-slide{
-width:90%;
-}
+    /* BUTTON */
+    button {
+      margin-top: 30px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 25px;
+      background: #eb957f;
+      color: white;
+      cursor: pointer;
+    }
 
-.step-card{
-flex-direction:column;
-text-align:center;
-}
+    button:hover {
+      background: white;
+      color: #eb957f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      transition: 0.3s ease;
+    }
 
-.step-image img{
-width:240px;
-}
+    .quiz-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
 
-.step-text{
-text-align:center;
-}
+    .progress-container {
+      width: 60%;
+      height: 6px;
+      background: #ddd;
+      margin: auto 0 30px;
+    }
 
-}
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #507cb0;
+    }
 
-</style>
+    .quiz-card {
+      max-width: 500px;
+      margin: auto;
+      background: #f4f6f5;
+      padding: 30px;
+      border-radius: 20px;
+    }
+
+    .step {
+      display: none;
+    }
+
+    .step.active {
+      display: block;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      border-radius: 10px;
+    }
+
+    .nav-buttons {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      background: #eb957f;
+      color: white;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    .progress-container {
+      width: 300px;
+      /* fixed width makes centering visible */
+      height: 6px;
+      background: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+
+      margin: 20px auto;
+      /* 👈 THIS centers it */
+      display: block;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #507cb0;
+      transition: 0.4s;
+    }
+
+    .step.active h2 {
+      font-family: 'ikaros';
+    }
+  </style>
 </head>
 
 <body>
 
-<section class="how-section">
+  <!-- BRAND HEADER -->
+  <header class="brand-header">
+    <div class="brand">
+      <img src="remove logo backgraound.png" alt="The Open Window Logo">
+    </div>
+  </header>
 
-<h2 class="heading"><span>How It Works</span>
-  <br></br>
-   At The Open Window, care is intentional from the first interaction to the last session. Our process is designed to
-      feel clear,thoughtful, and steady,not rushed or transactional.
-    
-</h2>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
 
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <!-- <li><a href="login.html">LOG IN</a></li>
+            <li><a href="getstart.html">LETS START</a></li> -->
 
-<div class="swiper howSwiper">
+    </ul>
+  </nav>
+  <!-- question part -->
+  <section class="quiz-section">
 
-<div class="swiper-wrapper">
+    <!-- PROGRESS -->
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
 
-<!-- STEP 1 -->
+    <form id="quizForm" class="quiz-card">
 
-<div class="swiper-slide">
+      <!-- STEP 1 -->
+      <div class="step active">
+        <h2>Basic Information</h2>
 
-<div class="step-card">
+        <input type="text" placeholder="Full Name" required>
+        <input type="text" placeholder="Pronouns">
+        <input type="email" placeholder="Email Address" required>
+        <input type="tel" placeholder="Phone Number">
+        <input type="number" placeholder="Age">
 
-<div class="step-number">01</div>
+        <select>
+          <option>Gender</option>
+          <option>Woman</option>
+          <option>Man</option>
+          <option>Non-binary</option>
+          <option>Prefer to self describe</option>
+          <option>Prefer not to say</option>
+        </select>
 
-<div class="step-image">
-<img src="WhatsApp Image 2026-02-19 at 1_uuid_f51aee2c-2fe1-44b6-afc3-0eea934e3bc7.png">
-</div>
+        <input type="text" placeholder="Country of Residence">
+        <input type="text" placeholder="Sexuality (optional)">
+      </div>
 
-<div class="step-text">
+      <!-- STEP 2 -->
+      <div class="step">
+        <h2>Who is this for?</h2>
 
-<p><span>Reach Out</span></p>
+        <select id="userType">
+          <option value="">Select</option>
+          <option value="individual">Individual</option>
+          <option value="couple">Couple</option>
+          <option value="teen">Teen</option>
+        </select>
 
-<p>
-You begin by sharing what brings you here.
-This can be brief. You do not need to have the right words
-or a fully formed goal.
-</p>
+        <!-- Teen conditional -->
+        <div id="teenFields" style="display:none;">
+          <input type="text" placeholder="Parent/Guardian Name">
+          <input type="tel" placeholder="Parent Contact">
+        </div>
+      </div>
 
-<p>
-We simply want to understand where you are starting from.
-You can reach out to us on WhatsApp or on our website.
-</p>
+      <!-- STEP 3 -->
+      <div class="step">
+        <h2>What brings you here?</h2>
 
-<p><span>Thoughtful Matching</span></p>
+        <textarea placeholder="What's been on your mind lately?"></textarea>
 
-<p>
-We carefully match you with a therapist based on your
-concerns, preferences, lived context and therapeutic needs.
-</p>
+        <label><input type="checkbox"> Anxiety / Stress</label>
+        <label><input type="checkbox"> Low mood / Depression</label>
+        <label><input type="checkbox"> Relationship concerns</label>
+        <label><input type="checkbox"> Work stress</label>
+        <label><input type="checkbox"> Burnout</label>
 
-</div>
+        <input type="text" placeholder="Any other concern">
+      </div>
 
-</div>
+      <!-- STEP 4 -->
+      <div class="step">
+        <h2>Current Wellbeing</h2>
 
-</div>
+        <select>
+          <option>1 - Struggling a lot</option>
+          <option>2 - Not doing great</option>
+          <option>3 - Managing okay</option>
+          <option>4 - Mostly okay</option>
+          <option>5 - Doing well</option>
+        </select>
+      </div>
 
+      <!-- STEP 5 -->
+      <div class="step">
+        <h2>Duration</h2>
 
-<!-- STEP 2 -->
+        <select>
+          <option>A few weeks</option>
+          <option>A few months</option>
+          <option>6+ months</option>
+          <option>On and off for years</option>
+        </select>
+      </div>
 
-<div class="swiper-slide">
+      <!-- STEP 6 -->
+      <div class="step">
+        <h2>Therapy History</h2>
 
-<div class="step-card">
+        <select id="therapy">
+          <option>No</option>
+          <option>Yes</option>
+        </select>
 
-<div class="step-number">02</div>
+        <textarea id="therapyText" placeholder="What worked / didn’t work?" style="display:none;"></textarea>
+      </div>
 
-<div class="step-image">
-<img src="2ndd.png">
-</div>
+      <!-- STEP 7 -->
+      <div class="step">
+        <h2>What do you want from therapy?</h2>
+        <textarea></textarea>
+      </div>
 
-<div class="step-text">
+      <!-- STEP 8 -->
+      <div class="step">
+        <h2>Therapist Fit</h2>
 
-<p><span>First Session</span></p>
+        <select>
+          <option>Structured</option>
+          <option>Exploratory</option>
+          <option>Mix</option>
+          <option>Not sure</option>
+        </select>
 
-<p>
- The initial session focus on understanding your history, current challenges, pace, and readiness.
-</p>
+        <textarea placeholder="Preferences (optional)"></textarea>
+      </div>
 
-<p>
-There is no
-        pressure to disclose everything at once. Therapy begins where you are.
-</p>
+      <!-- STEP 9 -->
+      <div class="step">
+        <h2>Practical Details</h2>
 
-<p><span>Ongoing Work</span></p>
+        <select>
+          <option>Online</option>
+          <option>Phone</option>
+          <option>In-person</option>
+        </select>
 
-<p>
-Your therapist works with you using evidence-based approaches tailored to your needs. Together, you clarify
-        goals, explore patterns, and build emotional steadliness at a pace that feels sustainable.
-</p>
+        <select>
+          <option>Morning</option>
+          <option>Afternoon</option>
+          <option>Evening</option>
+          <option>Weekend</option>
+        </select>
 
-</div>
+        <input type="text" placeholder="Timezone">
+      </div>
 
-</div>
+      <!-- STEP 10 (Couple only) -->
+      <div class="step" id="coupleStep">
+        <h2>Relationship Context</h2>
 
-</div>
+        <input type="text" placeholder="How long together?">
+        <textarea placeholder="What support do you need?"></textarea>
 
+        <select>
+          <option>Yes</option>
+          <option>No</option>
+          <option>Not sure</option>
+        </select>
+      </div>
 
-<!-- STEP 3 -->
+      <!-- STEP 11 -->
+      <div class="step">
+        <h2>Safety Check</h2>
 
-<div class="swiper-slide">
+        <select id="safety">
+          <option>No</option>
+          <option>Yes</option>
+        </select>
 
-<div class="step-card">
+        <p id="alertText" style="display:none;color:red;">
+          Please contact emergency services.
+        </p>
+      </div>
 
-<div class="step-number">03</div>
+      <!-- STEP 12 -->
+      <div class="step">
+        <h2>Final Question</h2>
+        <textarea></textarea>
+      </div>
 
-<div class="step-image">
-<img src="3rd.png">
-</div>
+      <!-- STEP 13 -->
+      <div class="step">
+        <h2>Consent</h2>
 
-<div class="step-text">
+        <label>
+          <input type="checkbox" required>
+          I understand this is not emergency support.
+        </label>
 
-<p><span>Review and Adjust</span></p>
+        <button type="submit">Request Consultation</button>
+      </div>
 
-<p>
-Therapy is collaborative. You and your therapist regularly reflect on progress,adjust direction when needed, and
-        decide together what next steps look like.
-</p>
+      <!-- NAV -->
+      <div class="nav-buttons">
+        <button type="button" id="prevBtn">Back</button>
+        <button type="button" id="nextBtn">Next</button>
+        <button type="submit" id="submitBtn" style="display:none;">Submit</button>
+      </div>
+    </form>
 
-<p><span>Closing with Care</span></p>
+  </section>
+  </section>
 
-<p>
- When the time feels right,therapy moves towards closure intentionally.Endings are processed with care, ensuring
-        integration rather than abrupt withdrawal. The timeline looks different for everyone. For some, Therapy is short
-        and focused. For others, it unfolds over a longer period.The pace and duration are shaped collaboratively, based
-        on your needs,goals and readiness.
-</p>
+  <script>
+    const steps = document.querySelectorAll(".step");
+    const nextBtn = document.getElementById("nextBtn");
+    const prevBtn = document.getElementById("prevBtn");
+    const submitBtn = document.getElementById("submitBtn");
+    const progressBar = document.getElementById("progressBar");
 
-</div>
+    let currentStep = 0;
 
-</div>
+    // SHOW STEP
+    function showStep(index) {
+      steps.forEach(step => step.classList.remove("active"));
+      steps[index].classList.add("active");
 
-</div>
+      const progress = (index / (steps.length - 1)) * 100;
+      progressBar.style.width = progress + "%";
 
-</div>
+      updateButtons();
+    }
 
-<div class="swiper-pagination"></div>
+    // BUTTON CONTROL
+    function updateButtons() {
+      if (currentStep === steps.length - 1) {
+        submitBtn.style.display = "inline-block";
+        nextBtn.style.display = "none";
+      } else {
+        submitBtn.style.display = "none";
+        nextBtn.style.display = "inline-block";
+      }
+    }
 
-</div>
+    // NEXT
+    nextBtn.addEventListener("click", () => {
+      if (currentStep < steps.length - 1) {
+        currentStep++;
+        showStep(currentStep);
+      }
+    });
 
-</section>
+    // PREV
+    prevBtn.addEventListener("click", () => {
+      if (currentStep > 0) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    });
 
+    // INIT
+    showStep(currentStep);
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    // SUBMIT FORM
+    document.getElementById("quizForm").addEventListener("submit", function (e) {
+      e.preventDefault();
 
-<script>
+      const formData = {
+        fullName: document.querySelector('input[placeholder="Full Name"]').value,
+        pronouns: document.querySelector('input[placeholder="Pronouns"]').value,
+        email: document.querySelector('input[type="email"]').value,
+        phone: document.querySelector('input[type="tel"]').value,
+    age: document.querySelector('input[type="number"]').value,
+    gender: document.querySelector("select").value,
+    country: document.querySelector('input[placeholder="Country of Residence"]').value,
+    sexuality: document.querySelector('input[placeholder="Sexuality (optional)"]').value,
 
-var swiper = new Swiper(".howSwiper", {
+    userType: document.getElementById("userType").value,
 
-effect:"coverflow",
-grabCursor:true,
-centeredSlides:true,
-slidesPerView:"auto",
+    concerns: document.querySelector("textarea").value,
 
-coverflowEffect:{
-rotate:15,
-stretch:0,
-depth:200,
-modifier:1,
-slideShadows:false
-},
+    wellbeing: document.querySelectorAll("select")[1].value,
+    duration: document.querySelectorAll("select")[2].value,
 
-loop:true,
+    therapyHistory: document.getElementById("therapy").value,
+    goals: document.querySelectorAll("textarea")[1].value,
 
-autoplay:{
-delay:3500,
-disableOnInteraction:false
-},
+    format: document.querySelectorAll("select")[3].value,
+    timePreference: document.querySelectorAll("select")[4].value,
 
-pagination:{
-el:".swiper-pagination",
-clickable:true
-}
+    safety: document.getElementById("safety").value,
+    finalAnswer: document.querySelectorAll("textarea")[2].value,
 
-});
+    consent: document.querySelector('input[type="checkbox"]').checked
+  };
+      fetch("https://script.google.com/macros/s/AKfycbylICHdh1H4a0RcF6dHySfhuFvwK5h73riWlxKOdLWVw2zRzwPFetZhMFsoyaTdhjhd/exec", {
+        method: "POST",
+        body: JSON.stringify(formData)
+      })
+        .then(res => res.text())
+        .then(data => {
+          alert("Form submitted successfully!");
+          console.log(data);
+        })
+        .catch(err => {
+          console.error(err);
+          alert("Error submitting form");
+        });
+    });
+  </script>
 
-</script>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="forcompanies.html">For Companies</a>
+        <a href="advise.html">Advice</a>
+        <a href="getstart.html">Find a Therapist</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="library.html">Library</a>
+        <a href="careers.html">Careers</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="login.html">Log In </a>
+        <a href="getstart.html">Lets Start</a>
+      </div>
 
-</body>
-</html>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="footer-bottom">
+      <div class="bottom-links">
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Sharing Settings</a>
+        <a href="#">Web Accessibility</a>
+      </div>
+
+      <div class="copyright">
+        © 2026 Open Window. All rights reserved.
+      </div>
+    </div>
+  </footer>

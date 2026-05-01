@@ -96,11 +96,19 @@
   flex-shrink: 0;            /* prevents shrinking on small screens */
 }
 
-.how-image img {
+/* .how-image img {
   width: 100%;
   border-radius: 50%;
   object-fit: cover;
   display: block;
+} */
+
+.how-image img {
+  width: 100%;
+  height: 280px;          /* FIX height */
+  border-radius: 25%;
+  object-fit: contain;    /* 👈 shows full image */
+  background: #fff;       /* optional (adds white space around image) */
 }
 
 /* TEXT */
@@ -130,16 +138,109 @@
     text-align: center;
   }
 }
+
+/* text */
+.section-title {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 17px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.desc {
+  text-align: justify;   /* 🔥 justified text */
+  line-height: 1.7;
+  margin-bottom: 12px;
+  color: #555;
+  font-size: 15px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.how-container {
+  margin-bottom: 20px;
+}
+
+.thread {
+  margin: 10px 0;
+}
+
+footer {
+  margin-top: auto;
+}
+/* ===== FIX LOGO GAP ===== */
+.brand img {
+    height: 160px;   /* reduced from 150px */
+    width: auto;
+    display: block;
+}
+
+.brand-header {
+    text-align: center;
+    padding: 5px 0;   /* reduced gap */
+    margin-bottom: 0; /* remove extra space */
+}
+
+/* ===== NAVBAR GAP FIX ===== */
+.navbar {
+    margin-top: 0;
+    padding-top: 5px;
+}
+
+/* ===== REMOVE DUPLICATE login-section (IMPORTANT) */
+/* KEEP ONLY THIS ONE */
+.login-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;   /* responsive full screen */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== VIDEO FIX ===== */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* makes it responsive */
+  z-index: 0;
+}
+.section-title {
+    color: #507cb0;
+        font-family: 'Ikaros';
+                                                
+}
     </style>
 </head>
 
 <body>
 
     <!-- BRAND HEADER -->
-    <header class="brand-header">
-        <h1 class="brand">The Open Window</h1>
-        <!-- <p class="tagline">Mental Health</p> -->
-    </header>
+   <header class="brand-header">
+    <div class="brand">
+        <img src="remove logo backgraound.png" alt="The Open Window Logo">
+    </div>
+</header>
 
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
@@ -149,7 +250,7 @@
             <li><a href="index.html">HOME</a></li>
             <li><a href="phylosophy.html">PHILOSOPHY</a></li>
             <li><a href="culture.html">CULTURE</a></li>
-            <li><a href="ethicalai.html">ETHICAL AI</a></li>
+            <!-- <li><a href="ethicalai.html">ETHICAL AI</a></li> -->
             <li><a href="community.html">COMMUNITY</a></li>
         </ul>
     </nav>
@@ -162,33 +263,37 @@
 
         <!-- IMAGE -->
         <div class="how-image">
-            <img src="ethicalai.png" alt="phylosophy">
+            <img src="ehical ai.png" alt="phylosophy">
         </div>
 
         <!-- TEXT -->
-        <div class="how-text">
-            <p><strong><span> Ethical AI, guided by human care and clinical responsibility.</span></strong></p>
-             <br></br>
-            <p>
-                We use AI to enhance access, learning, and operational efficiency, while keeping clinical judgment,
-                therapeutic relationships, and decision making fully human-led.
- <br></br>
-                Transparency, privacy, and ethical responsibility guide every use of technology within our organisation.
- <br></br>
-                We do not use AI to diagnose, replace therapists, or interfere with the therapeutic relationship in any
-                way.
- <br></br>
-                Data protection, informed consent, and responsible use are non-negotiable, because technology should
-                reduce barriers to care, not create new ones.
-               
-                <!-- You do not need a new room. You may only need an open window. -->
+      <div class="how-text">
 
+  <h2 class="section-title">Ethical AI</h2>
 
+  <p class="title">Ethical AI, guided by human care and clinical responsibility.</p>
 
-            </p>
-        </div>
+  <p class="desc">
+    We use AI to enhance access, learning, and operational efficiency, while keeping clinical judgment,
+    therapeutic relationships, and decision making fully human-led.
+  </p>
+
+  <p class="desc">
+    Transparency, privacy, and ethical responsibility guide every use of technology within our organisation.
+  </p>
+
+  <p class="desc">
+    We do not use AI to diagnose, replace therapists, or interfere with the therapeutic relationship in any way.
+  </p>
+
+  <p class="desc">
+    Data protection, informed consent, and responsible use are non-negotiable, because technology should
+    reduce barriers to care, not create new ones.
+  </p>
+
 
     </div>
+  </div>
 
     </section>
 
@@ -207,15 +312,15 @@
   <footer class="footer">
     <div class="footer-top">
       <div class="footer-links">
-        <a href="index.html">Home</a>
+         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="#">For Comanies</a>
-        <a href="#">Advice</a>
-        <a href="#">Find a Therapist</a>
-        <a href="#">FAQ</a>
-        <a href="#">Library</a>
-        <a href="#">Careers</a>
-        <a href="#">Contact Us</a>
+        <a href="forcompanies.html">For Comanies</a>
+        <a href="advise.html">Advice</a>
+        <a href="getstart.html">Find a Therapist</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="library.html">Library</a>
+        <a href="careers.html">Careers</a>
+        <a href="contactus.html">Contact Us</a>
         <a href="login.html">Log In </a>
         <a href="getstart.html">Lets Start</a>
       </div>

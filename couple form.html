@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Open Window</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        
+*{
+  text-align: center;
+}
+        .how-image img {
+            width: 100%;
+            max-width: 350px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+        /* Default desktop */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+/* Hide menu toggle on desktop */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #cfd8d3;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* ================= LOGIN BACKGROUND SECTION ================= */
+.login-section{
+  background:url(coming\ soon.png) no-repeat center center;
+  background-size:cover;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;  
+  position:relative; 
+  /* padding:40px 20px; */
+  padding-top: 0px;
+}
+
+/* Overlay */
+.login-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  /* background: #f4f4f4;
+  z-index: 1; */
+  /* background:rgba(0,0,0,0.4); */
+}
+
+.login-section {
+  position:relative;
+  z-index:2;
+  
+}
+
+/* ================= LOGIN CARD ================= */
+.login-card{
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  width:100%;
+  max-width:400px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  text-align:center;
+  margin-top:-2px;
+}
+
+.login-card input{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border-radius:25px;
+  border:1px solid #ccc;
+}
+
+.login-card button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:25px;
+  background:#f3aaaa;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.login-card button:hover{
+  background:#996767;
+}
+
+.forgot{
+  display:block;
+  margin-top:10px;
+  font-size:14px;
+  text-decoration:none;
+  color:#333;
+}
+
+.how-waves svg {
+    display: block;
+    width: 100%;
+    height: 109px;
+}
+/* ===== FIX LOGO GAP ===== */
+.brand img {
+    height: 160px;   /* reduced from 150px */
+    width: auto;
+    display: block;
+}
+
+.brand-header {
+    text-align: center;
+    padding: 5px 0;   /* reduced gap */
+    margin-bottom: 0; /* remove extra space */
+}
+
+/* ===== NAVBAR GAP FIX ===== */
+.navbar {
+    margin-top: 0;
+    padding-top: 5px;
+}
+
+/* ===== REMOVE DUPLICATE login-section (IMPORTANT) */
+/* KEEP ONLY THIS ONE */
+.login-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;   /* responsive full screen */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== VIDEO FIX ===== */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* makes it responsive */
+  z-index: 0;
+}
+
+
+.coming-btn {
+  margin-top: 20px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: #eb957f;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* Hover effect */
+.coming-btn:hover {
+  background: white;
+  color: #eb957f;
+  transform: translateY(-2px);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .coming-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+.coming-btn {
+  display: block;
+  margin: 20px auto; /* 👈 centers horizontally */
+}
+.coming-heading {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #507cb0;
+  font-family: 'Ikaros';
+}
+
+.coming-heading {
+  text-align: center;
+  font-size: 22px;
+  margin-top: -149px;
+}
+.quiz-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* PROGRESS BAR */
+.progress-container {
+  width: 60%;
+  height: 6px;
+  background: #ddd;
+  margin: 0 auto 40px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #507cb0;
+  transition: 0.4s;
+}
+
+/* CARD */
+.quiz-card {
+  background: #f4f6f5;
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+/* STEPS */
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+/* INPUT */
+select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+/* BUTTON */
+button {
+  margin-top: 30px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  background: #eb957f;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background: white;
+  color: #eb957f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease;
+}
+.quiz-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.progress-container {
+  width: 60%;
+  height: 6px;
+  background: #ddd;
+  margin: auto 0 30px;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #507cb0;
+}
+
+.quiz-card {
+  max-width: 500px;
+  margin: auto;
+  background: #f4f6f5;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+input, select, textarea {
+  width: 50%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.nav-buttons {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: #eb957f;
+  color: white;
+  margin: 5px;
+  cursor: pointer;
+}
+.progress-container {
+  width: 300px;          /* fixed width makes centering visible */
+  height: 6px;
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+
+  margin: 20px auto;     /* 👈 THIS centers it */
+  display: block;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #507cb0;
+  transition: 0.4s;
+}
+.step.active h2 {
+  font-family: 'ikaros';
+}
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- BRAND HEADER -->
+   <header class="brand-header">
+    <div class="brand">
+        <img src="remove logo backgraound.png" alt="The Open Window Logo">
+    </div>
+</header>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <!-- <li><a href="login.html">LOG IN</a></li>
+            <li><a href="getstart.html">LETS START</a></li> -->
+          
+        </ul>
+    </nav>
+<!-- question part -->
+ <section class="quiz-section">
+
+  <!-- PROGRESS -->
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+ <form id="multiStepForm">
+
+<!-- STEP 1 -->
+<div class="step active">
+  <h2>Basic Information (Partner 1)</h2>
+
+  <input type="text" placeholder="Full Name" required>
+  <input type="text" placeholder="Pronouns">
+  <input type="email" placeholder="Email Address" required>
+  <input type="tel" placeholder="Phone Number">
+  <input type="number" placeholder="Age">
+
+  <select>
+    <option>Gender</option>
+    <option>Woman</option>
+    <option>Man</option>
+    <option>Non-binary</option>
+    <option>Prefer to self-describe</option>
+    <option>Prefer not to say</option>
+  </select>
+</div>
+
+<!-- STEP 2 -->
+<div class="step">
+  <h2>Basic Information (Partner 2)</h2>
+
+  <input type="text" placeholder="Full Name">
+  <input type="text" placeholder="Pronouns">
+  <input type="email" placeholder="Email Address">
+  <input type="tel" placeholder="Phone Number">
+  <input type="number" placeholder="Age">
+
+  <select>
+    <option>Gender</option>
+    <option>Woman</option>
+    <option>Man</option>
+    <option>Non-binary</option>
+    <option>Prefer to self-describe</option>
+    <option>Prefer not to say</option>
+  </select>
+
+  <input type="text" placeholder="Country of Residence (Both)">
+  <input type="text" placeholder="Sexuality (optional)">
+</div>
+
+<!-- STEP 3 -->
+<div class="step">
+  <h2>Relationship Overview</h2>
+
+  <select>
+    <option>How long have you been together?</option>
+    <option>Less than 1 year</option>
+    <option>1-3 years</option>
+    <option>3-5 years</option>
+    <option>5+ years</option>
+  </select>
+
+  <select>
+    <option>Relationship Status</option>
+    <option>Dating</option>
+    <option>Engaged</option>
+    <option>Married</option>
+    <option>Live-in</option>
+    <option>Separated/On a break</option>
+  </select>
+
+  <select>
+    <option>Are both partners aware?</option>
+    <option>Yes</option>
+    <option>No</option>
+    <option>Not sure</option>
+  </select>
+</div>
+
+<!-- STEP 4 -->
+<div class="step">
+  <h2>What Brings You Here?</h2>
+
+  <textarea placeholder="What's been happening in your relationship lately?"></textarea>
+
+  <label><input type="checkbox"> Communication issues</label>
+  <label><input type="checkbox"> Emotional distance</label>
+  <label><input type="checkbox"> Frequent conflicts</label>
+  <label><input type="checkbox"> Trust issues</label>
+  <label><input type="checkbox"> Intimacy concerns</label>
+  <label><input type="checkbox"> Life stress</label>
+</div>
+
+<!-- STEP 5 -->
+<div class="step">
+  <h2>Current Relationship Wellbeing</h2>
+
+  <h4>Partner 1</h4>
+  <select>
+    <option>1 - Struggling a lot</option>
+    <option>2 - Not doing great</option>
+    <option>3 - Managing okay</option>
+    <option>4 - Mostly okay</option>
+    <option>5 - Doing well</option>
+  </select>
+
+  <h4>Partner 2</h4>
+  <select>
+    <option>1 - Struggling a lot</option>
+    <option>2 - Not doing great</option>
+    <option>3 - Managing okay</option>
+    <option>4 - Mostly okay</option>
+    <option>5 - Doing well</option>
+  </select>
+</div>
+
+<!-- STEP 6 -->
+<div class="step">
+  <h2>Duration</h2>
+
+  <select>
+    <option>A few weeks</option>
+    <option>A few months</option>
+    <option>6+ months</option>
+    <option>On and off for years</option>
+  </select>
+</div>
+
+<!-- STEP 7 -->
+<div class="step">
+  <h2>Therapy History</h2>
+
+  <select>
+    <option>Have either of you been to therapy?</option>
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+
+  <textarea placeholder="What worked or didn’t work?"></textarea>
+</div>
+
+<!-- STEP 8 -->
+<div class="step">
+  <h2>What Are You Hoping For?</h2>
+
+  <textarea placeholder="Your expectations from therapy"></textarea>
+</div>
+
+<!-- STEP 9 -->
+<div class="step">
+  <h2>Therapist Fit</h2>
+
+  <select>
+    <option>Structured</option>
+    <option>Exploratory</option>
+    <option>Mix</option>
+    <option>Not sure</option>
+  </select>
+
+  <textarea placeholder="Anything to help us match you better"></textarea>
+</div>
+
+<!-- STEP 10 -->
+<div class="step">
+  <h2>Practical Details</h2>
+
+  <select>
+    <option>Online</option>
+    <option>Phone</option>
+    <option>In-person</option>
+  </select>
+
+  <select>
+    <option>Morning</option>
+    <option>Afternoon</option>
+    <option>Evening</option>
+    <option>Weekend</option>
+  </select>
+
+  <input type="text" placeholder="Timezone (if outside India)">
+</div>
+
+<!-- STEP 11 -->
+<div class="step">
+  <h2>Safety Check</h2>
+
+  <select>
+    <option>No</option>
+    <option>Yes</option>
+  </select>
+
+  <p style="color:red;">
+    If yes, please contact emergency services immediately.
+  </p>
+</div>
+
+<!-- STEP 12 -->
+<div class="step">
+  <h2>Final Question</h2>
+
+  <textarea placeholder="Anything else you'd like us to know?"></textarea>
+</div>
+
+<!-- STEP 13 -->
+<div class="step">
+  <h2>Consent</h2>
+
+  <label>
+    <input type="checkbox" required>
+    We understand this is not emergency support.
+  </label>
+
+  <button type="submit">Request Consultation</button>
+</div>
+
+<!-- NAV BUTTONS -->
+<div class="nav-buttons">
+  <button type="button" id="prevBtn">Back</button>
+  <button type="button" id="nextBtn">Next</button>
+  <button type="submit" id="submitBtn" style="display:none;">Submit</button>
+</div>
+
+</form>
+    
+
+</section>
+</section>
+
+   <script>
+const steps = document.querySelectorAll(".step");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+const submitBtn = document.getElementById("submitBtn");
+const progressBar = document.getElementById("progressBar");
+
+let currentStep = 0;
+
+// SHOW STEP
+function showStep(index) {
+  steps.forEach(step => step.classList.remove("active"));
+  steps[index].classList.add("active");
+
+  const progress = (index / (steps.length - 1)) * 100;
+  progressBar.style.width = progress + "%";
+
+  updateButtons();
+}
+
+// BUTTON CONTROL
+function updateButtons() {
+  if (currentStep === steps.length - 1) {
+    submitBtn.style.display = "inline-block";
+    nextBtn.style.display = "none";
+  } else {
+    submitBtn.style.display = "none";
+    nextBtn.style.display = "inline-block";
+  }
+}
+
+// NEXT
+nextBtn.addEventListener("click", () => {
+  if (currentStep < steps.length - 1) {
+    currentStep++;
+    showStep(currentStep);
+  }
+});
+
+// PREV
+prevBtn.addEventListener("click", () => {
+  if (currentStep > 0) {
+    currentStep--;
+    showStep(currentStep);
+  }
+});
+
+// INIT
+showStep(currentStep);
+
+// SUBMIT FORM
+document.getElementById("quizForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const formData = {
+    fullName: document.querySelector('input[placeholder="Full Name"]').value,
+    email: document.querySelector('input[type="email"]').value,
+    phone: document.querySelector('input[type="tel"]').value,
+    age: document.querySelector('input[type="number"]').value,
+    userType: document.getElementById("userType").value,
+    safety: document.getElementById("safety").value,
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbylICHdh1H4a0RcF6dHySfhuFvwK5h73riWlxKOdLWVw2zRzwPFetZhMFsoyaTdhjhd/exec", {
+    method: "POST",
+    body: JSON.stringify(formData)
+  })
+  .then(res => res.text())
+  .then(data => {
+    alert("Form submitted successfully!");
+    console.log(data);
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Error submitting form");
+  });
+});
+    </script>
+
+      <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-links">
+          <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="forcompanies.html">For Companies</a>
+        <a href="advise.html">Advice</a>
+        <a href="getstart.html">Find a Therapist</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="library.html">Library</a>
+        <a href="careers.html">Careers</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="login.html">Log In </a>
+        <a href="getstart.html">Lets Start</a>
+      </div>
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="footer-bottom">
+      <div class="bottom-links">
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Sharing Settings</a>
+        <a href="#">Web Accessibility</a>
+      </div>
+
+      <div class="copyright">
+        © 2026 Open Window. All rights reserved. 
+      </div>
+    </div>
+  </footer>

@@ -16,7 +16,10 @@
     width: 100%;
     height: 150px;
 }  */
-
+*{
+  text-align: center;
+font-family:'ikaros';
+}
         .how-image img {
             width: 100%;
             max-width: 350px;
@@ -139,16 +142,58 @@
     width: 100%;
     height: 109px;
 }
+/* ===== FIX LOGO GAP ===== */
+.brand img {
+    height: 160px;   /* reduced from 150px */
+    width: auto;
+    display: block;
+}
+
+.brand-header {
+    text-align: center;
+    padding: 5px 0;   /* reduced gap */
+    margin-bottom: 0; /* remove extra space */
+}
+
+/* ===== NAVBAR GAP FIX ===== */
+.navbar {
+    margin-top: 0;
+    padding-top: 5px;
+}
+
+/* ===== REMOVE DUPLICATE login-section (IMPORTANT) */
+/* KEEP ONLY THIS ONE */
+.login-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;   /* responsive full screen */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== VIDEO FIX ===== */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* makes it responsive */
+  z-index: 0;
+}
     </style>
 </head>
 
 <body>
 
     <!-- BRAND HEADER -->
-    <header class="brand-header">
-        <h1 class="brand">The Open Window</h1>
-        <!-- <p class="tagline">Mental Health</p> -->
-    </header>
+   <header class="brand-header">
+    <div class="brand">
+        <img src="remove logo backgraound.png" alt="The Open Window Logo">
+    </div>
+</header>
 
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
@@ -156,7 +201,7 @@
 
         <ul class="nav-links" id="nav-links">
             <li><a href="index.html">HOME</a></li>
-            <li><a href="login.html">LOG IN</a></li>
+            <!-- <li><a href="login.html">LOG IN</a></li> -->
             <li><a href="getstart.html">LETS START</a></li>
           
         </ul>
@@ -164,11 +209,10 @@
 
    
 
-
    <section class="login-section">
-
+    
   <div class="login-card">
-    <h2>Welcome Back</h2>
+    <h2>Log In </h2>
     <form id="loginForm">
       <input type="email" id="email" placeholder="Email ID" required>
       <input type="password" id="password" placeholder="Password" required>
@@ -178,9 +222,7 @@
   </div>
 
 </section>
-
-    
-       
+ 
 
      <script>
   const toggle = document.getElementById("menu-toggle");
@@ -195,15 +237,15 @@
   <footer class="footer">
     <div class="footer-top">
       <div class="footer-links">
-        <a href="index.html">Home</a>
+   <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="forcompanies.html">For Companies</a>
-        <a href="#">Advice</a>
-        <a href="#">Find a Therapist</a>
-        <a href="individual.html">FAQ</a>
-        <a href="#">Library</a>
-        <a href="#">Careers</a>
-        <a href="#">Contact Us</a>
+        <a href="forcompanies.html">For Comanies</a>
+        <a href="advise.html">Advice</a>
+        <a href="getstart.html">Find a Therapist</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="library.html">Library</a>
+        <a href="careers.html">Careers</a>
+        <a href="contactus.html">Contact Us</a>
         <a href="login.html">Log In </a>
         <a href="getstart.html">Lets Start</a>
       </div>
