@@ -369,6 +369,76 @@ button {
   font-family: 'ikaros';
 }
 
+/* teen css
+ */
+ /* Relationship concerns step */
+.step textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 16px;
+  margin: 18px 0 25px;
+  border: 1px solid #dcdcdc;
+  border-radius: 16px;
+  font-size: 15px;
+  resize: none;
+  background: #fafafa;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.step textarea:focus {
+  border-color: #507cb0;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(80, 124, 176, 0.12);
+  outline: none;
+}
+
+.step label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f8f9fb;
+  border: 1px solid #ececec;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  color: #333;
+  text-align: left;
+}
+
+.step label:hover {
+  border-color: #eb957f;
+  background: #fff7f4;
+  transform: translateX(4px);
+}
+
+.step input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #507cb0;
+  cursor: pointer;
+}
+
+.step input[type="checkbox"]:checked + span,
+.step label:has(input:checked) {
+  border-color: #507cb0;
+  background: rgba(80, 124, 176, 0.08);
+}
+
+.step h2 {
+  color: #507cb0;
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.step textarea::placeholder {
+  color: #999;
+  font-size: 14px;
+}
 
 
     </style>
@@ -445,7 +515,7 @@ button {
 <div class="step">
   <h2>2. What Brings You Here?</h2>
 
-  <textarea placeholder="What's been on your mind lately?"></textarea>
+  <textarea placeholder="What's been on your mind lately?  (You can write as much or as little as you want)"></textarea>
 
   <label><input type="checkbox"> Feeling anxious or stressed</label>
   <label><input type="checkbox"> Feeling low/sad</label>
@@ -453,12 +523,12 @@ button {
   <label><input type="checkbox"> Friendships or social issues</label>
   <label><input type="checkbox"> Family concerns</label>
   <label><input type="checkbox"> Self-esteem / confidence</label>
-  <label><input type="checkbox"> Identity (who I am, what I want)</label>
+  <label><input type="checkbox"> Identity (who I am, what I want,etc.)</label>
   <label><input type="checkbox"> Big life changes</label>
   <label><input type="checkbox"> Bullying (online or offline)</label>
   <label><input type="checkbox"> Trauma or difficult experiences</label>
   <label><input type="checkbox"> Anger or frustration</label>
-  <label><input type="checkbox"> Trouble focusing / motivation</label>
+  <label><input type="checkbox"> Trouble focusing or feeling motivated</label>
 
   <input type="text" placeholder="Other">
 </div>
@@ -491,7 +561,9 @@ button {
 <!-- STEP 5 -->
 <div class="step">
   <h2>5. Therapy History</h2>
-
+  <h4 style="color:#5ead4e; font-size:19px; font-weight:700; text-align:center;">
+ Have you spoken to a therapist or counsellor before?
+</h4>
   <select>
     <option>No</option>
     <option>Yes</option>
@@ -509,7 +581,8 @@ button {
 <!-- STEP 7 -->
 <div class="step">
   <h2>7. What Would Help You Feel Comfortable?</h2>
-
+<h4 style="color:#5ead4e; font-size:19px; font-weight:700; text-align:center;">
+What kind of sessions would you prefer?</h4>
   <select>
     <option>Talking freely</option>
     <option>Some guidance + tools</option>
@@ -517,12 +590,13 @@ button {
     <option>Not sure</option>
   </select>
 
-  <textarea placeholder="Anything that helps you feel more at ease"></textarea>
+  <textarea placeholder="Anything that helps you feel more at ease  (e.g., nervous about talking, prefer a slower pace, etc.)"></textarea>
 </div>
 
 <!-- STEP 8 -->
 <div class="step">
   <h2>8. Practical Details</h2>
+  <h2>Preferred session format:</h2>
 
   <select>
     <option>Online (video)</option>
@@ -539,21 +613,25 @@ button {
 <!-- STEP 9 -->
 <div class="step">
   <h2>9. Safety Check (Important)</h2>
-
+<h4 style="color:#5ead4e; font-size:19px; font-weight:700; text-align:center;">
+Are you currently feeling unsafe or having thoughts about harming yourself?
+ ) 
+</h4>
   <select>
     <option>No</option>
     <option>Yes</option>
   </select>
 
-  <p style="color:red; font-size:13px;">
-    If yes: Please tell a trusted adult or contact emergency services. This form is not for emergencies.
-  </p>
+  <p style="color:#eb957f; font-size:13px;">
+If yes:
+ Please tell a trusted adult (parent, guardian, teacher) or reach out to local emergency services or a helpline. This form is not monitored for emergencies.  </p>
 </div>
 
 <!-- STEP 10 -->
 <div class="step">
   <h2>10. Final Question</h2>
-  <textarea placeholder="Anything else you'd like us to know? (optional)"></textarea>
+  <textarea placeholder="Anything else you’d like us to know before we speak?
+ (Optional)"></textarea>
 </div>
 
 <!-- STEP 11 -->
@@ -562,11 +640,13 @@ button {
 
   <label>
     <input type="checkbox" required>
-    I (and my parent/guardian) understand this is not emergency support.
+     I (and my parent/guardian) understand this form is for inquiry purposes and not a substitute for emergency support.
   </label>
 
-  <button type="submit">Request a Consultation</button>
-</div>
+  
+  <a href="https://wa.me/918618938017?text=Hi" target="_blank">
+  <button type="button">Request Consultation</button>
+</a>    </div>
 
     <!-- NAV -->
  <div class="nav-buttons">
@@ -634,15 +714,48 @@ document.getElementById("quizForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
   const formData = {
+    formType: "teen",
+
     fullName: document.querySelector('input[placeholder="Full Name"]').value,
-    email: document.querySelector('input[type="email"]').value,
-    phone: document.querySelector('input[type="tel"]').value,
+    pronouns: document.querySelector('input[placeholder="Pronouns (optional)"]').value,
     age: document.querySelector('input[type="number"]').value,
-    userType: document.getElementById("userType").value,
-    safety: document.getElementById("safety").value,
+    gender: document.querySelectorAll("select")[0].value,
+
+    email: document.querySelectorAll('input[type="email"]')[0].value,
+    phone: document.querySelectorAll('input[type="tel"]')[0].value,
+    country: document.querySelector('input[placeholder="Country of Residence"]').value,
+
+    parentName: document.querySelector('input[placeholder="Parent/Guardian Name"]').value,
+    parentPhone: document.querySelectorAll('input[type="tel"]')[1].value,
+    parentEmail: document.querySelectorAll('input[type="email"]')[1].value,
+
+    concerns: document.querySelector("textarea").value,
+    otherConcern: document.querySelector('input[placeholder="Other"]').value,
+
+    wellbeing: document.querySelectorAll("select")[1].value,
+    duration: document.querySelectorAll("select")[2].value,
+
+    therapyHistory: document.querySelectorAll("select")[3].value,
+    therapyDetails: document.querySelectorAll("textarea")[1].value,
+
+    goals: document.querySelectorAll("textarea")[2].value,
+
+    comfortPreference: document.querySelectorAll("select")[4].value,
+    comfortNotes: document.querySelectorAll("textarea")[3].value,
+
+    sessionFormat: document.querySelectorAll("select")[5].value,
+    timePreference: document.querySelectorAll("select")[6].value,
+
+    safety: document.querySelectorAll("select")[7].value,
+
+    finalAnswer: document.querySelectorAll("textarea")[4].value,
+
+    // consent: checkboxes[12].checked
+    consent: document.querySelector('input[type="checkbox"]').checked
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbylICHdh1H4a0RcF6dHySfhuFvwK5h73riWlxKOdLWVw2zRzwPFetZhMFsoyaTdhjhd/exec", {
+
+  fetch("https://script.google.com/macros/s/AKfycbyQbBF7w0JPsVFWsesjYccjEJi1Py5moxXqoAu4FFFKpTXdjSevPeHU8Wuj5QWz3EEs/exec", {
     method: "POST",
     body: JSON.stringify(formData)
   })
@@ -655,6 +768,13 @@ document.getElementById("quizForm").addEventListener("submit", function (e) {
     console.error(err);
     alert("Error submitting form");
   });
+});
+// navbar
+const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggle.addEventListener("click", function () {
+  navLinks.classList.toggle("active");
 });
     </script>
 

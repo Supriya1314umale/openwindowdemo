@@ -312,7 +312,18 @@
   height: 14px;
   cursor: pointer;
 }
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
 
+.whatsapp-btn img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
 /* CONSENT */
 .consent-box {
   display: flex;
@@ -342,6 +353,54 @@
 @media (max-width: 600px) {
   .input-row {
     flex-direction: column;
+  }
+}
+.contact-info {
+  width: 90%;
+  max-width: 350px;
+
+  margin: 20px auto;
+  padding: 20px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+
+  text-align: center;
+  color: black;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Text spacing */
+.contact-info p {
+  margin: 10px 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Links */
+.contact-info a {
+  color: green;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact-info a:hover {
+  color: #eb957f;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .contact-info {
+    width: 85%;
+    padding: 15px;
+  }
+
+  .contact-info p {
+    font-size: 14px;
   }
 }
     </style>
@@ -396,8 +455,11 @@
 
       <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
 
-      <button type="submit">Submit on WhatsApp</button>
-      <button type="button" id="emailBtn">Submit on Email</button>
+    <button type="submit" class="whatsapp-btn">
+      Submit
+      <img src="whatsapp.png" alt="WhatsApp">
+    </button>
+      <!-- <button type="button" id="emailBtn">hello@openwindow.co</button> -->
 
       <div class="consent-box">
         <input type="checkbox" id="consent" required>
@@ -429,7 +491,7 @@ form.addEventListener("submit", function(e) {
 Email: ${email}
 Message: ${message}`;
 
-  const phoneNumber = "919916424717";
+  const phoneNumber = "+91 8618938017"; //
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(fullMessage)}`;
 
   window.open(url, "_blank");

@@ -388,6 +388,76 @@
     .step.active h2 {
       font-family: 'ikaros';
     }
+    /* indivisual css */
+/* Relationship concerns step */
+.step textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 16px;
+  margin: 18px 0 25px;
+  border: 1px solid #dcdcdc;
+  border-radius: 16px;
+  font-size: 15px;
+  resize: none;
+  background: #fafafa;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.step textarea:focus {
+  border-color: #507cb0;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(80, 124, 176, 0.12);
+  outline: none;
+}
+
+.step label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f8f9fb;
+  border: 1px solid #ececec;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  color: #333;
+  text-align: left;
+}
+
+.step label:hover {
+  border-color: #eb957f;
+  background: #fff7f4;
+  transform: translateX(4px);
+}
+
+.step input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #507cb0;
+  cursor: pointer;
+}
+
+.step input[type="checkbox"]:checked + span,
+.step label:has(input:checked) {
+  border-color: #507cb0;
+  background: rgba(80, 124, 176, 0.08);
+}
+
+.step h2 {
+  color: #507cb0;
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.step textarea::placeholder {
+  color: #999;
+  font-size: 14px;
+}
+
   </style>
 </head>
 
@@ -445,34 +515,27 @@
       </div>
 
       <!-- STEP 2 -->
-      <div class="step">
-        <h2>Who is this for?</h2>
-
-        <select id="userType">
-          <option value="">Select</option>
-          <option value="individual">Individual</option>
-          <option value="couple">Couple</option>
-          <option value="teen">Teen</option>
-        </select>
-
-        <!-- Teen conditional -->
-        <div id="teenFields" style="display:none;">
-          <input type="text" placeholder="Parent/Guardian Name">
-          <input type="tel" placeholder="Parent Contact">
-        </div>
-      </div>
+     
 
       <!-- STEP 3 -->
       <div class="step">
         <h2>What brings you here?</h2>
-
+<h2 style="color:#5ead4e; font-size:19px; font-weight:700; text-align:center;">
+  (What’s been on your mind lately?)
+</h2>
         <textarea placeholder="What's been on your mind lately?"></textarea>
 
         <label><input type="checkbox"> Anxiety / Stress</label>
         <label><input type="checkbox"> Low mood / Depression</label>
         <label><input type="checkbox"> Relationship concerns</label>
-        <label><input type="checkbox"> Work stress</label>
-        <label><input type="checkbox"> Burnout</label>
+        <label><input type="checkbox"> Work / career stress</label>
+        <label><input type="checkbox">  Grief or loss</label>
+        <label><input type="checkbox">  Self-esteem / identity</label>
+        <label><input type="checkbox">  Life transitions</label>
+        <label><input type="checkbox">  Trauma</label>
+        <label><input type="checkbox">  Family concerns</label>
+        <label><input type="checkbox">  Burnout </label>
+        <label><input type="checkbox">  Substance use and dependency</label>
 
         <input type="text" placeholder="Any other concern">
       </div>
@@ -480,6 +543,11 @@
       <!-- STEP 4 -->
       <div class="step">
         <h2>Current Wellbeing</h2>
+        <h2 style="color:#5ead4e; font-size:19px; font-weight:700; text-align:center;">
+  (How have you been feeling recently?)
+ 
+</h2>
+
 
         <select>
           <option>1 - Struggling a lot</option>
@@ -492,7 +560,7 @@
 
       <!-- STEP 5 -->
       <div class="step">
-        <h2>Duration</h2>
+        <h2>How long have you been experiencing this?</h2>
 
         <select>
           <option>A few weeks</option>
@@ -505,34 +573,43 @@
       <!-- STEP 6 -->
       <div class="step">
         <h2>Therapy History</h2>
-
+        <h2 style="color:#5ead4e; font-size:19px; font-weight:700; text-align:center;">
+(Have you been to therapy before?) 
+</h2>
         <select id="therapy">
           <option>No</option>
           <option>Yes</option>
         </select>
 
-        <textarea id="therapyText" placeholder="What worked / didn’t work?" style="display:none;"></textarea>
+                <input type="text" placeholder="If yes (optional):
+ What worked or didn’t work for you?">
+
       </div>
 
-      <!-- STEP 7 -->
-      <div class="step">
-        <h2>What do you want from therapy?</h2>
-        <textarea></textarea>
-      </div>
+    <!-- STEP 7 -->
+<div class="step">
+  <h2>What Are You Hoping to Get From Therapy?</h2>
+  
+  <textarea placeholder="Short answer:"></textarea>
+</div>
 
-      <!-- STEP 8 -->
-      <div class="step">
-        <h2>Therapist Fit</h2>
+<!-- STEP 8 -->
+<div class="step">
+  <h2>Therapist Fit (to help us match you better)</h2>
 
-        <select>
-          <option>Structured</option>
-          <option>Exploratory</option>
-          <option>Mix</option>
-          <option>Not sure</option>
-        </select>
+  <h2 style="color:#5ead4e; font-size:19px; font-weight:700; text-align:center;">
+    (What kind of support style would you prefer?)
+  </h2>
 
-        <textarea placeholder="Preferences (optional)"></textarea>
-      </div>
+  <select>
+    <option>Structured (tools, exercises, goal-oriented)</option>
+    <option>Exploratory (open conversations, reflective)</option>
+    <option>A mix of both</option>
+    <option>Not sure</option>
+  </select>
+
+  <textarea placeholder="Any preferences that would help you feel more comfortable? (optional):"></textarea>
+</div>
 
       <!-- STEP 9 -->
       <div class="step">
@@ -545,47 +622,40 @@
         </select>
 
         <select>
-          <option>Morning</option>
-          <option>Afternoon</option>
+          <option> Weekday Morning</option>
+          <option> Weekday Afternoon</option>
           <option>Evening</option>
           <option>Weekend</option>
         </select>
 
-        <input type="text" placeholder="Timezone">
+        <input type="text" placeholder="Timezone (if outside India):">
       </div>
 
       <!-- STEP 10 (Couple only) -->
-      <div class="step" id="coupleStep">
-        <h2>Relationship Context</h2>
-
-        <input type="text" placeholder="How long together?">
-        <textarea placeholder="What support do you need?"></textarea>
-
-        <select>
-          <option>Yes</option>
-          <option>No</option>
-          <option>Not sure</option>
-        </select>
-      </div>
+     
 
       <!-- STEP 11 -->
       <div class="step">
-        <h2>Safety Check</h2>
+        <h2>Safety Check (Important)</h2>
+              <h2></h2>
+                <h2 style="color:#5ead4e; font-size:19px; font-weight:700; text-align:center;">
+ (Are you currently experiencing thoughts of harming yourself or feeling unsafe?
+ ) 
+</h2>
 
         <select id="safety">
           <option>No</option>
           <option>Yes</option>
         </select>
 
-        <p id="alertText" style="display:none;color:red;">
-          Please contact emergency services.
-        </p>
+        <h5>If yes:
+ Please reach out to local emergency services or a crisis helpline. This form is not monitored for emergencies.</h5>
       </div>
 
       <!-- STEP 12 -->
       <div class="step">
-        <h2>Final Question</h2>
-        <textarea></textarea>
+        <h2>Anything else you’d like us to know before we speak?</h2>
+        <textarea placeholder="Write Here: "></textarea>
       </div>
 
       <!-- STEP 13 -->
@@ -594,11 +664,11 @@
 
         <label>
           <input type="checkbox" required>
-          I understand this is not emergency support.
-        </label>
+I understand this form is for inquiry purposes and not a substitute for emergency mental health support.        </label>
 
-        <button type="submit">Request Consultation</button>
-      </div>
+<a href="https://wa.me/918618938017?text=Hi" target="_blank">
+  <button type="button">Request Consultation</button>
+</a>    </div>
 
       <!-- NAV -->
       <div class="nav-buttons">
@@ -666,6 +736,7 @@
       e.preventDefault();
 
       const formData = {
+         formType: "individual",
         fullName: document.querySelector('input[placeholder="Full Name"]').value,
         pronouns: document.querySelector('input[placeholder="Pronouns"]').value,
         email: document.querySelector('input[type="email"]').value,
@@ -693,7 +764,7 @@
 
     consent: document.querySelector('input[type="checkbox"]').checked
   };
-      fetch("https://script.google.com/macros/s/AKfycbylICHdh1H4a0RcF6dHySfhuFvwK5h73riWlxKOdLWVw2zRzwPFetZhMFsoyaTdhjhd/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbyQbBF7w0JPsVFWsesjYccjEJi1Py5moxXqoAu4FFFKpTXdjSevPeHU8Wuj5QWz3EEs/exec", {
         method: "POST",
         body: JSON.stringify(formData)
       })
@@ -707,6 +778,14 @@
           alert("Error submitting form");
         });
     });
+
+    // navbar
+    const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggle.addEventListener("click", function () {
+  navLinks.classList.toggle("active");
+});
   </script>
 
   <!-- Footer -->

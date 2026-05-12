@@ -369,6 +369,76 @@ button {
   font-family: 'ikaros';
 }
 
+/* what brings you hear */
+/* Relationship concerns step */
+.step textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 16px;
+  margin: 18px 0 25px;
+  border: 1px solid #dcdcdc;
+  border-radius: 16px;
+  font-size: 15px;
+  resize: none;
+  background: #fafafa;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.step textarea:focus {
+  border-color: #507cb0;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(80, 124, 176, 0.12);
+  outline: none;
+}
+
+.step label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f8f9fb;
+  border: 1px solid #ececec;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  color: #333;
+  text-align: left;
+}
+
+.step label:hover {
+  border-color: #eb957f;
+  background: #fff7f4;
+  transform: translateX(4px);
+}
+
+.step input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #507cb0;
+  cursor: pointer;
+}
+
+.step input[type="checkbox"]:checked + span,
+.step label:has(input:checked) {
+  border-color: #507cb0;
+  background: rgba(80, 124, 176, 0.08);
+}
+
+.step h2 {
+  color: #507cb0;
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.step textarea::placeholder {
+  color: #999;
+  font-size: 14px;
+}
+
 
 
     </style>
@@ -466,6 +536,9 @@ button {
     <option>Married</option>
     <option>Live-in</option>
     <option>Separated/On a break</option>
+    <option>Other</option>
+
+
   </select>
 
   <select>
@@ -482,17 +555,27 @@ button {
 
   <textarea placeholder="What's been happening in your relationship lately?"></textarea>
 
-  <label><input type="checkbox"> Communication issues</label>
-  <label><input type="checkbox"> Emotional distance</label>
-  <label><input type="checkbox"> Frequent conflicts</label>
-  <label><input type="checkbox"> Trust issues</label>
+  <label><input type="checkbox">  Communication challenges</label>
+  <label><input type="checkbox"> Frequent conflicts / arguments</label>
+  <label><input type="checkbox">Emotional distance</label>
+  <label><input type="checkbox"> Trust issues / infidelity</label>
+  <label><input type="checkbox">  Considering a break or separation</label>
+  <label><input type="checkbox"> Rebuilding after a conflict</label>
   <label><input type="checkbox"> Intimacy concerns</label>
-  <label><input type="checkbox"> Life stress</label>
+  <label><input type="checkbox"> Family or external stress impacting relationship</label>
+  <label><input type="checkbox"> Life transitions (moving, jobs, etc.)</label>
+  <label><input type="checkbox"> Differences in expectations or values</label>
+  <label><input type="checkbox"> Other </label>
 </div>
 
 <!-- STEP 5 -->
 <div class="step">
   <h2>Current Relationship Wellbeing</h2>
+     <h4 style="color:#5ead4e; font-size:19px; font-weight:700; text-align:center;">
+ (How would each of you rate the relationship currently?
+
+ ) 
+</h4>
 
   <h4>Partner 1</h4>
   <select>
@@ -515,7 +598,7 @@ button {
 
 <!-- STEP 6 -->
 <div class="step">
-  <h2>Duration</h2>
+  <h2>How Long Has This Been Going On?</h2>
 
   <select>
     <option>A few weeks</option>
@@ -535,33 +618,45 @@ button {
     <option>No</option>
   </select>
 
-  <textarea placeholder="What worked or didn’t work?"></textarea>
+  <textarea placeholder="If yes (optional):
+ What worked or didn’t work for you (individually or as a couple)?
+"></textarea>
 </div>
 
 <!-- STEP 8 -->
 <div class="step">
-  <h2>What Are You Hoping For?</h2>
+  <h2> What Are You Hoping to Get From Therapy?
+</h2>
 
-  <textarea placeholder="Your expectations from therapy"></textarea>
+  <textarea placeholder="(Short answer)
+ You can answer together or individually."></textarea>
 </div>
 
 <!-- STEP 9 -->
 <div class="step">
-  <h2>Therapist Fit</h2>
+  <h2>Therapist Fit (to help us match you better)</h2>
+     <h4 style="color:#5ead4e; font-size:19px; font-weight:700; text-align:center;">
+ (What kind of support style would you prefer?
+
+ ) 
+</h4>
 
   <select>
-    <option>Structured</option>
-    <option>Exploratory</option>
-    <option>Mix</option>
+    <option>Structured (tools, exercises, goal-oriented)</option>
+    <option>Exploratory (open conversations, reflective)
+</option>
+    <option>A mix of both</option>
     <option>Not sure</option>
   </select>
 
-  <textarea placeholder="Anything to help us match you better"></textarea>
+  <textarea placeholder="Anything that would help either of you feel more comfortable? (optional)"></textarea>
 </div>
 
 <!-- STEP 10 -->
 <div class="step">
-  <h2>Practical Details</h2>
+  <h2> Practical Details</h2>
+  <h2>Preferred session format:</h2>
+
 
   <select>
     <option>Online</option>
@@ -581,23 +676,29 @@ button {
 
 <!-- STEP 11 -->
 <div class="step">
-  <h2>Safety Check</h2>
+  <h2>Safety Check (Important)</h2>
+  <h5 style="color:#5ead4e; font-size:19px; font-weight:700; text-align:center;">
+ (Is either partner currently experiencing thoughts of harming themselves or feeling unsafe?
+)
+</h5>
+  
 
   <select>
     <option>No</option>
     <option>Yes</option>
   </select>
 
-  <p style="color:red;">
-    If yes, please contact emergency services immediately.
-  </p>
+  <p style="color:#eb957f;">
+If yes:
+ Please reach out to local emergency services or a crisis helpline. This form is not monitored for emergencies.  </p>
 </div>
 
 <!-- STEP 12 -->
 <div class="step">
   <h2>Final Question</h2>
 
-  <textarea placeholder="Anything else you'd like us to know?"></textarea>
+  <textarea placeholder="Anything else you’d like us to know before we speak?
+ (Optional)"></textarea>
 </div>
 
 <!-- STEP 13 -->
@@ -606,11 +707,13 @@ button {
 
   <label>
     <input type="checkbox" required>
-    We understand this is not emergency support.
+We understand this form is for inquiry purposes and not a substitute for emergency mental health support.
   </label>
 
-  <button type="submit">Request Consultation</button>
-</div>
+  <a href="https://wa.me/918618938017?text=Hi" target="_blank">
+  <button type="button">Request Consultation</button>
+</a>    </div>
+
 
 <!-- NAV BUTTONS -->
 <div class="nav-buttons">
@@ -676,19 +779,62 @@ prevBtn.addEventListener("click", () => {
 showStep(currentStep);
 
 // SUBMIT FORM
-document.getElementById("quizForm").addEventListener("submit", function (e) {
+document.getElementById("multiStepForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const formData = {
-    fullName: document.querySelector('input[placeholder="Full Name"]').value,
-    email: document.querySelector('input[type="email"]').value,
-    phone: document.querySelector('input[type="tel"]').value,
-    age: document.querySelector('input[type="number"]').value,
-    userType: document.getElementById("userType").value,
-    safety: document.getElementById("safety").value,
-  };
+   const formData = {
+    formType: "couple",
 
-  fetch("https://script.google.com/macros/s/AKfycbylICHdh1H4a0RcF6dHySfhuFvwK5h73riWlxKOdLWVw2zRzwPFetZhMFsoyaTdhjhd/exec", {
+    // Partner 1
+    partner1Name: document.querySelectorAll('input[placeholder="Full Name"]')[0].value,
+    partner1Pronouns: document.querySelectorAll('input[placeholder="Pronouns"]')[0].value,
+    partner1Email: document.querySelectorAll('input[type="email"]')[0].value,
+    partner1Phone: document.querySelectorAll('input[type="tel"]')[0].value,
+    partner1Age: document.querySelectorAll('input[type="number"]')[0].value,
+    partner1Gender: document.querySelectorAll("select")[0].value,
+
+    // Partner 2
+    partner2Name: document.querySelectorAll('input[placeholder="Full Name"]')[1].value,
+    partner2Pronouns: document.querySelectorAll('input[placeholder="Pronouns"]')[1].value,
+    partner2Email: document.querySelectorAll('input[type="email"]')[1].value,
+    partner2Phone: document.querySelectorAll('input[type="tel"]')[1].value,
+    partner2Age: document.querySelectorAll('input[type="number"]')[1].value,
+    partner2Gender: document.querySelectorAll("select")[1].value,
+
+    // Shared
+    country: document.querySelector('input[placeholder="Country of Residence (Both)"]').value,
+    sexuality: document.querySelector('input[placeholder="Sexuality (optional)"]').value,
+
+    relationshipLength: document.querySelectorAll("select")[2].value,
+    relationshipStatus: document.querySelectorAll("select")[3].value,
+    awareness: document.querySelectorAll("select")[4].value,
+
+    relationshipIssues: document.querySelector("textarea").value,
+
+    wellbeing1: document.querySelectorAll("select")[5].value,
+    wellbeing2: document.querySelectorAll("select")[6].value,
+
+    duration: document.querySelectorAll("select")[7].value,
+
+    therapyHistory: document.querySelectorAll("select")[8].value,
+    therapyDetails: document.querySelectorAll("textarea")[1].value,
+
+    goals: document.querySelectorAll("textarea")[2].value,
+
+    therapistFit: document.querySelectorAll("select")[9].value,
+    matchNotes: document.querySelectorAll("textarea")[3].value,
+
+    sessionFormat: document.querySelectorAll("select")[10].value,
+    timePreference: document.querySelectorAll("select")[11].value,
+    timezone: document.querySelector('input[placeholder="Timezone (if outside India)"]').value,
+
+    safety: document.querySelectorAll("select")[12].value,
+
+    finalAnswer: document.querySelectorAll("textarea")[4].value,
+
+    consent: document.querySelector('input[type="checkbox"]').checked
+  };
+    fetch("https://script.google.com/macros/s/AKfycbxA7mCcIEa6eruL9u3sxUx3aCzt0xUZBg9XzyZAEuFsTC8vokfWD48jz2PEDdep1IKH/exec", {
     method: "POST",
     body: JSON.stringify(formData)
   })
@@ -701,6 +847,13 @@ document.getElementById("quizForm").addEventListener("submit", function (e) {
     console.error(err);
     alert("Error submitting form");
   });
+});
+// navbar
+const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggle.addEventListener("click", function () {
+  navLinks.classList.toggle("active");
 });
     </script>
 

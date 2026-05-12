@@ -212,6 +212,7 @@
 .coming-btn {
   display: block;
   margin: 20px auto; /* 👈 centers horizontally */
+  transition: all 0.3s ease;
 }
 .coming-heading {
   text-align: center;
@@ -226,6 +227,32 @@
   font-size: 22px;
   margin-top: -149px;
 }
+
+@media (max-width: 768px) {
+
+  .login-section {
+    align-items: flex-start;
+    padding-top: 120px;
+  }
+
+  .how-text {
+    margin-top: 0;
+  }
+
+  .coming-heading {
+    margin-top: -74px;
+  }
+}
+
+/* Hover effect */
+.coming-btn:hover {
+  background: #ffffff;
+  color: #eb957f;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+
     </style>
 </head>
 
