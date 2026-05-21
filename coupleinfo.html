@@ -2,465 +2,624 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Open Window</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-       
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Open Window</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    .how-image img {
+      width: 100%;
+      max-width: 350px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+    }
 
-        .how-image img {
-            width: 100%;
-            max-width: 350px;
-            aspect-ratio: 1 / 1;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-            margin: 0 auto;
-        }
+    /* Default desktop */
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
 
-        /* Default desktop */
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 30px;
-}
+    /* Hide menu toggle on desktop */
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
 
-/* Hide menu toggle on desktop */
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-}
+    /* Mobile */
+    @media (max-width: 768px) {
 
-/* Mobile */
-@media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
 
-  .menu-toggle {
-    display: block;
-  }
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #cfd8d3;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        padding: 20px 0;
+      }
 
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: #cfd8d3;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    display: none;
-    padding: 20px 0;
-  }
+      .nav-links.active {
+        display: flex;
+      }
+    }
 
-  .nav-links.active {
-    display: flex;
-  }
-}
- .how-waves svg {
-    /* display: block;
+    .how-waves svg {
+      /* display: block;
     width: 100%; */
-    height: 132px;
-}
+      height: 132px;
+    }
 
-/* new css */
-.how-container {
-  display: flex;
-  align-items: flex-start;   /* top-aligns content */
-  justify-content: flex-start;
-  gap: 60px;                 /* space between image & text */
-  position: relative;        /* allows image to move freely */
-  /* padding: 40px 20px; */
-  flex-wrap: wrap;           /* for mobile */
+    /* new css */
+    .how-container {
+      display: flex;
+      align-items: flex-start;
+      /* top-aligns content */
+      justify-content: flex-start;
+      gap: 60px;
+      /* space between image & text */
+      position: relative;
+      /* allows image to move freely */
+      /* padding: 40px 20px; */
+      flex-wrap:nowrap;
+      flex-direction: row;
+      /* for mobile */
 
-    align-items: center;   /* 👈 auto adjusts vertically */
-  justify-content: center;
- 
-  padding: 60px 20px;
-  
-}
+      align-items: center;
+      /* 👈 auto adjusts vertically */
+      justify-content: center;
 
-/* IMAGE */
-.how-image {
-  position: relative;
-                 /* move image slightly up */
-  left: 0;                   /* push to the left corner */
-  max-width: 280px;          /* controls size */
-  flex-shrink: 0;            /* prevents shrinking on small screens */
-}
+      padding: 60px 20px;
 
-.how-image img {
-  width: 100%;
-  border-radius: 0%;
-  object-fit: cover;
-  display: block;
-}
+    }
 
-/* TEXT */
-.how-text {
-  max-width: 600px;
-  text-align: left;
-  font-size: 16px;
-  line-height: 1.6;
-}
+    /* IMAGE */
+    .how-image {
+      position: relative;
+      /* move image slightly up */
+      left: 0;
+      /* push to the left corner */
+      max-width: 280px;
+      /* controls size */
+      flex-shrink: 0;
+      /* prevents shrinking on small screens */
+    }
 
-/* RESPONSIVE */
+    .how-image img {
+      width: 100%;
+      border-radius: 0%;
+      object-fit: cover;
+      display: block;
+      /* margin-top: -324px; */
+          margin-bottom: 350px;
+
+    }
+
+    /* TEXT */
+    .how-text {
+      max-width: 600px;
+      text-align: left;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .how-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+      }
+
+      .how-image {
+        top: 0;
+        /* reset on mobile */
+        left: 0;
+        margin-bottom: 20px;
+      }
+
+      .how-text {
+        max-width: 100%;
+        text-align: center;
+      }
+    }
+
+    /* new text */
+    .section-title {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .desc {
+      text-align: justify;
+      /* 🔥 justified text */
+      line-height: 1.7;
+      margin-bottom: 12px;
+      color: #555;
+      font-size: 15px;
+    }
+
+    /* ===== FIX LOGO GAP ===== */
+    .brand img {
+      height: 160px;
+      /* reduced from 150px */
+      width: auto;
+      display: block;
+    }
+
+    .brand-header {
+      text-align: center;
+      padding: 5px 0;
+      /* reduced gap */
+      margin-bottom: 0;
+      /* remove extra space */
+    }
+
+    /* ===== NAVBAR GAP FIX ===== */
+    .navbar {
+      margin-top: 0;
+      padding-top: 5px;
+    }
+
+    /* ===== REMOVE DUPLICATE login-section (IMPORTANT) */
+    /* KEEP ONLY THIS ONE */
+    .login-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      /* responsive full screen */
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ===== VIDEO FIX ===== */
+    .bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* makes it responsive */
+      z-index: 0;
+    }
+
+    .section-title {
+      color: #507cb0;
+      font-family: 'Ikaros';
+    }
+
+    /* container (optional but recommended) */
+    .button-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    /* button style */
+    .custom-btn {
+      padding: 12px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      background: #eb957f;
+      color: white;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* hover effect */
+    .custom-btn:hover {
+      background: white;
+      color: #eb957f;
+      border: 2px solid #aa6666;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    /* active click effect */
+    .custom-btn:active {
+      transform: scale(0.95);
+    }
+
+    .button-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      /* aligns under text */
+      margin-top: 25px;
+    }
+
+    /* mobile */
+    @media (max-width: 768px) {
+      .button-group {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .custom-btn {
+        width: 80%;
+        text-align: center;
+      }
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: row;
+      /* 👈 THIS makes buttons one by one */
+      gap: 15px;
+      margin-top: 25px;
+      align-items: flex-start;
+      /* left aligned under text */
+      align-content: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+
+    /* button style stays same */
+    .custom-btn {
+      width: fit-content;
+      /* keeps natural size */
+      padding: 12px 22px;
+      font-size: 14px;
+      font-weight: 500;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      background: #eb957f;
+      color: white;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .custom-btn:hover {
+      background: white;
+      color: #eb957f;
+      border: 2px solid #eb957f;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .custom-btn {
+      width: fit-content;
+      padding: 12px 25px;
+      font-size: 14px;
+      font-weight: 500;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      background: #eb957f;
+      color: white;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .custom-btn:hover {
+      background: white;
+      color: #eb957f;
+      border: 2px solid #eb957f;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    /* FORM CONTAINER CONTROL */
+    form,
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* INPUT BOX STYLE */
+    input,
+    select,
+    textarea {
+      width: 50%;
+      max-width: 420px;
+      /* 👈 controls box size */
+      padding: 10px 14px;
+      margin: 8px 0;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    /* TEXTAREA FIX */
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    /* STEP HEADING */
+    .step h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+
+      input,
+      select,
+      textarea {
+        max-width: 90%;
+        /* 👈 smaller on mobile */
+      }
+    }
+    /* =========================
+   MOBILE RESPONSIVE CSS
+========================= */
 @media (max-width: 768px) {
+
+  /* MAIN CONTAINER */
   .how-container {
     flex-direction: column;
-    align-items: center;
-    padding: 20px 10px;
+    padding: 20px 15px;
+    gap: 25px;
+    text-align: center;
+    flex-wrap: wrap;
   }
 
+  /* IMAGE SECTION */
   .how-image {
-    top: 0;                  /* reset on mobile */
-    left: 0;
+    max-width: 220px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .how-image img {
+    width: 100%;
+    height: auto;
     margin-bottom: 20px;
   }
 
+  /* TEXT SECTION */
   .how-text {
     max-width: 100%;
-    text-align: center;
+    padding: 0 10px;
+    text-align: left;
   }
-}
 
-/* new text */
-.section-title {
-  font-size: 22px;
-  font-weight: 500;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.desc {
-  text-align: justify;   /* 🔥 justified text */
-  line-height: 1.7;
-  margin-bottom: 12px;
-  color: #555;
-  font-size: 15px;
-}
-/* ===== FIX LOGO GAP ===== */
-.brand img {
-    height: 160px;   /* reduced from 150px */
-    width: auto;
-    display: block;
-}
-
-.brand-header {
+  .section-title {
+    font-size: 28px;
     text-align: center;
-    padding: 5px 0;   /* reduced gap */
-    margin-bottom: 0; /* remove extra space */
-}
+    margin-bottom: 15px;
+  }
 
-/* ===== NAVBAR GAP FIX ===== */
-.navbar {
-    margin-top: 0;
-    padding-top: 5px;
-}
+  .desc {
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: justify;
+  }
 
-/* ===== REMOVE DUPLICATE login-section (IMPORTANT) */
-/* KEEP ONLY THIS ONE */
-.login-section {
-  position: relative;
-  width: 100%;
-  height: 100vh;   /* responsive full screen */
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* ===== VIDEO FIX ===== */
-.bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   /* makes it responsive */
-  z-index: 0;
-}
-.section-title {
-    color: #507cb0;
-    font-family: 'Ikaros';
-}
-
-/* container (optional but recommended) */
-.button-group {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-/* button style */
-.custom-btn {
-  padding: 12px 20px;
-  font-size: 14px;
-  font-weight: 500;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  background: #eb957f;
-  color: white;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* hover effect */
-.custom-btn:hover {
-  background: white;
-  color: #eb957f;
-  border: 2px solid #aa6666;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-}
-
-/* active click effect */
-.custom-btn:active {
-  transform: scale(0.95);
-}
-
-.button-group {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  justify-content: flex-start; /* aligns under text */
-  margin-top: 25px;
-}
-
-/* mobile */
-@media (max-width: 768px) {
+  /* BUTTONS */
   .button-group {
-    justify-content: center;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+    flex-wrap: wrap;
   }
 
   .custom-btn {
-    width: 80%;
+    width: 85%;
+    max-width: 260px;
     text-align: center;
+    padding: 12px 18px;
+    font-size: 15px;
   }
-}
 
-.button-group {
-  display: flex;
-  flex-direction: column;   /* 👈 THIS makes buttons one by one */
-  gap: 15px;
-  margin-top: 25px;
-  align-items: flex-start;  /* left aligned under text */
-      align-content: center;
-}
+  /* NAVBAR */
+  .navbar {
+    padding: 10px 15px;
+  }
 
-/* button style stays same */
-.custom-btn {
-  width: fit-content;   /* keeps natural size */
-  padding: 12px 22px;
-  font-size: 14px;
-  font-weight: 500;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  background: #eb957f;
-  color: white;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
+  .nav-links {
+    top: 60px;
+    width: 100%;
+    padding: 15px 0;
+    z-index: 999;
+  }
 
-.custom-btn:hover {
-  background: white;
-  color: #eb957f;
-  border: 2px solid #eb957f;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-}
+  .nav-links li {
+    margin: 10px 0;
+  }
 
-.custom-btn {
-  width: fit-content;   
-  padding: 12px 25px;
-  font-size: 14px;
-  font-weight: 500;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  background: #eb957f;
-  color: white;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
+  /* LOGO */
+  .brand img {
+    height: 110px;
+  }
 
-.custom-btn:hover {
-  background: white;
-  color: #eb957f;
-  border: 2px solid #eb957f;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-}
-/* FORM CONTAINER CONTROL */
-form, .step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  /* FOOTER */
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
 
-/* INPUT BOX STYLE */
-input,
-select,
-textarea {
-  width: 50%;
-  max-width: 420px;   /* 👈 controls box size */
-  padding: 10px 14px;
-  margin: 8px 0;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  outline: none;
-  box-sizing: border-box;
-}
+  .footer-links {
+    display: flex;
+        flex-direction: row;
+            gap: 10px;
+  }
 
-/* TEXTAREA FIX */
-textarea {
-  min-height: 100px;
-  resize: vertical;
-}
+  .footer-bottom {
+    text-align: center;
+    padding: 15px;
+  }
 
-/* STEP HEADING */
-.step h2 {
-  text-align: center;
-  margin-bottom: 15px;
-}
+  .bottom-links {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
 
-/* MOBILE RESPONSIVE */
-@media (max-width: 768px) {
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 15px;
+  }
+
+  /* FORM INPUTS */
   input,
   select,
   textarea {
-    max-width: 90%;   /* 👈 smaller on mobile */
+    width: 100%;
+    max-width: 100%;
+    font-size: 15px;
   }
 }
-
-
-
-
-    </style>
+  </style>
 </head>
 
 <body>
 
-    <!-- BRAND HEADER -->
-   <header class="brand-header">
+  <!-- BRAND HEADER -->
+  <header class="brand-header">
     <div class="brand">
-        <img src="remove logo backgraound.png" alt="The Open Window Logo">
+      <img src="remove logo backgraound.png" alt="The Open Window Logo">
     </div>
-</header>
+  </header>
 
-    <!-- NAVBAR -->
-    <nav class="navbar" id="navbar">
-        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
- <ul class="nav-links" id="nav-links">
-            <li><a href="index.html">HOME</a></li>
-            <!-- <li><a href="careers.html">FOR INDIVISUAL</a></li> -->
-            <!-- <li><a href="cultureee.html">CULTURE</a></li> -->
-            <!-- <li><a href="perkwith.html">FOR COUPLES</a></li>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <!-- <li><a href="careers.html">FOR INDIVISUAL</a></li> -->
+      <!-- <li><a href="cultureee.html">CULTURE</a></li> -->
+      <!-- <li><a href="perkwith.html">FOR COUPLES</a></li>
             <li><a href="teamstory.html">FOR TEEN</a></li>
             <li><a href="openposition.html">OPEN POSITIONS</a></li> -->
-        </ul>
-    </nav>
+    </ul>
+  </nav>
 
-    <!-- ===== HOW IT WORKS ===== -->
+  <!-- ===== HOW IT WORKS ===== -->
 
-    <div class="how-container">
+  <div class="how-container">
 
-        <!-- IMAGE -->
-        <div class="how-image">
-            <img src="Open_Couple-removebg-preview.png" alt="phylosophy">
-        </div>
+    <!-- IMAGE -->
+    <div class="how-image">
+      <img src="Open_Couple-removebg-preview.png" alt="phylosophy">
+      <div class="button-group">
 
-       <div class="how-text">
+        <a href="couple form.html" class="custom-btn">Form</a>
 
-  <h2 class="section-title">Couples Therapy</h2>
+        <a href="https://wa.me/919970778039" class="custom-btn" target="_blank">
+          WhatsApp
+        </a>
 
-  <p class="desc">
-    
-  </p>
+        <a href="mailto:hello@openwindow.com" class="custom-btn">
+          Email 
+        </a>
 
-  <p class="desc">
-Couples therapy isn't just for when things feel like they're falling apart, it can also be a space to better understand each other and your relationship.
-  </p>
-
-  <p class="desc">
-It offers a structured, neutral environment where both partners can speak openly, feel heard, and work through challenges together. This might include communication difficulties, recurring conflicts, trust concerns, emotional distance, or navigating important life decisions.
-</p>
-
-  <p class="desc">
-The focus isn't on "who's right," but on understanding what's happening between you and finding ways to move forward that feel healthier and more supportive for both of you.  </p>
-
-  <p class="desc">
-Whether you're looking to repair, reconnect, or simply gain clarity, therapy can help you have conversations that are often hard to have on your own.  </p>
-  
-  <p class="desc">
-   Confidentiality
-<br></br>
-What you share in therapy stays private.
-<br></br>
-Confidentiality is a core part of the process, it helps create a space where you can speak honestly and safely.
-<br></br>
-There are a few exceptions, which we'll always be transparent about:
-<br></br>
-If there is a risk of harm to yourself or someone else
-<br></br>
-If there is concern about abuse or safety
-<br></br>
-If required by law
-
-  </p>
-
-   <p class="desc">
-    In these situations, the priority is safety, and only the necessary information is shared.
-
-If you ever have questions about confidentiality, you're always welcome to ask, we'll walk you through it.
-  </p>
-
-</div>
-        </div>
-
+      </div>
     </div>
 
-    </section>
- <div class="button-group">
+  <div class="how-text">
 
-  <a href="couple form.html" class="custom-btn">Form</a>
+    <h2 class="section-title">Couples Therapy</h2>
 
-  <a href="https://wa.me/919970778039" class="custom-btn" target="_blank">
-    WhatsApp
-  </a>
+    <p class="desc">
 
-  <a href="mailto:hello@openwindow.com" class="custom-btn">
-    Email us
-  </a>
+    </p>
 
-</div>
+    <p class="desc">
+      Couples therapy isn't just for when things feel like they're falling apart, it can also be a space to better
+      understand each other and your relationship.
+    </p>
 
-</div>
+    <p class="desc">
+      It offers a structured, neutral environment where both partners can speak openly, feel heard, and work through
+      challenges together. This might include communication difficulties, recurring conflicts, trust concerns, emotional
+      distance, or navigating important life decisions.
+    </p>
 
-   
-        <script>
-  const toggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
+    <p class="desc">
+      The focus isn't on "who's right," but on understanding what's happening between you and finding ways to move
+      forward that feel healthier and more supportive for both of you. </p>
 
-  toggle.addEventListener("click", function () {
-    navLinks.classList.toggle("active");
-  });
-</script>
-    
+    <p class="desc">
+      Whether you're looking to repair, reconnect, or simply gain clarity, therapy can help you have conversations that
+      are often hard to have on your own. </p>
+
+    <p class="desc">
+      Confidentiality
+      <br></br>
+      What you share in therapy stays private.
+      <br></br>
+      Confidentiality is a core part of the process, it helps create a space where you can speak honestly and safely.
+      <br></br>
+      There are a few exceptions, which we'll always be transparent about:
+    <ul>
+      <li>If there is a risk of harm to yourself or someone else</li>
+      <li>If there is concern about abuse or safety</li>
+      <li>If required by law</li>
+    </ul>
+
+    </p>
+
+    <p class="desc">
+      In these situations, the priority is safety, and only the necessary information is shared.
+
+      If you ever have questions about confidentiality, you're always welcome to ask, we'll walk you through it.
+    </p>
+
+  </div>
+  </div>
+
+  </div>
+
+  </section>
+  </div>
+
+
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", function () {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+
 
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-top">
       <div class="footer-links">
-          <a href="index.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="forcompanies.html">For Companies</a>
         <a href="advise.html">Advice</a>
@@ -474,11 +633,12 @@ If you ever have questions about confidentiality, you're always welcome to ask, 
       </div>
 
       <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61573356484595"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/openwindow.co?igsh=MTM4dnRtenFhdWNlYQ%3D%3D&utm_source=qr"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@theopenwindow?si=acUKdo98Gt6AoaY8"><i class="fab fa-youtube"></i></a>
         <a href="#"><i class="fab fa-x-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="http://www.linkedin.com/in/the-open-window-160925406"><i class="fab fa-linkedin-in"></i></a>
       </div>
     </div>
 

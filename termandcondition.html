@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Open Window</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    /* .wave svg {
+    display: block;
+    width: 100%;
+    height: 150px;
+}  */
+
+    .how-image img {
+      width: 100%;
+      max-width: 350px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    .how-waves svg {
+    /* display: block;
+    width: 100%; */
+    height: 132px;
+}
+
+/* new css */
+.how-container {
+  display: flex;
+  align-items: flex-start;   /* top-aligns content */
+  justify-content: flex-start;
+  gap: 60px;                 /* space between image & text */
+  position: relative;        /* allows image to move freely */
+  /* padding: 40px 20px; */
+  flex-wrap: wrap;           /* for mobile */
+
+    align-items: center;   /* 👈 auto adjusts vertically */
+  justify-content: center;
+ 
+  padding: 60px 20px;
+  
+}
+
+/* IMAGE */
+.how-image {
+  position: relative;
+                 /* move image slightly up */
+  left: 0;                   /* push to the left corner */
+  max-width: 280px;          /* controls size */
+  flex-shrink: 0;            /* prevents shrinking on small screens */
+}
+
+.how-image img {
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/* TEXT */
+.how-text {
+  max-width: 600px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .how-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+  }
+
+  .how-image {
+    top: 0;                  /* reset on mobile */
+    left: 0;
+    margin-bottom: 20px;
+  }
+
+  .how-text {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+/* text */
+
+.section-title {
+  font-size: 22px;
+  font-weight: 500;   /* medium, not too bold */
+  margin-bottom: 15px;
+    color: #507cb0;
+      font-family: 'Ikaros';
+
+  }
+
+.desc {
+  text-align: justify;   /* 🔥 this justifies text */
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #555;
+  font-size: 15px;
+}
+
+.quote {
+  margin-top: 20px;
+  font-weight: 500;
+  text-align: center;
+  font-style: italic;
+  color: #222;
+}
+/* ===== FIX LOGO GAP ===== */
+.brand img {
+    height: 160px;   /* reduced from 150px */
+    width: auto;
+    display: block;
+}
+
+.brand-header {
+    text-align: center;
+    padding: 5px 0;   /* reduced gap */
+    margin-bottom: 0; /* remove extra space */
+}
+
+/* ===== NAVBAR GAP FIX ===== */
+.navbar {
+    margin-top: 0;
+    padding-top: 5px;
+}
+
+/* ===== REMOVE DUPLICATE login-section (IMPORTANT) */
+/* KEEP ONLY THIS ONE */
+.login-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;   /* responsive full screen */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== VIDEO FIX ===== */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* makes it responsive */
+  z-index: 0;
+}
+
+/* text new css */
+
+.terms-section {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 40px 25px;
+  font-family: 'Roboto', sans-serif;
+  color: #222;
+  line-height: 1.8;
+}
+
+.main-heading {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #111;
+  text-align: left;
+}
+
+.last-updated {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 35px;
+}
+
+.section-heading {
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 45px;
+  margin-bottom: 15px;
+  color: #111;
+  line-height: 1.4;
+}
+
+.desc {
+  font-size: 17px;
+  color: #444;
+  margin-bottom: 18px;
+  line-height: 1.9;
+}
+
+.terms-list {
+  margin-left: 25px;
+  margin-bottom: 25px;
+  padding-left: 10px;
+}
+
+.terms-list li {
+  font-size: 17px;
+  color: #444;
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+/* Smooth spacing between sections */
+.section-heading + .desc,
+.section-heading + .terms-list {
+  margin-top: 10px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+  .terms-section {
+    padding: 25px 18px;
+    margin: 50px auto;
+  }
+
+  .main-heading {
+    font-size: 32px;
+  }
+
+  .section-heading {
+    font-size: 23px;
+    margin-top: 35px;
+  }
+
+  .desc,
+  .terms-list li {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .terms-list {
+    margin-left: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .main-heading {
+    font-size: 28px;
+  }
+
+  .section-heading {
+    font-size: 21px;
+  }
+
+  .desc,
+  .terms-list li {
+    font-size: 15px;
+  }
+
+  .terms-section {
+    padding: 20px 15px;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- BRAND HEADER -->
+<header class="brand-header">
+    <div class="brand">
+        <img src="remove logo backgraound.png" alt="The Open Window Logo">
+    </div>
+</header>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <!-- <li><a href="phylosophy.html">PHILOSOPHY</a></li> -->
+      <li><a href="culture.html">CULTURE</a></li>
+      <li><a href="ethicalai.html">ETHICAL AI</a></li>
+      <li><a href="community.html">COMMUNITY</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HOW IT WORKS ===== -->
+
+  <div class="how-container">
+
+    <!-- IMAGE -->
+  
+
+    <!-- TEXT -->
+ <div class="how-text">
+
+  <h2 class="section-title">Terms & Conditions</h2>
+<div class="terms-section">
+
+  <h1 class="main-heading">Terms & Conditions</h1>
+
+  <p class="last-updated"><strong>Last Updated:</strong> May 20, 2026</p>
+
+  <p class="desc">
+    Welcome to The Open Window. By accessing or using our website, services,
+    workshops, therapy sessions, or digital platforms, you agree to comply
+    with and be bound by the following Terms & Conditions. Please read them carefully.
+  </p>
+
+  <h2 class="section-heading">1. About The Open Window</h2>
+
+  <p class="desc">
+    The Open Window is a mental health and wellness platform that provides:
+  </p>
+
+  <ul class="terms-list">
+    <li>Therapy services</li>
+    <li>Workshops and wellness sessions</li>
+    <li>Educational content</li>
+    <li>Community-based emotional wellbeing initiatives</li>
+  </ul>
+
+  <h2 class="section-heading">2. Eligibility</h2>
+
+  <p class="desc">By using our website or booking our services, you confirm that:</p>
+
+  <ul class="terms-list">
+    <li>You are at least 18 years old, or have parental/legal guardian consent.</li>
+    <li>The information you provide is accurate and complete.</li>
+    <li>You will use our services responsibly and lawfully.</li>
+  </ul>
+
+  <h2 class="section-heading">3. Therapy & Wellness Services</h2>
+
+  <p class="desc">
+    Our therapists and facilitators aim to provide professional and ethical support.
+    However:
+  </p>
+
+  <ul class="terms-list">
+    <li>Therapy outcomes may vary from person to person.</li>
+    <li>Our services are not a substitute for emergency medical or psychiatric care.</li>
+    <li>
+      If you are experiencing a mental health crisis or emergency,
+      please contact local emergency services immediately.
+    </li>
+  </ul>
+
+  <h2 class="section-heading">4. Appointments, Rescheduling & Cancellations</h2>
+
+  <ul class="terms-list">
+    <li>Sessions must be booked in advance through approved channels.</li>
+    <li>Rescheduling or cancellation requests should be made at least 24 hours before the session.</li>
+    <li>Missed appointments or late cancellations may be non-refundable.</li>
+    <li>
+      The Open Window reserves the right to reschedule sessions due to unforeseen circumstances.
+    </li>
+  </ul>
+
+  <h2 class="section-heading">5. Payments & Refunds</h2>
+
+  <ul class="terms-list">
+    <li>Payments must be completed before confirmed sessions or workshops.</li>
+    <li>Refund eligibility depends on the service purchased and cancellation timeline.</li>
+    <li>
+      Digital products, downloadable resources, or completed sessions are generally non-refundable.
+    </li>
+  </ul>
+
+  <h2 class="section-heading">6. Confidentiality</h2>
+
+  <p class="desc">
+    We respect client confidentiality and privacy. Information shared during
+    therapy sessions is handled with care and discretion, subject to applicable
+    laws and professional ethical guidelines.
+  </p>
+
+  <p class="desc">Exceptions may apply in situations involving:</p>
+
+  <ul class="terms-list">
+    <li>Risk of harm to self or others</li>
+    <li>Abuse or neglect reporting obligations</li>
+    <li>Legal requirements or court orders</li>
+  </ul>
+
+  <h2 class="section-heading">7. Intellectual Property</h2>
+
+  <p class="desc">
+    All website content, branding, graphics, text, workshop materials,
+    logos, and digital resources belong to The Open Window unless otherwise stated.
+  </p>
+
+  <p class="desc">You may not:</p>
+
+  <ul class="terms-list">
+    <li>Reproduce or redistribute our content without written permission</li>
+    <li>Use our branding or materials for commercial purposes</li>
+    <li>Copy or modify workshop or therapy resources</li>
+  </ul>
+
+  <h2 class="section-heading">8. User Conduct</h2>
+
+  <p class="desc">You agree not to:</p>
+
+  <ul class="terms-list">
+    <li>Harass, abuse, or threaten others through our platform</li>
+    <li>Share false or misleading information</li>
+    <li>Attempt unauthorized access to our systems</li>
+    <li>Use the platform for unlawful or harmful purposes</li>
+  </ul>
+
+  <h2 class="section-heading">9. Third-Party Links</h2>
+
+  <p class="desc">
+    Our website may contain links to third-party websites or services.
+    The Open Window is not responsible for the content, privacy practices,
+    or policies of third-party platforms.
+  </p>
+
+  <h2 class="section-heading">10. Limitation of Liability</h2>
+
+  <p class="desc">The Open Window shall not be liable for:</p>
+
+  <ul class="terms-list">
+    <li>Indirect or incidental damages</li>
+    <li>Loss resulting from interruptions or technical issues</li>
+    <li>
+      Personal decisions made based on website content or wellness resources
+    </li>
+  </ul>
+
+  <p class="desc">
+    Users engage with our services voluntarily and at their own discretion.
+  </p>
+
+  <h2 class="section-heading">11. Changes to Terms</h2>
+
+  <p class="desc">
+    We may update these Terms & Conditions periodically. Continued use of the
+    website after updates constitutes acceptance of the revised terms.
+  </p>
+
+  <h2 class="section-heading">12. Contact Us</h2>
+
+  <p class="desc">
+    For questions regarding these Terms & Conditions, please contact:
+  </p>
+
+  <p class="desc">
+    <strong>Email:</strong> hello@openwindow.co
+  </p>
+
+</div>
+
+ </div>
+
+</div>
+
+  </section>
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", function () {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-links">
+         <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="forcompanies.html">For Comanies</a>
+        <a href="advise.html">Advice</a>
+        <a href="getstart.html">Find a Therapist</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="library.html">Library</a>
+        <a href="careers.html">Careers</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="login.html">Log In </a>
+        <a href="getstart.html">Lets Start</a>
+      </div>
+
+      <div class="social-icons">
+       <a href="https://www.facebook.com/profile.php?id=61573356484595"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/openwindow.co?igsh=MTM4dnRtenFhdWNlYQ%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@theopenwindow?si=acUKdo98Gt6AoaY8"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="http://www.linkedin.com/in/the-open-window-160925406"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="footer-bottom">
+      <div class="bottom-links">
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Sharing Settings</a>
+        <a href="#">Web Accessibility</a>
+      </div>
+
+      <div class="copyright">
+        © 2026 Open Window. All rights reserved. 
+      </div>
+    </div>
+  </footer>
