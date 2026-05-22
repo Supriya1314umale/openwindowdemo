@@ -3645,6 +3645,7 @@ body {
 .gift-container {
   opacity: 1;
   transform: none;
+  margin-top: -110px;
 }
 
 .gift-section.revealed .gift-container {
@@ -3673,7 +3674,10 @@ body {
     overflow-x: hidden;
   }
 
-  h1, h2, h3, p {
+  h1,
+  h2,
+  h3,
+  p {
     word-wrap: break-word;
     text-align: center;
   }
@@ -3686,7 +3690,7 @@ body {
   }
 
   .logo img {
-    height: 120px;
+    height: 300px;
   }
 
   /* AUTH BUTTONS */
@@ -3702,6 +3706,8 @@ body {
     width: auto;
     padding: 10px 18px;
     font-size: 13px;
+    margin-left: 267px;
+    margin-top: 31px;
   }
 
   /* NAVBAR */
@@ -3767,7 +3773,7 @@ body {
 
   .stat h2 {
     font-size: 28px;
-            text-align: center;
+    text-align: center;
   }
 
   /* THERAPIST SECTION */
@@ -3841,6 +3847,7 @@ body {
     flex-direction: column;
     text-align: center;
     padding: 20px;
+    margin-top: -85px;
   }
 
   .gift-text h2 {

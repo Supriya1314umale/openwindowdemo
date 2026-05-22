@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The Open Window</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Google Font -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #fff;
+      color: #222;
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       BRAND HEADER
+    ========================== */
+
+    .brand-header {
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .brand img {
+      height: 140px;
+      width: auto;
+      display: block;
+      margin: auto;
+    }
+
+    /* =========================
+       TERMS SECTION
+    ========================== */
+
+    .terms-wrapper {
+      width: 100%;
+      padding: 40px 20px 80px;
+    }
+
+    .terms-container {
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 500;
+      color: #507cb0;
+      margin-bottom: 18px;
+      line-height: 1.2;
+      font-family: 'ikaros';
+    }
+
+    .last-updated {
+      font-size: 15px;
+      color: #777;
+      margin-bottom: 35px;
+    }
+
+    .section-heading {
+      font-size: 21px;
+      font-weight: 500;
+      margin-top: 45px;
+      margin-bottom: 16px;
+      color: #5ead4e;
+      line-height: 1.4;
+      font-family: 'ikaros';
+    }
+
+    .desc {
+      font-size: 17px;
+      line-height: 1.9;
+      color: #444;
+      margin-bottom: 18px;
+      text-align: justify;
+      font-family: 'Poppins';
+    }
+
+    .terms-list {
+      padding-left: 25px;
+      margin-bottom: 28px;
+    }
+
+    .terms-list li {
+      font-size: 17px;
+      line-height: 1.9;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    /* =========================
+       MOBILE RESPONSIVE
+    ========================== */
+
+    @media (max-width: 768px) {
+
+      .terms-wrapper {
+        padding: 25px 16px 60px;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+
+      .section-heading {
+        font-size: 23px;
+        margin-top: 35px;
+      }
+
+      .desc,
+      .terms-list li {
+        font-size: 15px;
+        line-height: 1.8;
+        text-align: left;
+      }
+
+      .terms-list {
+        padding-left: 20px;
+      }
+
+      .brand img {
+        height: 110px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .section-heading {
+        font-size: 21px;
+      }
+
+      .desc,
+      .terms-list li {
+        font-size: 14px;
+      }
+    }
+
+    .email-link {
+  color: #507cb0;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.email-link:hover {
+  color: #355d8c;
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- BRAND HEADER -->
+  <header class="brand-header">
+    <div class="brand">
+      <img src="remove logo backgraound.png" alt="The Open Window Logo">
+    </div>
+  </header>
+
+    <!-- NAVBAR -->
+
+ <nav class="navbar" id="navbar">
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <!-- <li><a href="phylosophy.html">PHILOSOPHY</a></li> -->
+      <!-- <li><a href="culture.html">CULTURE</a></li>
+      <li><a href="ethicalai.html">ETHICAL AI</a></li>
+      <li><a href="community.html">COMMUNITY</a></li> -->
+    </ul>
+  </nav>
+
+
+  <!-- POLICY SECTION -->
+ <section class="terms-wrapper">
+
+  <div class="terms-container">
+
+    <h1 class="section-title">Privacy Policy</h1>
+
+    <p class="last-updated">
+      <strong>Last Updated:</strong> May 20, 2026
+    </p>
+
+    <p class="desc">
+      At The Open Window, your privacy matters deeply to us.
+      This Privacy Policy explains how we collect, use, store,
+      and protect your information when you use our website or services.
+    </p>
+
+    <!-- 1 -->
+    <h2 class="section-heading">1. Information We Collect</h2>
+
+    <p class="desc">
+      We may collect:
+    </p>
+
+    <p class="desc"><strong>Personal Information</strong></p>
+
+    <ul class="terms-list">
+      <li>Name</li>
+      <li>Email address</li>
+      <li>Phone number</li>
+      <li>Billing information</li>
+      <li>Information shared through inquiry or intake forms</li>
+    </ul>
+
+    <p class="desc"><strong>Usage Information</strong></p>
+
+    <ul class="terms-list">
+      <li>Browser type and device information</li>
+      <li>IP address</li>
+      <li>Website usage data</li>
+      <li>Cookies and analytics data</li>
+    </ul>
+
+    <!-- 2 -->
+    <h2 class="section-heading">2. How We Use Your Information</h2>
+
+    <p class="desc">
+      We use your information to:
+    </p>
+
+    <ul class="terms-list">
+      <li>Schedule and manage appointments</li>
+      <li>Respond to inquiries</li>
+      <li>Improve user experience</li>
+      <li>Process payments</li>
+      <li>Send updates, reminders, or newsletters</li>
+      <li>Maintain the safety and integrity of our services</li>
+    </ul>
+
+    <!-- 3 -->
+    <h2 class="section-heading">3. Confidentiality & Therapy Information</h2>
+
+    <p class="desc">
+      Information shared during therapy sessions is treated confidentially
+      and handled in accordance with ethical standards and applicable laws.
+    </p>
+
+    <p class="desc">
+      We do not sell personal or therapy-related information.
+    </p>
+
+    <!-- 4 -->
+    <h2 class="section-heading">4. Sharing of Information</h2>
+
+    <p class="desc">
+      We may share limited information with:
+    </p>
+
+    <ul class="terms-list">
+      <li>Licensed therapists or facilitators involved in your care</li>
+      <li>Secure payment providers</li>
+      <li>Technology or scheduling platforms supporting our services</li>
+      <li>Legal authorities when required by law</li>
+    </ul>
+
+    <p class="desc">
+      We only share information when necessary and with appropriate safeguards.
+    </p>
+
+    <!-- 5 -->
+    <h2 class="section-heading">5. Cookies & Analytics</h2>
+
+    <p class="desc">
+      Our website may use cookies and analytics tools to:
+    </p>
+
+    <ul class="terms-list">
+      <li>Understand website traffic</li>
+      <li>Improve performance and accessibility</li>
+      <li>Enhance user experience</li>
+    </ul>
+
+    <p class="desc">
+      You can disable cookies through your browser settings.
+    </p>
+
+    <!-- 6 -->
+    <h2 class="section-heading">6. Data Security</h2>
+
+    <p class="desc">
+      We take reasonable measures to protect your information from
+      unauthorized access, misuse, or disclosure. However,
+      no digital platform can guarantee complete security.
+    </p>
+
+    <!-- 7 -->
+    <h2 class="section-heading">7. Your Rights</h2>
+
+    <p class="desc">
+      Depending on your location and applicable laws,
+      you may have the right to:
+    </p>
+
+    <ul class="terms-list">
+      <li>Access your personal data</li>
+      <li>Correct inaccurate information</li>
+      <li>Request deletion of your data</li>
+      <li>Withdraw consent for communications</li>
+    </ul>
+
+    <p class="desc">
+      To make a request, contact us at
+      <a href="mailto:hello@openwindow.co" class="email-link">
+        hello@openwindow.co
+      </a>
+    </p>
+
+    <!-- 8 -->
+    <h2 class="section-heading">8. Children's Privacy</h2>
+
+    <p class="desc">
+      Our services are not directed toward children under 13
+      without parental or guardian involvement.
+    </p>
+
+    <!-- 9 -->
+    <h2 class="section-heading">9. Changes to This Policy</h2>
+
+    <p class="desc">
+      We may update this Privacy Policy periodically.
+      Any updates will be reflected on this page.
+    </p>
+
+    <!-- 10 -->
+    <h2 class="section-heading">10. Contact Us</h2>
+
+    <p class="desc">
+      If you have questions about this Privacy Policy, please contact:
+    </p>
+
+    <p class="desc">
+      <strong>Email:</strong>
+      <a href="mailto:hello@openwindow.co" class="email-link">
+        hello@openwindow.co
+      </a>
+    </p>
+
+  </div>
+
+</section>
+
+</body>
+
+</html>
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", function () {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-links">
+         <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="forcompanies.html">For Comanies</a>
+        <a href="advise.html">Advice</a>
+        <a href="getstart.html">Find a Therapist</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="library.html">Library</a>
+        <a href="careers.html">Careers</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="login.html">Log In </a>
+        <a href="getstart.html">Lets Start</a>
+      </div>
+
+      <div class="social-icons">
+       <a href="https://www.facebook.com/profile.php?id=61573356484595"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/openwindow.co?igsh=MTM4dnRtenFhdWNlYQ%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@theopenwindow?si=acUKdo98Gt6AoaY8"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="http://www.linkedin.com/in/the-open-window-160925406"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="footer-bottom">
+      <div class="bottom-links">
+        <a href="termandcondition.html">Terms & Conditions</a>
+        <a href="privacypolicy.html">Privacy Policy</a>
+        <a href="SharingSettings.html">Sharing Settings</a>
+        <a href="WebAccessibility.html">Web Accessibility</a>
+      </div>
+
+      <div class="copyright">
+        © 2026 Open Window. All rights reserved. 
+      </div>
+    </div>
+  </footer>
