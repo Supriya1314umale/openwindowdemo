@@ -38,6 +38,7 @@
   src: url('fonts/Ikaros-Light.otf') format('opentype');
   font-weight: 300;
 }
+
 /* Brand section */
 .brand-header {
   text-align: center;
@@ -162,7 +163,13 @@
   padding: 8px 18px;
   border-radius: 20px;
   cursor: pointer;
-  font-family: revert
+  font-family: revert;
+  box-shadow:
+    0 8px 0 #8b685f,
+    /* Bottom layer */
+    0 10px 18px rgba(0, 0, 0, 0.25);
+
+  transition: all 0.15s ease;
 }
 
 /* RESPONSIVE */
@@ -2464,7 +2471,7 @@ body {
 .auth-bar {
   position: absolute;
   right: 20px;
-  top: 25px;
+  top: 90px;
   display: flex;
   gap: 10px;
 }
@@ -2882,7 +2889,7 @@ body {
 .windows-container {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 80px;
   flex-wrap: wrap;
 }
 
@@ -2894,7 +2901,7 @@ body {
 
 .card-text {
   margin-top: 15px;
-  font-size: 24px;
+  font-size: 35px;
   font-weight: 600;
   text-align: center;
   color: #5ead4e;
@@ -3269,7 +3276,7 @@ body {
   font-size: 20px;
   font-weight: 600;
   color: white;
-  font-family: 'RhumaSinera';
+  font-family: 'ikaros';
 
 }
 
@@ -3379,6 +3386,7 @@ body {
   gap: 30px;
   animation: scroll 20s linear infinite;
   color: white;
+  font-family: 'ikaros';
 
 }
 
@@ -3538,6 +3546,10 @@ body {
 
 #faq-heading,
 #faq-heading strong {
+
+  font-size: 42px;
+  margin-bottom: 50px;
+  font-weight: 400;
   font-family: 'Ikaros';
 }
 
@@ -3690,7 +3702,7 @@ body {
   }
 
   .logo img {
-    height: 300px;
+    height: 250px;
   }
 
   /* AUTH BUTTONS */
