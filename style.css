@@ -29,15 +29,15 @@
 
 @font-face {
   font-family: 'Ikaros';
-  src: url('fonts/IkarosSans-Regular.otf');
+  src: url('fonts/Ikaros-Regular.otf') format('opentype');
+  font-weight: 400;
 }
 
 @font-face {
   font-family: 'Ikaros';
-  src: url('fonts/IkarosSans-Light.otf');
+  src: url('fonts/Ikaros-Light.otf') format('opentype');
   font-weight: 300;
 }
-
 /* Brand section */
 .brand-header {
   text-align: center;
@@ -3706,7 +3706,7 @@ body {
     width: auto;
     padding: 10px 18px;
     font-size: 13px;
-    margin-left: 267px;
+    margin-left: 191px;
     margin-top: 31px;
   }
 
