@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Open Window</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        
+
+        .how-image img {
+            width: 100%;
+            max-width: 350px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+        /* Default desktop */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+/* Hide menu toggle on desktop */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #cfd8d3;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* ================= LOGIN BACKGROUND SECTION ================= */
+.login-section{
+  background:url(coming\ soon.png) no-repeat center center;
+  background-size:cover;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;  
+  position:relative; 
+  /* padding:40px 20px; */
+  padding-top: 0px;
+}
+
+/* Overlay */
+.login-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  /* background: #f4f4f4;
+  z-index: 1; */
+  /* background:rgba(0,0,0,0.4); */
+}
+
+.login-section {
+  position:relative;
+  z-index:2;
+  
+}
+
+/* ================= LOGIN CARD ================= */
+.login-card{
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  width:100%;
+  max-width:400px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  text-align:center;
+  margin-top:-2px;
+}
+
+.login-card input{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border-radius:25px;
+  border:1px solid #ccc;
+}
+
+.login-card button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:25px;
+  background:#f3aaaa;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.login-card button:hover{
+  background:#996767;
+}
+
+.forgot{
+  display:block;
+  margin-top:10px;
+  font-size:14px;
+  text-decoration:none;
+  color:#333;
+}
+
+.how-waves svg {
+    display: block;
+    width: 100%;
+    height: 109px;
+}
+/* ===== FIX LOGO GAP ===== */
+.brand img {
+    height: 160px;   /* reduced from 150px */
+    width: auto;
+    display: block;
+}
+
+.brand-header {
+    text-align: center;
+    padding: 5px 0;   /* reduced gap */
+    margin-bottom: 0; /* remove extra space */
+}
+
+/* ===== NAVBAR GAP FIX ===== */
+.navbar {
+    margin-top: 0;
+    padding-top: 5px;
+}
+
+/* ===== REMOVE DUPLICATE login-section (IMPORTANT) */
+/* KEEP ONLY THIS ONE */
+.login-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;   /* responsive full screen */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== VIDEO FIX ===== */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* makes it responsive */
+  z-index: 0;
+}
+
+
+.coming-btn {
+  margin-top: 20px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: #eb957f;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* Hover effect */
+.coming-btn:hover {
+  background: white;
+  color: #eb957f;
+  transform: translateY(-2px);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .coming-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+.coming-btn {
+  display: block;
+  margin: 20px auto; /* 👈 centers horizontally */
+  transition: all 0.3s ease;
+}
+.coming-heading {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #507cb0;
+  font-family: 'Ikaros';
+}
+
+.coming-heading {
+  text-align: center;
+  font-size: 22px;
+  margin-top: -149px;
+}
+
+@media (max-width: 768px) {
+
+  .login-section {
+    align-items: flex-start;
+    padding-top: 120px;
+  }
+
+  .how-text {
+    margin-top: 0;
+  }
+
+  .coming-heading {
+    margin-top: -74px;
+  }
+}
+
+.coming-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 30px;
+  background: #eb957f;
+  color: whitblacke;
+  text-decoration: none;
+  border: none;
+   display: block;
+  margin: 20px auto;
+  cursor: pointer;
+  transition: 0.3s;
+      box-shadow: 0 8px 0 #8b685f, 0 10px 18px rgba(0, 0, 0, 0.25);
+}
+
+.coming-btn:hover {
+  background: #996767;
+}
+
+.coming-btn:active {
+  transform: scale(0.97);
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- BRAND HEADER -->
+   <header class="brand-header">
+    <div class="brand">
+        <img src="remove logo backgraound.png" alt="The Open Window Logo">
+    </div>
+</header>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            
+          
+        </ul>
+    </nav>
+
+   
+
+
+  
+   <section class="login-section">
+ <div class="how-text">
+  <h2 class="coming-heading">Library</h2>
+  <button class="coming-btn">Coming Soon</button>
+</div>
+</section>
+
+     <script>
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  toggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+  });
+
+</script>
+
+      <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-links">
+          <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="forcompanies.html">For Companies</a>
+        <a href="advise.html">Advice</a>
+        <a href="getstart.html">Find a Therapist</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="library.html">Library</a>
+        <a href="careers.html">Careers</a>
+        <a href="contactus.html">Contact Us</a>
+        <!-- <a href="login.html">Log In </a> -->
+        <a href="getstart.html">Lets Start</a>
+      </div>
+ <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=61573356484595"><i class="fab fa-facebook-f">
+          </i></a>
+        <a href="https://www.instagram.com/openwindow.co?igsh=MTM4dnRtenFhdWNlYQ%3D%3D&utm_source=qr"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@theopenwindow?si=acUKdo98Gt6AoaY8"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.threads.com/@openwindow.co?igshid=NTc4MTIwNjQ2YQ=="><i class="fa-brands fa-threads"></i></i></a>
+        <a href="http://www.linkedin.com/in/the-open-window-160925406"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="footer-bottom">
+      <div class="bottom-links">
+        <a href="termandcondition.html">Terms & Conditions</a>
+        <a href="privacypolicy.html">Privacy Policy</a>
+        <a href="SharingSettings.html">Sharing Settings</a>
+        <a href="WebAccessibility.html">Web Accessibility</a>
+      </div>
+
+      <div class="copyright">
+        © 2026 Open Window. All rights reserved. 
+      </div>
+    </div>
+  </footer>

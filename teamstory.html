@@ -180,25 +180,29 @@
 }
 
 .coming-btn {
-  margin-top: 20px;
-  padding: 12px 28px;
-  font-size: 16px;
-  font-weight: 600;
-  color: white;
-  background: #eb957f;
-  border: none;
+  display: inline-block;
+  padding: 12px 30px;
   border-radius: 30px;
+  background: #eb957f;
+  color: white;
+  text-decoration: none;
+  border: none;
+   display: block;
+  margin: 20px auto;
   cursor: pointer;
-  transition: all 0.3s ease;
   text-align: center;
+  transition: 0.3s;
+      box-shadow: 0 8px 0 #8b685f, 0 10px 18px rgba(0, 0, 0, 0.25);
 }
 
-/* Hover effect */
 .coming-btn:hover {
-  background: white;
-  color: #eb957f;
-  transform: translateY(-2px);
+  background: #996767;
 }
+
+.coming-btn:active {
+  transform: scale(0.97);
+}
+
 
 /* Mobile responsive */
 @media (max-width: 768px) {
