@@ -655,6 +655,18 @@
  (Optional)"></textarea>
       </div>
 
+      <!-- STEP 14 -->
+      <div class="step">
+        <h2>How did u hear about us? </h2>
+
+        <label><input type="checkbox"> Instagram </label>
+        <label><input type="checkbox"> YouTube </label>
+        <label><input type="checkbox">Referred by a friend</label>
+        <label><input type="checkbox"> Google </label>
+        <label><input type="checkbox"> Other</label>
+
+      </div>
+
       <!-- STEP 11 -->
       <div class="step">
         <h2>11. Consent</h2>
@@ -684,150 +696,150 @@
 
   <script>
 
-const steps = document.querySelectorAll(".step");
-const nextBtn = document.getElementById("nextBtn");
-const prevBtn = document.getElementById("prevBtn");
-const submitBtn = document.getElementById("submitBtn");
-const progressBar = document.getElementById("progressBar");
+    const steps = document.querySelectorAll(".step");
+    const nextBtn = document.getElementById("nextBtn");
+    const prevBtn = document.getElementById("prevBtn");
+    const submitBtn = document.getElementById("submitBtn");
+    const progressBar = document.getElementById("progressBar");
 
-let currentStep = 0;
+    let currentStep = 0;
 
-// SHOW STEP
-function showStep(index) {
+    // SHOW STEP
+    function showStep(index) {
 
-  steps.forEach(step => step.classList.remove("active"));
+      steps.forEach(step => step.classList.remove("active"));
 
-  steps[index].classList.add("active");
+      steps[index].classList.add("active");
 
-  const progress = (index / (steps.length - 1)) * 100;
+      const progress = (index / (steps.length - 1)) * 100;
 
-  progressBar.style.width = progress + "%";
+      progressBar.style.width = progress + "%";
 
-  updateButtons();
-}
+      updateButtons();
+    }
 
-// BUTTON CONTROL
-function updateButtons() {
+    // BUTTON CONTROL
+    function updateButtons() {
 
-  if (currentStep === steps.length - 1) {
+      if (currentStep === steps.length - 1) {
 
-    submitBtn.style.display = "inline-block";
-    nextBtn.style.display = "none";
+        submitBtn.style.display = "inline-block";
+        nextBtn.style.display = "none";
 
-  } else {
+      } else {
 
-    submitBtn.style.display = "none";
-    nextBtn.style.display = "inline-block";
-  }
-}
+        submitBtn.style.display = "none";
+        nextBtn.style.display = "inline-block";
+      }
+    }
 
-// NEXT
-nextBtn.addEventListener("click", () => {
+    // NEXT
+    nextBtn.addEventListener("click", () => {
 
-  if (currentStep < steps.length - 1) {
+      if (currentStep < steps.length - 1) {
 
-    currentStep++;
+        currentStep++;
 
+        showStep(currentStep);
+      }
+    });
+
+    // PREV
+    prevBtn.addEventListener("click", () => {
+
+      if (currentStep > 0) {
+
+        currentStep--;
+
+        showStep(currentStep);
+      }
+    });
+
+    // INIT
     showStep(currentStep);
-  }
-});
 
-// PREV
-prevBtn.addEventListener("click", () => {
+    // SUBMIT FORM
+    document.getElementById("quizForm").addEventListener("submit", function (e) {
 
-  if (currentStep > 0) {
+      e.preventDefault();
 
-    currentStep--;
+      const formData = {
 
-    showStep(currentStep);
-  }
-});
+        formType: "teen",
 
-// INIT
-showStep(currentStep);
+        fullName: document.querySelector('input[placeholder="Full Name"]').value,
+        pronouns: document.querySelector('input[placeholder="Pronouns (optional)"]').value,
+        age: document.querySelector('input[type="number"]').value,
+        gender: document.querySelectorAll("select")[0].value,
 
-// SUBMIT FORM
-document.getElementById("quizForm").addEventListener("submit", function (e) {
+        email: document.querySelectorAll('input[type="email"]')[0].value,
+        phone: document.querySelectorAll('input[type="tel"]')[0].value,
+        country: document.querySelector('input[placeholder="Country of Residence"]').value,
 
-  e.preventDefault();
+        parentName: document.querySelector('input[placeholder="Parent/Guardian Name"]').value,
+        parentPhone: document.querySelectorAll('input[type="tel"]')[1].value,
+        parentEmail: document.querySelectorAll('input[type="email"]')[1].value,
 
-  const formData = {
+        concerns: document.querySelector("textarea").value,
+        otherConcern: document.querySelector('input[placeholder="Other"]').value,
 
-    formType: "teen",
+        wellbeing: document.querySelectorAll("select")[1].value,
+        duration: document.querySelectorAll("select")[2].value,
 
-    fullName: document.querySelector('input[placeholder="Full Name"]').value,
-    pronouns: document.querySelector('input[placeholder="Pronouns (optional)"]').value,
-    age: document.querySelector('input[type="number"]').value,
-    gender: document.querySelectorAll("select")[0].value,
+        therapyHistory: document.querySelectorAll("select")[3].value,
+        therapyDetails: document.querySelectorAll("textarea")[1].value,
 
-    email: document.querySelectorAll('input[type="email"]')[0].value,
-    phone: document.querySelectorAll('input[type="tel"]')[0].value,
-    country: document.querySelector('input[placeholder="Country of Residence"]').value,
+        goals: document.querySelectorAll("textarea")[2].value,
 
-    parentName: document.querySelector('input[placeholder="Parent/Guardian Name"]').value,
-    parentPhone: document.querySelectorAll('input[type="tel"]')[1].value,
-    parentEmail: document.querySelectorAll('input[type="email"]')[1].value,
+        comfortPreference: document.querySelectorAll("select")[4].value,
+        comfortNotes: document.querySelectorAll("textarea")[3].value,
 
-    concerns: document.querySelector("textarea").value,
-    otherConcern: document.querySelector('input[placeholder="Other"]').value,
+        sessionFormat: document.querySelectorAll("select")[5].value,
+        timePreference: document.querySelectorAll("select")[6].value,
 
-    wellbeing: document.querySelectorAll("select")[1].value,
-    duration: document.querySelectorAll("select")[2].value,
+        safety: document.querySelectorAll("select")[7].value,
 
-    therapyHistory: document.querySelectorAll("select")[3].value,
-    therapyDetails: document.querySelectorAll("textarea")[1].value,
+        finalAnswer: document.querySelectorAll("textarea")[4].value,
 
-    goals: document.querySelectorAll("textarea")[2].value,
+        consent: document.querySelector('input[type="checkbox"]').checked
+      };
 
-    comfortPreference: document.querySelectorAll("select")[4].value,
-    comfortNotes: document.querySelectorAll("textarea")[3].value,
+      fetch("https://script.google.com/macros/s/AKfycbxuf6YUW_pzu5Z-7Mf-EjG7lNYrRBJRmylZnbZQZJMKUNL979bsCfXzR9J86lH4NBM0/exec", {
+        method: "POST",
+        body: JSON.stringify(formData)
+      })
 
-    sessionFormat: document.querySelectorAll("select")[5].value,
-    timePreference: document.querySelectorAll("select")[6].value,
+        .then(res => res.text())
 
-    safety: document.querySelectorAll("select")[7].value,
+        .then(data => {
 
-    finalAnswer: document.querySelectorAll("textarea")[4].value,
+          console.log(data);
 
-    consent: document.querySelector('input[type="checkbox"]').checked
-  };
+          alert("Form submitted successfully!");
 
-  fetch("https://script.google.com/macros/s/AKfycbxuf6YUW_pzu5Z-7Mf-EjG7lNYrRBJRmylZnbZQZJMKUNL979bsCfXzR9J86lH4NBM0/exec", {
-  method: "POST",
-  body: JSON.stringify(formData)
-})
+          document.getElementById("quizForm").reset();
+        })
 
-  .then(res => res.text())
+        .catch(err => {
 
-  .then(data => {
+          console.error(err);
 
-    console.log(data);
+          alert("Error submitting form");
+        });
 
-    alert("Form submitted successfully!");
+    });
 
-    document.getElementById("quizForm").reset();
-  })
+    // NAVBAR
+    const toggle = document.getElementById("menu-toggle");
 
-  .catch(err => {
+    const navLinks = document.getElementById("nav-links");
 
-    console.error(err);
+    toggle.addEventListener("click", function () {
 
-    alert("Error submitting form");
-  });
+      navLinks.classList.toggle("active");
+    });
 
-});
-
-// NAVBAR
-const toggle = document.getElementById("menu-toggle");
-
-const navLinks = document.getElementById("nav-links");
-
-toggle.addEventListener("click", function () {
-
-  navLinks.classList.toggle("active");
-});
-
-</script>
+  </script>
 
   <!-- Footer -->
   <footer class="footer">
@@ -845,39 +857,39 @@ toggle.addEventListener("click", function () {
         <!-- <a href="login.html">Log In </a> -->
         <a href="getstart.html">Lets Start</a>
       </div>
- <div class="social-icons">
+      <div class="social-icons">
 
-  <!-- Instagram -->
-  <a href="https://www.instagram.com/openwindow.co?igsh=MTM4dnRtenFhdWNlYQ%3D%3D&utm_source=qr">
-    <i class="fab fa-instagram"></i>
-  </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/openwindow.co?igsh=MTM4dnRtenFhdWNlYQ%3D%3D&utm_source=qr">
+          <i class="fab fa-instagram"></i>
+        </a>
 
-  <!-- YouTube -->
-  <a href="https://youtube.com/@theopenwindow?si=acUKdo98Gt6AoaY8">
-    <i class="fab fa-youtube"></i>
-  </a>
+        <!-- YouTube -->
+        <a href="https://youtube.com/@theopenwindow?si=acUKdo98Gt6AoaY8">
+          <i class="fab fa-youtube"></i>
+        </a>
 
-  <!-- LinkedIn -->
-  <a href="http://www.linkedin.com/in/the-open-window-160925406">
-    <i class="fab fa-linkedin-in"></i>
-  </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/company/the-open-window-co/">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
 
-  <!-- Threads -->
-  <a href="https://www.threads.com/@openwindow.co?igshid=NTc4MTIwNjQ2YQ==">
-    <i class="fa-brands fa-threads"></i>
-  </a>
+        <!-- Threads -->
+        <a href="https://www.threads.com/@openwindow.co?igshid=NTc4MTIwNjQ2YQ==">
+          <i class="fa-brands fa-threads"></i>
+        </a>
 
-  <!-- Facebook -->
-  <a href="https://www.facebook.com/profile.php?id=61573356484595">
-    <i class="fab fa-facebook-f"></i>
-  </a>
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/profile.php?id=61573356484595">
+          <i class="fab fa-facebook-f"></i>
+        </a>
 
-  <!-- X / Twitter -->
-  <a href="#">
-    <i class="fab fa-x-twitter"></i>
-  </a>
+        <!-- X / Twitter -->
+        <a href="https://x.com/openwindowco/status/2059595956107227211?s=20">
+          <i class="fab fa-x-twitter"></i>
+        </a>
 
-</div>
+      </div>
     </div>
 
     <hr>

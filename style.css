@@ -3228,7 +3228,7 @@ body {
   /* pushes left & right */
   align-items: center;
   padding: 10px 40px;
-  margin-bottom: -64px;
+  margin-bottom: 18px;
 }
 
 /* LOGO SIZE */
@@ -3743,10 +3743,15 @@ body {
   .login-btn,
   .start-btn {
     width: auto;
-    padding: 10px 18px;
+    /* padding: 10px 18px;
     font-size: 13px;
     margin-left: 191px;
-    margin-top: 31px;
+    margin-top: 31px; */
+
+    padding: 12px 32px;
+        font-size: 13px;
+        margin-left: 197px;
+        margin-top: -30px;
     box-shadow: 0 8px 0 #8b685f, 0 10px 18px rgba(0, 0, 0, 0.25);
   }
 
@@ -3986,4 +3991,39 @@ body {
   object-fit: cover;
   border-radius: 50%;
   /* optional for circle image */
+}
+
+
+
+/* air baloon */
+.window-card{
+  position: relative;
+}
+
+.air-balloon{
+  position: absolute;
+  top: -79px;
+    right: -78px;   /* move left/right */
+  width: 80px;    /* balloon size */
+  z-index: 10;
+}
+
+/* phone view
+ */
+
+ @media (max-width: 768px) {
+
+  .air-balloon{
+    position: relative;
+    display: block;
+    margin: -47px auto 0;
+        top: 0px;
+        right: 0px;
+        left: 125px;
+    width: 70px;
+  }
+  .window-card .air-balloon{
+    display: none;
+  }
+
 }
