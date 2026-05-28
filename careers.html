@@ -128,16 +128,16 @@
     text-align: center;
   }
 }
-/* text */
-.title {
-  font-weight: 500;
-  font-size: 18px;
-  margin-bottom: 10px;
+
+/* new text */
+.section-title {
+  font-size: 22px;
+  margin-bottom: 15px;
   color: #333;
 }
 
 .desc {
-  text-align: justify;   /* 🔥 this justifies the text */
+  text-align: justify;   /* 🔥 justified text */
   line-height: 1.7;
   margin-bottom: 12px;
   color: #555;
@@ -184,11 +184,9 @@
   object-fit: cover;   /* makes it responsive */
   z-index: 0;
 }
-.how-text .title  {
-  color: #507cb0;
-  font-family: 'Ikaros';
-  font-size: 22px;
-    
+.section-title {
+    color: #507cb0;
+    font-family: 'Ikaros';
 }
     </style>
 </head>
@@ -205,7 +203,6 @@
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-
         <ul class="nav-links" id="nav-links">
             <li><a href="index.html">HOME</a></li>
             <!-- <li><a href="careers.html">CAREERS</a></li> -->
@@ -215,8 +212,6 @@
             <li><a href="openposition.html">OPEN POSITIONS</a></li>
         </ul>
     </nav>
-
-
     <!-- ===== HOW IT WORKS ===== -->
 
     <div class="how-container">
@@ -226,9 +221,9 @@
             <img src="Careers.png" alt="phylosophy">
         </div>
 
-    <div class="how-text">
+       <div class="how-text">
 
-  <p class="title"><STRong>Careers</STRong></p>
+  <h2 class="section-title">Careers</h2>
 
   <p class="desc">
    We are building a workplace where mental health professionals can do meaningful work without burning out, shrinking themselves, or compromising ethics.
@@ -238,7 +233,7 @@
     At The Open Window, we believe the people who hold space deserve to be held too.
   </p>
 
-
+</div>
         </div>
 
     </div>
@@ -269,10 +264,11 @@
         <a href="library.html">Library</a>
         <a href="careers.html">Careers</a>
         <a href="contactus.html">Contact Us</a>
-        <a href="login.html">Log In </a>
+        <!-- <a href="login.html">Log In </a> -->
         <a href="getstart.html">Lets Start</a>
       </div>
-<div class="social-icons">
+
+      <div class="social-icons">
 
   <!-- Instagram -->
   <a href="https://www.instagram.com/openwindow.co?igsh=MTM4dnRtenFhdWNlYQ%3D%3D&utm_source=qr">
@@ -305,7 +301,7 @@
   </a>
 
 </div>
-    </div>
+      </div>
 
     <hr>
 
@@ -318,7 +314,7 @@
       </div>
 
       <div class="copyright">
-        © 2026 Open Window. All rights reserved. 
+        © 2026 Open Window. All rights reserved.
       </div>
     </div>
   </footer>
