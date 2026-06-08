@@ -2,624 +2,682 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Open Window</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Open Window</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
 
-    <style>
-        
+  <style>
+    .how-image img {
+      width: 100%;
+      max-width: 350px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+    }
 
-        .how-image img {
-            width: 100%;
-            max-width: 350px;
-            aspect-ratio: 1 / 1;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-            margin: 0 auto;
-        }
-        /* Default desktop */
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 30px;
-}
+    /* Default desktop */
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
 
-/* Hide menu toggle on desktop */
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-}
+    /* Hide menu toggle on desktop */
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
 
-/* Mobile */
-@media (max-width: 768px) {
+    /* Mobile */
+    @media (max-width: 768px) {
 
-  .menu-toggle {
-    display: block;
-  }
+      .menu-toggle {
+        display: block;
+      }
 
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    /* background: #cfd8d3; */
-    background: white;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    display: none;
-    padding: 20px 0;
-  }
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        /* background: #cfd8d3; */
+        background: white;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        padding: 20px 0;
+      }
 
-  .nav-links.active {
-    display: flex;
-  }
-}
+      .nav-links.active {
+        display: flex;
+      }
+    }
 
-/* ================= LOGIN BACKGROUND SECTION ================= */
-.login-section{
-  background:url(coming\ soon.png) no-repeat center center;
-  background-size:cover;
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;  
-  position:relative; 
-  /* padding:40px 20px; */
-  padding-top: 0px;
-}
+    /* ================= LOGIN BACKGROUND SECTION ================= */
+    .login-section {
+      background: url(coming\ soon.png) no-repeat center center;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      /* padding:40px 20px; */
+      padding-top: 0px;
+    }
 
-.contact-section {
-  position: relative;
-  padding: 60px 20px;
+    .contact-section {
+      position: relative;
+      padding: 60px 20px;
 
-  background: url("coming soon.png") no-repeat center center;
-  background-size: cover;
+      background: url("coming-soon.webp") center center / cover no-repeat;
+      background-size: cover;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-/* Overlay */
-.login-section::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  /* background: #f4f4f4;
+    /* Overlay */
+    .login-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      /* background: #f4f4f4;
   z-index: 1; */
-  /* background:rgba(0,0,0,0.4); */
-}
+      /* background:rgba(0,0,0,0.4); */
+    }
 
-.login-section {
-  position:relative;
-  z-index:2;
-  
-}
+    .login-section {
+      position: relative;
+      z-index: 2;
 
-/* ================= LOGIN CARD ================= */
-.login-card{
-  background:white;
-  padding:40px;
-  border-radius:20px;
-  width:100%;
-  max-width:400px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.2);
-  text-align:center;
-  margin-top:-2px;
-}
+    }
 
-.login-card input{
-  width:100%;
-  padding:12px;
-  margin-bottom:15px;
-  border-radius:25px;
-  border:1px solid #ccc;
-}
+    /* ================= LOGIN CARD ================= */
+    .login-card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      margin-top: -2px;
+    }
 
-.login-card button{
-  width:100%;
-  padding:12px;
-  border:none;
-  border-radius:25px;
-  background:#f3aaaa;
-  color:white;
-  cursor:pointer;
-  transition:0.3s;
-}
+    .login-card input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+    }
 
-.login-card button:hover{
-  background:#996767;
-}
+    .login-card button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      background: #f3aaaa;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-.forgot{
-  display:block;
-  margin-top:10px;
-  font-size:14px;
-  text-decoration:none;
-  color:#333;
-}
+    .login-card button:hover {
+      background: #996767;
+    }
 
-.how-waves svg {
-    display: block;
-    width: 100%;
-    height: 109px;
-}
-/* ===== FIX LOGO GAP ===== */
-.brand img {
-    height: 160px;   /* reduced from 150px */
-    width: auto;
-    display: block;
-}
+    .forgot {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+      text-decoration: none;
+      color: #333;
+    }
 
-.brand-header {
-    text-align: center;
-    padding: 5px 0;   /* reduced gap */
-    margin-bottom: 0; /* remove extra space */
-}
+    .how-waves svg {
+      display: block;
+      width: 100%;
+      height: 109px;
+    }
 
-/* ===== NAVBAR GAP FIX ===== */
-.navbar {
-    margin-top: 0;
-    padding-top: 5px;
-}
+    /* ===== FIX LOGO GAP ===== */
+    .brand img {
+      height: 160px;
+      /* reduced from 150px */
+      width: auto;
+      display: block;
+    }
 
-/* ===== REMOVE DUPLICATE login-section (IMPORTANT) */
-/* KEEP ONLY THIS ONE */
-.login-section {
-  position: relative;
-  width: 100%;
-  height: 100vh;   /* responsive full screen */
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    .brand-header {
+      text-align: center;
+      padding: 5px 0;
+      /* reduced gap */
+      margin-bottom: 0;
+      /* remove extra space */
+    }
 
-/* ===== VIDEO FIX ===== */
-.bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   /* makes it responsive */
-  z-index: 0;
-}
+    /* ===== NAVBAR GAP FIX ===== */
+    .navbar {
+      margin-top: 0;
+      padding-top: 5px;
+    }
+
+    /* ===== REMOVE DUPLICATE login-section (IMPORTANT) */
+    /* KEEP ONLY THIS ONE */
+    .login-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      /* responsive full screen */
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ===== VIDEO FIX ===== */
+    .bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* makes it responsive */
+      z-index: 0;
+    }
 
 
-.coming-btn {
-  margin-top: 20px;
-  padding: 12px 28px;
-  font-size: 16px;
-  font-weight: 600;
-  color: white;
-  background: #eb957f;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: center;
-}
+    .coming-btn {
+      margin-top: 20px;
+      padding: 12px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+      background: #eb957f;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
 
-/* Hover effect */
-.coming-btn:hover {
-  background: white;
-  color: #eb957f;
-  transform: translateY(-2px);
-}
+    /* Hover effect */
+    .coming-btn:hover {
+      background: white;
+      color: #eb957f;
+      transform: translateY(-2px);
+    }
 
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .coming-btn {
-    width: 100%;
-    font-size: 14px;
-    padding: 10px;
-  }
-}
-.coming-btn {
-  display: block;
-  margin: 20px auto; /* 👈 centers horizontally */
-}
-.coming-heading {
-  text-align: center;
-  font-size: 22px;
-  font-weight: bold;
-  color: #507cb0;
-  font-family: 'Ikaros';
-}
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .coming-btn {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
 
-.coming-heading {
-  text-align: center;
-  font-size: 22px;
-  margin-top: -149px;
-}
-.contact-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 60px 20px;
-}
+    .coming-btn {
+      display: block;
+      margin: 20px auto;
+      /* 👈 centers horizontally */
+    }
 
-/* TOP TEXT */
-.contact-text {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 18px;
-  color: #333;
-}
+    .coming-heading {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: #507cb0;
+      font-family: 'Ikaros';
+    }
 
-/* CARD */
-.contact-card {
-  background: #f4f6f5;
-  padding: 40px;
-  border-radius: 20px;
-  width: 100%;
-  max-width: 420px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
+    .coming-heading {
+      text-align: center;
+      font-size: 22px;
+      margin-top: -149px;
+    }
 
-.contact-card h2 {
-  text-align: center;
-  margin-bottom: 25px;
-  font-family: 'Ikaros';
-  color: #507cb0;
-}
+    .contact-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+    }
 
-/* INPUT ROW */
-.input-row {
-  display: flex;
-  gap: 10px;
-}
+    /* TOP TEXT */
+    .contact-text {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 18px;
+      color: #333;
+    }
 
-.contact-card input,
-.contact-card textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 25px;
-  border: 1px solid #ccc;
-}
+    /* CARD */
+    .contact-card {
+      background: #f4f6f5;
+      padding: 40px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
 
-.contact-card textarea {
-  border-radius: 15px;
-}
+    .contact-card h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-family: 'Ikaros';
+      color: #507cb0;
+    }
 
-/* BUTTONS */
-.contact-card button {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 25px;
-  background: #eb957f;
-  color: white;
-  cursor: pointer;
-  margin-bottom: 10px;
-  text-align: center;
-}
+    /* INPUT ROW */
+    .input-row {
+      display: flex;
+      gap: 10px;
+    }
 
-.contact-card button:hover {
-  background: white;
-  color: #eb957f;
-}
-.consent-box input[type="checkbox"] {
-  width: 14px;
-  height: 14px;
-  cursor: pointer;
-}
-.whatsapp-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
+    .contact-card input,
+    .contact-card textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+    }
 
-.whatsapp-btn img {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-}
-/* CONSENT */
-.consent-box {
-  display: flex;
-  gap: 10px;
-  font-size: 13px;
-  text-align: left;
-}
+    .contact-card textarea {
+      border-radius: 15px;
+    }
 
-/* BOTTOM INFO */
-.contact-info {
-  margin-top: 30px;
-  text-align: center;
-  color: #444;
-}
+    /* BUTTONS */
+    .contact-card button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      background: #eb957f;
+      color: white;
+      cursor: pointer;
+      margin-bottom: 10px;
+      text-align: center;
+    }
 
-.contact-info .email {
-  color: green;
-  text-decoration: underline;
-}
-.contact-info {
-  text-align: center;
-  margin-top: 30px;
-  color: #444;
-  line-height: 1.6;
-}
-/* MOBILE */
-@media (max-width: 600px) {
-  .input-row {
-    flex-direction: column;
-  }
-}
-.contact-info {
-  width: 90%;
-  max-width: 350px;
+    .contact-card button:hover {
+      background: white;
+      color: #eb957f;
+    }
 
-  margin: 20px auto;
-  padding: 20px;
+    .consent-box input[type="checkbox"] {
+      width: 14px;
+      height: 14px;
+      cursor: pointer;
+    }
 
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
+    .whatsapp-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
 
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 20px;
+    .whatsapp-btn img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
 
-  text-align: center;
-  color: black;
+    /* CONSENT */
+    .consent-box {
+      display: flex;
+      gap: 10px;
+      font-size: 13px;
+      text-align: left;
+    }
 
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
+    /* BOTTOM INFO */
+    .contact-info {
+      margin-top: 30px;
+      text-align: center;
+      color: #444;
+    }
 
-/* Text spacing */
-.contact-info p {
-  margin: 10px 0;
-  font-size: 15px;
-  line-height: 1.5;
-}
+    .contact-info .email {
+      color: green;
+      text-decoration: underline;
+    }
 
-/* Links */
-.contact-info a {
-  color: green;
-  text-decoration: none;
-  transition: 0.3s;
-}
+    .contact-info {
+      text-align: center;
+      margin-top: 30px;
+      color: #444;
+      line-height: 1.6;
+    }
 
-.contact-info a:hover {
-  color: #eb957f;
-}
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .input-row {
+        flex-direction: column;
+      }
+    }
 
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .contact-info {
-    width: 85%;
-    padding: 15px;
-  }
+    .contact-info {
+      width: 90%;
+      max-width: 350px;
 
-  .contact-info p {
-    font-size: 14px;
-  }
-}
-    </style>
+      margin: 20px auto;
+      padding: 20px;
+
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+
+      text-align: center;
+      color: black;
+
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Text spacing */
+    .contact-info p {
+      margin: 10px 0;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* Links */
+    .contact-info a {
+      color: green;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .contact-info a:hover {
+      color: #eb957f;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .contact-info {
+        width: 85%;
+        padding: 15px;
+      }
+
+      .contact-info p {
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- BRAND HEADER -->
-   <header class="brand-header">
-    <div class="brand">
-        <img src="remove logo backgraound.png" alt="The Open Window Logo">
+  <!-- BRAND HEADER -->
+  <header class="brand-header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="logoopenwindow.png" alt="The Open Window">
+      </a>
     </div>
-</header>
+  </header>
 
-    <!-- NAVBAR -->
-    <nav class="navbar" id="navbar">
-        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
 
-        <ul class="nav-links" id="nav-links">
-            <li><a href="index.html">HOME</a></li>
-            <!-- <li><a href="login.html">LOG IN</a></li>  -->
-            <li><a href="windows.html">LETS START</a></li>
-          
-        </ul>
-    </nav>
-<!-- card section -->
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <!-- <li><a href="login.html">LOG IN</a></li>  -->
+      <li><a href="windows.html">LETS START</a></li>
 
-   <!-- ===== CONTACT SECTION ===== -->
-<section class="contact-section">
+    </ul>
+  </nav>
+  <!-- card section -->
 
-  <!-- TEXT ABOVE CARD -->
-  <div class="contact-text">
-    <p>
-      <strong>
-        Have a Question? We are here to help you take the next step with clarity and care.
-      </strong>
-    </p>
-  </div>
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="contact-section">
 
-  <!-- CARD -->
-  <div class="contact-card">
-    <h2>Contact Us</h2>
+    <!-- TEXT ABOVE CARD -->
+    <div class="contact-text">
+      <p>
+        <strong>
+          Have a Question? We are here to help you take the next step with clarity and care.
+        </strong>
+      </p>
+    </div>
 
-    <form id="contactForm">
-      
-      <div class="input-row">
-        <input type="text" id="firstName" placeholder="First Name" required>
-        <input type="text" id="lastName" placeholder="Last Name" required>
-      </div>
+    <!-- CARD -->
+    <div class="contact-card">
+      <h2>Contact Us</h2>
 
-      <input type="email" id="email" placeholder="Email Address" required>
+      <form id="contactForm">
 
-      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+        <div class="input-row">
+          <input type="text" id="firstName" placeholder="First Name" required>
+          <input type="text" id="lastName" placeholder="Last Name" required>
+        </div>
 
-    <button type="submit" class="whatsapp-btn">
-      Submit
-      <!-- <img src="whatsapp.png" alt="WhatsApp"> -->
-    </button>
-      <!-- <button type="button" id="emailBtn">hello@openwindow.co</button> -->
+        <input type="email" id="email" placeholder="Email Address" required>
 
-      <div class="consent-box">
-        <input type="checkbox" id="consent" required>
-        <label for="consent">
-   By clicking "Submit" you agree to the processing of your personal information for the purpose of responding to this inquiry. For more information about how we use and retain your information, please see our Privacy Policy and Terms of Use
-        </label>
-<!-- card -->
+        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
 
-<script>
-const form = document.getElementById("contactForm");
-const emailBtn = document.getElementById("emailBtn");
+        <button type="submit" class="whatsapp-btn">
+          Submit
+          <!-- <img src="whatsapp.png" alt="WhatsApp"> -->
+        </button>
+        <!-- <button type="button" id="emailBtn">hello@openwindow.co</button> -->
 
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
+        <div class="consent-box">
+          <input type="checkbox" id="consent" required>
+          <label for="consent">
+            By clicking "Submit" you agree to the processing of your personal information for the purpose of responding
+            to this inquiry. For more information about how we use and retain your information, please see our Privacy
+            Policy and Terms of Use
+          </label>
+          <!-- card -->
 
-  const consent = document.getElementById("consent");
-  if (!consent.checked) {
-    alert("Please accept consent.");
-    return;
-  }
+          <script>
+            const form = document.getElementById("contactForm");
+            const emailBtn = document.getElementById("emailBtn");
 
-  const firstName = document.getElementById("firstName").value;
-  const lastName = document.getElementById("lastName").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
+            form.addEventListener("submit", function (e) {
+              e.preventDefault();
 
-  const fullMessage =
-`Hello, my name is ${firstName} ${lastName}
+              const consent = document.getElementById("consent");
+              if (!consent.checked) {
+                alert("Please accept consent.");
+                return;
+              }
+
+              const firstName = document.getElementById("firstName").value;
+              const lastName = document.getElementById("lastName").value;
+              const email = document.getElementById("email").value;
+              const message = document.getElementById("message").value;
+
+              const fullMessage =
+                `Hello, my name is ${firstName} ${lastName}
 Email: ${email}
 Message: ${message}`;
 
-  const phoneNumber = "+91 8618938017"; //
-  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(fullMessage)}`;
+              const phoneNumber = "8618938017"; //
+              const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(fullMessage)}`;
 
-  window.open(url, "_blank");
-});
+              window.open(url, "_blank");
+            });
 
-/* EMAIL BUTTON */
-emailBtn.addEventListener("click", function() {
-  const consent = document.getElementById("consent");
-  if (!consent.checked) {
-    alert("Please accept consent.");
-    return;
-  }
+            /* EMAIL BUTTON */
+            emailBtn.addEventListener("click", function () {
+              const consent = document.getElementById("consent");
+              if (!consent.checked) {
+                alert("Please accept consent.");
+                return;
+              }
 
-  const firstName = document.getElementById("firstName").value;
-  const lastName = document.getElementById("lastName").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
+              const firstName = document.getElementById("firstName").value;
+              const lastName = document.getElementById("lastName").value;
+              const email = document.getElementById("email").value;
+              const message = document.getElementById("message").value;
 
-  const subject = "Contact Inquiry";
-  const body =
-`Hello, my name is ${firstName} ${lastName}
+              const subject = "Contact Inquiry";
+              const body =
+                `Hello, my name is ${firstName} ${lastName}
 
 Email: ${email}
 
 Message:
 ${message}`;
 
-  window.location.href =
-    `mailto:hello@openwindow.co?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-});
-</script>
+              window.location.href =
+                `mailto:hello@openwindow.co?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            });
+          </script>
 
-      </div>
+        </div>
 
-    </form>
-  </div>
+      </form>
+    </div>
 
-  <!-- TEXT BELOW CARD -->
- <div class="contact-info">
-  <p><strong>THE OPEN WINDOW</strong></p>
-  <p>WORKDEN HQ #183, Double Road</p>
-  <p>Indiranagar 2nd Stage, Bangalore, India</p>
+    <!-- TEXT BELOW CARD -->
+    <div class="contact-info">
+      <p><strong>THE OPEN WINDOW</strong></p>
+      <p>WORKDEN HQ #183, Double Road</p>
+      <p>Indiranagar 2nd Stage, Bangalore, India</p>
 
-  <!-- EMAIL CLICK -->
-  <p>
-    <a href="mailto:hello@openwindow.co" class="email">
-      hello@openwindow.co
-    </a>
-  </p>
+      <!-- EMAIL CLICK -->
+      <p>
+        <a href="mailto:hello@openwindow.co" class="email">
+          hello@openwindow.co
+        </a>
+      </p>
 
-  <!-- PHONE CLICK -->
-  <p>
- <!-- <p>
+      <!-- PHONE CLICK -->
+      <p>
+        <!-- <p>
   <a href="tel:+918618938017" class="phone">
     <i class="fas fa-phone"></i> +91 86189 38017</a>
 </p> -->
 
-<p>
-  <a href="https://wa.me/918618938017" class="whatsapp-contact" target="_blank">
-    <i class="fab fa-whatsapp"></i>    +91 86189 38017</a>
-</p>
+      <p>
+        <a href="https://wa.me/918618938017" class="social-contact whatsapp" target="_blank">
+          <i class="fab fa-whatsapp"></i> +91 86189 38017
+        </a>
+      </p>
 
-</section>
+      <p>
+        <a href="https://www.instagram.com/openwindow.co?igsh=MTM4dnRtenFhdWNlYQ%3D%3D&utm_source=qr"
+          class="social-contact" target="_blank">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+      </p>
+
+      <p>
+        <a href="https://youtube.com/@theopenwindow?si=acUKdo98Gt6AoaY8" class="social-contact" target="_blank">
+          <i class="fab fa-youtube"></i> YouTube
+        </a>
+      </p>
+
+      <p>
+        <a href="https://www.linkedin.com/company/the-open-window-co/" class="social-contact" target="_blank">
+          <i class="fab fa-linkedin-in"></i> LinkedIn
+        </a>
+      </p>
+
+      <p>
+        <a href="https://www.threads.com/@openwindow.co?igshid=NTc4MTIwNjQ2YQ==" class="social-contact" target="_blank">
+          <i class="fa-brands fa-threads"></i> Threads
+        </a>
+      </p>
+
+      <p>
+        <a href="https://www.facebook.com/profile.php?id=61573356484595" class="social-contact" target="_blank">
+          <i class="fab fa-facebook-f"></i> Facebook
+        </a>
+      </p>
+
+      <p>
+        <a href="https://x.com/openwindowco/status/2059595956107227211?s=20" class="social-contact" target="_blank">
+          <i class="fab fa-x-twitter"></i> X (Twitter)
+        </a>
+      </p>
+
+  </section>
 
 
-  
-</section>
 
-     <script>
-  const toggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
+  </section>
 
-  toggle.addEventListener("click", function () {
-    navLinks.classList.toggle("active");
-  });
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
 
-</script>
+    toggle.addEventListener("click", function () {
+      navLinks.classList.toggle("active");
+    });
 
-      <!-- Footer -->
+  </script>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-top">
       <div class="footer-links">
-          <a href="index.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="forcompanies.html">For Companies</a>
         <a href="advise.html">Advice</a>
-        <a href="getstart.html">Find a Therapist</a>
-        <a href="index.html#faq">FAQ</a>
+        <a href="windows.html">Find a Therapist</a>
+        <a href="individual.html">FAQ</a>
         <a href="library.html">Library</a>
         <a href="careers.html">Careers</a>
         <a href="contactus.html">Contact Us</a>
         <!-- <a href="login.html">Log In </a> -->
-        <a href="getstart.html">Lets Start</a>
+        <a href="windows.html">Lets Start</a>
       </div>
 
-     <div class="social-icons">
+      <div class="social-icons">
 
-  <!-- Instagram -->
-   <a href="https://www.instagram.com/openwindow.co?igsh=MTM4dnRtenFhdWNlYQ%3D%3D&utm_source=qr">
-    <i class="fab fa-instagram"></i>
-  </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/openwindow.co?igsh=MTM4dnRtenFhdWNlYQ%3D%3D&utm_source=qr">
+          <i class="fab fa-instagram"></i>
+        </a>
 
-  <!-- YouTube -->
-  <a href="https://youtube.com/@theopenwindow?si=acUKdo98Gt6AoaY8">
-    <i class="fab fa-youtube"></i>
-  </a>
+        <!-- YouTube -->
+        <a href="https://youtube.com/@theopenwindow?si=acUKdo98Gt6AoaY8">
+          <i class="fab fa-youtube"></i>
+        </a>
 
-  <!-- LinkedIn -->
-  <a href="https://www.linkedin.com/company/the-open-window-co/">
-    <i class="fab fa-linkedin-in"></i>
-  </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/company/the-open-window-co/">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
 
-  <!-- Threads -->
-  <a href="https://www.threads.com/@openwindow.co?igshid=NTc4MTIwNjQ2YQ==">
-    <i class="fa-brands fa-threads"></i>
-  </a>
+        <!-- Threads -->
+        <a href="https://www.threads.com/@openwindow.co?igshid=NTc4MTIwNjQ2YQ==">
+          <i class="fa-brands fa-threads"></i>
+        </a>
 
-  <!-- Facebook -->
-  <a href="https://www.facebook.com/profile.php?id=61573356484595">
-    <i class="fab fa-facebook-f"></i>
-  </a>
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/profile.php?id=61573356484595">
+          <i class="fab fa-facebook-f"></i>
+        </a>
 
-  <!-- X / Twitter -->
-  <a href="https://x.com/openwindowco/status/2059595956107227211?s=20">
-    <i class="fab fa-x-twitter"></i>
-  </a>
+        <!-- X / Twitter -->
+        <a href="https://x.com/openwindowco/status/2059595956107227211?s=20">
+          <i class="fab fa-x-twitter"></i>
+        </a>
 
-</div>
+      </div>
     </div>
 
     <hr>
@@ -633,7 +691,7 @@ ${message}`;
       </div>
 
       <div class="copyright">
-        © 2026 Open Window. All rights reserved. 
+        © 2026 Open Window. All rights reserved.
       </div>
     </div>
   </footer>

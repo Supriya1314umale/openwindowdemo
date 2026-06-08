@@ -465,9 +465,11 @@
 
   <!-- BRAND HEADER -->
   <header class="brand-header">
-    <div class="brand">
-      <img src="remove logo backgraound.png" alt="The Open Window Logo">
-    </div>
+   <div class="logo">
+  <a href="index.html">
+    <img src="logoopenwindow.png" alt="The Open Window">
+  </a>
+</div>
   </header>
 
   <!-- NAVBAR -->
@@ -774,6 +776,10 @@ I understand this form is for inquiry purposes and not a substitute for emergenc
     safety: document.getElementById("safety").value,
     finalAnswer: document.querySelectorAll("textarea")[2].value,
 
+    hearFrom: Array.from(document.querySelectorAll('.step:nth-child(14) input[type="checkbox"]'))
+      .filter(checkbox => checkbox.checked)
+      .map(checkbox => checkbox.parentElement.textContent.trim()),
+
     consent: document.querySelector('input[type="checkbox"]').checked
   };
       fetch("https://script.google.com/macros/s/AKfycbyQbBF7w0JPsVFWsesjYccjEJi1Py5moxXqoAu4FFFKpTXdjSevPeHU8Wuj5QWz3EEs/exec", {
@@ -804,17 +810,17 @@ toggle.addEventListener("click", function () {
   <footer class="footer">
     <div class="footer-top">
       <div class="footer-links">
-        <a href="index.html">Home</a>
+           <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="forcompanies.html">For Companies</a>
         <a href="advise.html">Advice</a>
-        <a href="getstart.html">Find a Therapist</a>
-        <a href="index.html#faq">FAQ</a>
+        <a href="windows.html">Find a Therapist</a>
+        <a href="individual.html">FAQ</a>
         <a href="library.html">Library</a>
         <a href="careers.html">Careers</a>
         <a href="contactus.html">Contact Us</a>
         <!-- <a href="login.html">Log In </a> -->
-        <a href="getstart.html">Lets Start</a>
+        <a href="windows.html">Lets Start</
       </div>
 
     <div class="social-icons">
