@@ -75,7 +75,7 @@
       position: relative;
       /* allows image to move freely */
       /* padding: 40px 20px; */
-      flex-wrap:nowrap;
+      flex-wrap: nowrap;
       flex-direction: row;
       /* for mobile */
 
@@ -106,7 +106,7 @@
       object-fit: cover;
       display: block;
       /* margin-top: -324px; */
-          /* margin-bottom: 350px; */
+      /* margin-bottom: 350px; */
 
     }
 
@@ -253,7 +253,7 @@
       /* aligns under text */
       margin-top: 25px;
     }
-    
+
     /* mobile */
     @media (max-width: 768px) {
       .button-group {
@@ -316,7 +316,8 @@
       background: #eb957f;
       color: white;
       transition: all 0.3s ease;
-box-shadow: 0 8px 0 #8b685f, 0 10px 18px rgba(0, 0, 0, 0.25);    }
+      box-shadow: 0 8px 0 #8b685f, 0 10px 18px rgba(0, 0, 0, 0.25);
+    }
 
     .custom-btn:hover {
       background: white;
@@ -372,134 +373,137 @@ box-shadow: 0 8px 0 #8b685f, 0 10px 18px rgba(0, 0, 0, 0.25);    }
         /* 👈 smaller on mobile */
       }
     }
+
     /* =========================
    MOBILE RESPONSIVE CSS
 ========================= */
-@media (max-width: 768px) {
+    @media (max-width: 768px) {
 
-  /* MAIN CONTAINER */
-  .how-container {
-    flex-direction: column;
-    padding: 20px 15px;
-    gap: 25px;
-    text-align: center;
-    flex-wrap: wrap;
-  }
+      /* MAIN CONTAINER */
+      .how-container {
+        flex-direction: column;
+        padding: 20px 15px;
+        gap: 25px;
+        text-align: center;
+        flex-wrap: wrap;
+      }
 
-  /* IMAGE SECTION */
-  .how-image {
-    max-width: 220px;
-    width: 100%;
-    margin: 0 auto;
-  }
+      /* IMAGE SECTION */
+      .how-image {
+        max-width: 220px;
+        width: 100%;
+        margin: 0 auto;
+      }
 
-  .how-image img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-  }
+      .how-image img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
 
-  /* TEXT SECTION */
-  .how-text {
-    max-width: 100%;
-    padding: 0 10px;
-    text-align: left;
-  }
+      /* TEXT SECTION */
+      .how-text {
+        max-width: 100%;
+        padding: 0 10px;
+        text-align: left;
+      }
 
-  .section-title {
-    font-size: 28px;
-    text-align: center;
-    margin-bottom: 15px;
-  }
+      .section-title {
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 15px;
+      }
 
-  .desc {
-    font-size: 15px;
-    line-height: 1.8;
-    text-align: justify;
-  }
+      .desc {
+        font-size: 15px;
+        line-height: 1.8;
+        text-align: justify;
+      }
 
-  /* BUTTONS */
-  .button-group {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 10px;
-    flex-wrap: wrap;
-  }
+      /* BUTTONS */
+      .button-group {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+      }
 
-  .custom-btn {
-    width: 85%;
-    max-width: 260px;
-    text-align: center;
-    padding: 12px 18px;
-    font-size: 15px;
-  }
+      .custom-btn {
+        width: 85%;
+        max-width: 260px;
+        text-align: center;
+        padding: 12px 18px;
+        font-size: 15px;
+      }
 
-  /* NAVBAR */
-  .navbar {
-    padding: 10px 15px;
-  }
+      /* NAVBAR */
+      .navbar {
+        padding: 10px 15px;
+      }
 
-  .nav-links {
-    top: 60px;
-    width: 100%;
-    padding: 15px 0;
-    z-index: 999;
-  }
+      .nav-links {
+        top: 60px;
+        width: 100%;
+        padding: 15px 0;
+        z-index: 999;
+      }
 
-  .nav-links li {
-    margin: 10px 0;
-  }
+      .nav-links li {
+        margin: 10px 0;
+      }
 
-  /* LOGO */
-  .brand img {
-    height: 110px;
-  }
+      /* LOGO */
+      .brand img {
+        height: 110px;
+      }
 
-  /* FOOTER */
-  .footer-top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-  }
+      /* FOOTER */
+      .footer-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+      }
 
-  .footer-links {
-    display: flex;
+      .footer-links {
+        display: flex;
         flex-direction: row;
-            gap: 10px;
-  }
+        gap: 10px;
+        padding-right: 70px;
 
-  .footer-bottom {
-    text-align: center;
-    padding: 15px;
-  }
+      }
 
-  .bottom-links {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-    margin-bottom: 10px;
-  }
+      .footer-bottom {
+        text-align: center;
+        padding: 15px;
+      }
 
-  .social-icons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 15px;
-  }
+      .bottom-links {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        margin-bottom: 10px;
+      }
 
-  /* FORM INPUTS */
-  input,
-  select,
-  textarea {
-    width: 100%;
-    max-width: 100%;
-    font-size: 15px;
-  }
-}
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+      }
+
+      /* FORM INPUTS */
+      input,
+      select,
+      textarea {
+        width: 100%;
+        max-width: 100%;
+        font-size: 15px;
+      }
+    }
   </style>
 </head>
 
@@ -508,10 +512,10 @@ box-shadow: 0 8px 0 #8b685f, 0 10px 18px rgba(0, 0, 0, 0.25);    }
   <!-- BRAND HEADER -->
   <header class="brand-header">
     <div class="logo">
-  <a href="index.html">
-    <img src="logoopenwindow.png" alt="The Open Window">
-  </a>
-</div>
+      <a href="index.html">
+        <img src="logoopenwindow.png" alt="The Open Window">
+      </a>
+    </div>
   </header>
 
   <!-- NAVBAR -->
@@ -533,15 +537,15 @@ box-shadow: 0 8px 0 #8b685f, 0 10px 18px rgba(0, 0, 0, 0.25);    }
 
     <!-- IMAGE -->
     <div class="how-image">
-     
+
       <img src="Open_Couple-removebg-preview.png" alt="phylosophy">
-      <p class="req" style= "   margin-bottom:px;
+      <p class="req" style="   margin-bottom:px;
     text-align: center;
     color: #5ead4e;">
-<strong> Request a consultation :</strong> 
-</p>
+        <strong> Request a consultation :</strong>
+      </p>
       <div class="button-group">
-         
+
 
         <a href="couple form.html" class="custom-btn">Form</a>
 
@@ -550,62 +554,64 @@ box-shadow: 0 8px 0 #8b685f, 0 10px 18px rgba(0, 0, 0, 0.25);    }
         </a>
 
         <a href="mailto:hello@openwindow.com" class="custom-btn">
-          Email 
+          Email
         </a>
 
       </div>
     </div>
 
-  <div class="how-text">
+    <div class="how-text">
 
-    <h2 class="section-title">Couples Therapy</h2>
+      <h2 class="section-title">Couples Therapy</h2>
 
-    <p class="desc">
+      <p class="desc">
 
-    </p>
+      </p>
 
-    <p class="desc">
-      Couples therapy isn't just for when things feel like they're falling apart, it can also be a space to better
-      understand each other and your relationship.
-    </p>
+      <p class="desc">
+        Couples therapy isn't just for when things feel like they're falling apart, it can also be a space to better
+        understand each other and your relationship.
+      </p>
 
-    <p class="desc">
-      It offers a structured, neutral environment where both partners can speak openly, feel heard, and work through
-      challenges together. This might include communication difficulties, recurring conflicts, trust concerns, emotional
-      distance, or navigating important life decisions.
-    </p>
+      <p class="desc">
+        It offers a structured, neutral environment where both partners can speak openly, feel heard, and work through
+        challenges together. This might include communication difficulties, recurring conflicts, trust concerns,
+        emotional
+        distance, or navigating important life decisions.
+      </p>
 
-    <p class="desc">
-      The focus isn't on "who's right," but on understanding what's happening between you and finding ways to move
-      forward that feel healthier and more supportive for both of you. </p>
+      <p class="desc">
+        The focus isn't on "who's right," but on understanding what's happening between you and finding ways to move
+        forward that feel healthier and more supportive for both of you. </p>
 
-    <p class="desc">
-      Whether you're looking to repair, reconnect, or simply gain clarity, therapy can help you have conversations that
-      are often hard to have on your own. </p>
+      <p class="desc">
+        Whether you're looking to repair, reconnect, or simply gain clarity, therapy can help you have conversations
+        that
+        are often hard to have on your own. </p>
 
-    <p class="desc">
-      Confidentiality
-      <br></br>
-      What you share in therapy stays private.
-      <br></br>
-      Confidentiality is a core part of the process, it helps create a space where you can speak honestly and safely.
-      <br></br>
-      There are a few exceptions, which we'll always be transparent about:
-    <ul>
-      <li>If there is a risk of harm to yourself or someone else</li>
-      <li>If there is concern about abuse or safety</li>
-      <li>If required by law</li>
-    </ul>
+      <p class="desc">
+        Confidentiality
+        <br></br>
+        What you share in therapy stays private.
+        <br></br>
+        Confidentiality is a core part of the process, it helps create a space where you can speak honestly and safely.
+        <br></br>
+        There are a few exceptions, which we'll always be transparent about:
+      <ul>
+        <li>If there is a risk of harm to yourself or someone else</li>
+        <li>If there is concern about abuse or safety</li>
+        <li>If required by law</li>
+      </ul>
 
-    </p>
+      </p>
 
-    <p class="desc">
-      In these situations, the priority is safety, and only the necessary information is shared.
+      <p class="desc">
+        In these situations, the priority is safety, and only the necessary information is shared.
 
-      If you ever have questions about confidentiality, you're always welcome to ask, we'll walk you through it.
-    </p>
+        If you ever have questions about confidentiality, you're always welcome to ask, we'll walk you through it.
+      </p>
 
-  </div>
+    </div>
   </div>
 
   </div>
@@ -628,7 +634,7 @@ box-shadow: 0 8px 0 #8b685f, 0 10px 18px rgba(0, 0, 0, 0.25);    }
   <footer class="footer">
     <div class="footer-top">
       <div class="footer-links">
-           <a href="index.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="forcompanies.html">For Companies</a>
         <a href="advise.html">Advice</a>
@@ -641,42 +647,40 @@ box-shadow: 0 8px 0 #8b685f, 0 10px 18px rgba(0, 0, 0, 0.25);    }
         <a href="windows.html">Lets Start</a>
       </div>
 
-     <div class="social-icons">
+      <div class="social-icons">
 
-  <!-- Instagram -->
-  <a href="https://www.instagram.com/openwindow.co?igsh=MTM4dnRtenFhdWNlYQ%3D%3D&utm_source=qr">
-    <i class="fab fa-instagram"></i>
-  </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/openwindow.co?igsh=MTM4dnRtenFhdWNlYQ%3D%3D&utm_source=qr">
+          <i class="fab fa-instagram"></i>
+        </a>
 
-  <!-- YouTube -->
-  <a href="https://youtube.com/@theopenwindow?si=acUKdo98Gt6AoaY8">
-    <i class="fab fa-youtube"></i>
-  </a>
+        <!-- YouTube -->
+        <a href="https://youtube.com/@theopenwindow?si=acUKdo98Gt6AoaY8">
+          <i class="fab fa-youtube"></i>
+        </a>
 
-  <!-- LinkedIn -->
-  <a href="https://www.linkedin.com/company/the-open-window-co/">
-    <i class="fab fa-linkedin-in"></i>
-  </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/company/the-open-window-co/">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
 
-  <!-- Threads -->
-  <a href="https://www.threads.com/@openwindow.co?igshid=NTc4MTIwNjQ2YQ==">
-    <i class="fa-brands fa-threads"></i>
-  </a>
+        <!-- Threads -->
+        <a href="https://www.threads.com/@openwindow.co?igshid=NTc4MTIwNjQ2YQ==">
+          <i class="fa-brands fa-threads"></i>
+        </a>
 
-  <!-- Facebook -->
-  <a href="https://www.facebook.com/profile.php?id=61573356484595">
-    <i class="fab fa-facebook-f"></i>
-  </a>
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/profile.php?id=61573356484595">
+          <i class="fab fa-facebook-f"></i>
+        </a>
 
-  <!-- X / Twitter -->
-  <a href="https://x.com/openwindowco/status/2059595956107227211?s=20">
-    <i class="fab fa-x-twitter"></i>
-  </a>
+        <!-- X / Twitter -->
+        <a href="https://x.com/openwindowco/status/2059595956107227211?s=20">
+          <i class="fab fa-x-twitter"></i>
+        </a>
 
-</div>
+      </div>
     </div>
-
-    <hr>
 
     <div class="footer-bottom">
       <div class="bottom-links">

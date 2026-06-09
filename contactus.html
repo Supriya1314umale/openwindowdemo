@@ -21,6 +21,30 @@
       display: block;
       margin: 0 auto;
     }
+    .contact-social-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.contact-social-row a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #9eefff;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+
 
     /* Default desktop */
     .nav-links {
@@ -554,144 +578,130 @@ ${message}`;
       <p><strong>THE OPEN WINDOW</strong></p>
       <p>WORKDEN HQ #183, Double Road</p>
       <p>Indiranagar 2nd Stage, Bangalore, India</p>
-
+    
       <!-- EMAIL CLICK -->
       <p>
         <a href="mailto:hello@openwindow.co" class="email">
           hello@openwindow.co
         </a>
       </p>
-
+    
       <!-- PHONE CLICK -->
       <p>
         <!-- <p>
-  <a href="tel:+918618938017" class="phone">
-    <i class="fas fa-phone"></i> +91 86189 38017</a>
-</p> -->
+      <a href="tel:+918618938017" class="phone">
+        <i class="fas fa-phone"></i> +91 86189 38017</a>
+    </p> -->
+    
+      <!-- SOCIAL ICONS ROW -->
+<div class="contact-social-row">
 
-      <p>
-        <a href="https://wa.me/918618938017" class="social-contact whatsapp" target="_blank">
-          <i class="fab fa-whatsapp"></i> +91 86189 38017
-        </a>
-      </p>
+  <a href="https://www.instagram.com/openwindow.co?igsh=MTM4dnRtenFhdWNlYQ%3D%3D&utm_source=qr" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
 
-      <p>
-        <a href="https://www.instagram.com/openwindow.co?igsh=MTM4dnRtenFhdWNlYQ%3D%3D&utm_source=qr"
-          class="social-contact" target="_blank">
-          <i class="fab fa-instagram"></i> Instagram
-        </a>
-      </p>
+  <a href="https://youtube.com/@theopenwindow?si=acUKdo98Gt6AoaY8" target="_blank">
+    <i class="fab fa-youtube"></i>
+  </a>
 
-      <p>
-        <a href="https://youtube.com/@theopenwindow?si=acUKdo98Gt6AoaY8" class="social-contact" target="_blank">
-          <i class="fab fa-youtube"></i> YouTube
-        </a>
-      </p>
+  <a href="https://www.linkedin.com/company/the-open-window-co/" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
 
-      <p>
-        <a href="https://www.linkedin.com/company/the-open-window-co/" class="social-contact" target="_blank">
-          <i class="fab fa-linkedin-in"></i> LinkedIn
-        </a>
-      </p>
+  <a href="https://www.threads.com/@openwindow.co?igshid=NTc4MTIwNjQ2YQ==" target="_blank">
+    <i class="fa-brands fa-threads"></i>
+  </a>
 
-      <p>
-        <a href="https://www.threads.com/@openwindow.co?igshid=NTc4MTIwNjQ2YQ==" class="social-contact" target="_blank">
-          <i class="fa-brands fa-threads"></i> Threads
-        </a>
-      </p>
+  <a href="https://www.facebook.com/profile.php?id=61573356484595" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
 
-      <p>
-        <a href="https://www.facebook.com/profile.php?id=61573356484595" class="social-contact" target="_blank">
-          <i class="fab fa-facebook-f"></i> Facebook
-        </a>
-      </p>
+  <a href="https://x.com/openwindowco/status/2059595956107227211?s=20" target="_blank">
+    <i class="fab fa-x-twitter"></i>
+  </a>
 
-      <p>
-        <a href="https://x.com/openwindowco/status/2059595956107227211?s=20" class="social-contact" target="_blank">
-          <i class="fab fa-x-twitter"></i> X (Twitter)
-        </a>
-      </p>
+</div>
+    
+      </section>
+    
+    
+    
+      </section>
+    
+      <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navLinks = document.getElementById("nav-links");
 
-  </section>
+        toggle.addEventListener("click", function () {
+          navLinks.classList.toggle("active");
+        });
 
-
-
-  </section>
-
-  <script>
-    const toggle = document.getElementById("menu-toggle");
-    const navLinks = document.getElementById("nav-links");
-
-    toggle.addEventListener("click", function () {
-      navLinks.classList.toggle("active");
-    });
-
-  </script>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-top">
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="forcompanies.html">For Companies</a>
-        <a href="advise.html">Advice</a>
-        <a href="windows.html">Find a Therapist</a>
-        <a href="individual.html">FAQ</a>
-        <a href="library.html">Library</a>
-        <a href="careers.html">Careers</a>
-        <a href="contactus.html">Contact Us</a>
-        <!-- <a href="login.html">Log In </a> -->
-        <a href="windows.html">Lets Start</a>
-      </div>
-
-      <div class="social-icons">
-
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/openwindow.co?igsh=MTM4dnRtenFhdWNlYQ%3D%3D&utm_source=qr">
-          <i class="fab fa-instagram"></i>
-        </a>
-
-        <!-- YouTube -->
-        <a href="https://youtube.com/@theopenwindow?si=acUKdo98Gt6AoaY8">
-          <i class="fab fa-youtube"></i>
-        </a>
-
-        <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/company/the-open-window-co/">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-
-        <!-- Threads -->
-        <a href="https://www.threads.com/@openwindow.co?igshid=NTc4MTIwNjQ2YQ==">
-          <i class="fa-brands fa-threads"></i>
-        </a>
-
-        <!-- Facebook -->
-        <a href="https://www.facebook.com/profile.php?id=61573356484595">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-
-        <!-- X / Twitter -->
-        <a href="https://x.com/openwindowco/status/2059595956107227211?s=20">
-          <i class="fab fa-x-twitter"></i>
-        </a>
-
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="footer-bottom">
-      <div class="bottom-links">
-        <a href="termandcondition.html">Terms & Conditions</a>
-        <a href="privacypolicy.html">Privacy Policy</a>
-        <a href="SharingSettings.html">Sharing Settings</a>
-        <a href="WebAccessibility.html">Web Accessibility</a>
-      </div>
-
-      <div class="copyright">
-        © 2026 Open Window. All rights reserved.
-      </div>
-    </div>
-  </footer>
+      </script>
+    
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="forcompanies.html">For Companies</a>
+            <a href="advise.html">Advice</a>
+            <a href="windows.html">Find a Therapist</a>
+            <a href="individual.html">FAQ</a>
+            <a href="library.html">Library</a>
+            <a href="careers.html">Careers</a>
+            <a href="contactus.html">Contact Us</a>
+            <!-- <a href="login.html">Log In </a> -->
+            <a href="windows.html">Lets Start</a>
+          </div>
+    
+          <div class="social-icons">
+    
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/openwindow.co?igsh=MTM4dnRtenFhdWNlYQ%3D%3D&utm_source=qr">
+              <i class="fab fa-instagram"></i>
+            </a>
+    
+            <!-- YouTube -->
+            <a href="https://youtube.com/@theopenwindow?si=acUKdo98Gt6AoaY8">
+              <i class="fab fa-youtube"></i>
+            </a>
+    
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/company/the-open-window-co/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+    
+            <!-- Threads -->
+            <a href="https://www.threads.com/@openwindow.co?igshid=NTc4MTIwNjQ2YQ==">
+              <i class="fa-brands fa-threads"></i>
+            </a>
+    
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/profile.php?id=61573356484595">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+    
+            <!-- X / Twitter -->
+            <a href="https://x.com/openwindowco/status/2059595956107227211?s=20">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+    
+          </div>
+        </div>
+    
+        <hr>
+    
+        <div class="footer-bottom">
+          <div class="bottom-links">
+            <a href="termandcondition.html">Terms & Conditions</a>
+            <a href="privacypolicy.html">Privacy Policy</a>
+            <a href="SharingSettings.html">Sharing Settings</a>
+            <a href="WebAccessibility.html">Web Accessibility</a>
+          </div>
+    
+          <div class="copyright">
+            © 2026 Open Window. All rights reserved.
+          </div>
+        </div>
+      </footer>

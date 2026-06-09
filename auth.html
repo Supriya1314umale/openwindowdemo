@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Open Window</title>
+
+<link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+
+<div class="cloud cloud1"><img src="new cloud.png" alt="Open Window"></div>
+<div class="cloud cloud2"><img src="new cloud.png" alt="Open Window"></div>
+
+<div class="auth-container">
+
+    <div class="left-panel">
+        <img src="logoopenwindow.png" alt="Open Window">
+    </div>
+
+    <div class="right-panel">
+
+        <h1>The Open Window</h1>
+
+        <div class="tabs">
+            <button class="tab active" id="showLogin">Login</button>
+            <button class="tab" id="showSignup">Sign Up</button>
+        </div>
+
+        <!-- LOGIN -->
+        <div id="loginForm">
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Email Address">
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Password">
+                <p class="forgot-password">
+                    <a href="#" id="forgotPassword">
+                        Forgot Password?
+                    </a>
+                </p>
+
+            <button id="loginBtn" class="main-btn">
+                Enter Your Window
+            </button>
+
+        </div>
+
+        <!-- SIGNUP -->
+        <div id="signupForm" style="display:none;">
+
+            <input
+                type="email"
+                id="signupEmail"
+                placeholder="Email Address">
+
+            <input
+                type="password"
+                id="signupPassword"
+                placeholder="Password">
+
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm Password">
+
+            <button id="signupBtn" class="main-btn">
+                Create Account
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="toast"></div>
+
+<script type="module" src="auth.js"></script>
+
+</body>
+</html>

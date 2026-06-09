@@ -347,3 +347,23 @@ navLinksList.forEach(link => {
   });
 });
 
+function sendGiftEmail() {
+  const subject = "Gift Therapy Inquiry";
+
+  const body =
+`Hi Team Open Window,
+
+I'd like to gift a therapy session/package to someone I care about.
+
+Name of Recipient:
+Relationship to Recipient:
+Recipient's Email/Phone Number:
+
+Please let me know the next steps, pricing details, and payment process.
+
+Warm regards`;
+
+  window.location.href =
+    `mailto:hello@openwindow.co?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
