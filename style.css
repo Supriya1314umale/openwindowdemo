@@ -3745,10 +3745,16 @@ body {
     flex-wrap: wrap;
     margin-top: 64px;
   }
+  .bottom-links {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
+    flex-direction: column;
+}
 
   .login-btn,
   .start-btn {
-    width: fit-content;
+    width: 125px;
     /* padding: 10px 18px;
     font-size: 13px;
     margin-left: 191px;
@@ -3969,8 +3975,7 @@ body {
     gap: 20px;
   }
 
-  .footer-links,
-  .bottom-links {
+  .footer-links {
     justify-content: center;
     flex-wrap: wrap;
   }
